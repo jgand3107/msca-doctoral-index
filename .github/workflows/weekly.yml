@@ -1,0 +1,45 @@
+name: Weekly MSCA doctoral scrape
+
+on:
+  schedule:
+    # Every Monday at 06:00 UTC. Adjust as you like (minute hour * * day-of-week).
+    - cron: "0 6 * * 1"
+  workflow_dispatch: {}   # lets you trigger a run by hand from the Actions tab
+
+permissions:
+  contents: write          # needed to commit refreshed data back to the repo
+
+concurrency:
+  group: msca-scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run scraper
+        run: python run.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Weekly MSCA doctoral update ($(date -u +%Y-%m-%d))"
+            git push
+          fi

@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local scratch
+*.log
+scratch/
+
+# Unrelated personal files that happen to live in this folder
+# (kept out of the public scraper repo). Delete lines to include any.
+*.pdf
+england-phd-ranking.html
+phd-ranking.html
