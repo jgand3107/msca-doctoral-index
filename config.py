@@ -38,6 +38,26 @@ USER_AGENT = (
 # Safety cap so a portal change can never spin forever.
 MAX_PAGES = 100
 
+# --- Field filter (life sciences only) ----------------------------------
+# EURAXESS tags each position with research fields. With this on, a position
+# is kept only if ANY of its field tags matches one of the keywords below
+# (case-insensitive substring). That keeps life-science posts — including
+# interdisciplinary ones like biophysics, biomedical engineering, or
+# computational biology — and drops social sciences, humanities, and non-life
+# fields (pure engineering, physics, maths, computer science, chemistry, etc.).
+# Set to False to keep every field. Edit the list to widen/narrow the net
+# (e.g. add "environmental science", "chemistry", or "psycholog").
+LIFE_SCIENCES_ONLY = True
+LIFE_SCIENCE_KEYWORDS = [
+    "biolog", "biochem", "biophys", "biotech", "biomedical",
+    "biological engineering", "medical science", "medicine", "health science",
+    "pharmacol", "pharmacy", "pharmaceutical", "neuroscience", "neurobiolog",
+    "botany", "zoolog", "microbiolog", "genetic", "genomic", "proteomic",
+    "immunolog", "virolog", "veterinary", "physiolog", "epidemiolog",
+    "toxicolog", "agricultural science", "ecology", "cell biolog", "cancer",
+    "molecular biolog", "bioinformatic", "life science",
+]
+
 # --- Detail-page enrichment ---------------------------------------------
 # Each listing links to /jobs/<id>, whose detail page carries contract type,
 # weekly hours, required education level, the Marie Curie grant number, and

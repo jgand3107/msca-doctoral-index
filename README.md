@@ -8,8 +8,11 @@ every matching listing once a week and publishes a tidy table of the important d
 
 > **Scope:** first-stage researchers (R1 — i.e. *doctoral candidates, not postdocs*)
 > funded by **Horizon Europe – MSCA** and **Horizon Europe – COFUND** doctoral
-> programmes. As of the first run that is ~215 live positions. Edit
-> [`config.py`](config.py) to widen or narrow the scope (e.g. add legacy Horizon 2020).
+> programmes, **filtered to life-science fields only** (social sciences,
+> humanities, and non-life fields such as pure engineering/physics/CS are
+> dropped). That narrows ~215 MSCA+COFUND doctoral posts to ~75 life-science
+> ones. Edit [`config.py`](config.py) to change the scope or the field filter
+> (set `LIFE_SCIENCES_ONLY = False` to keep every field).
 
 ---
 
@@ -141,6 +144,9 @@ Everything tunable is in [`config.py`](config.py):
 - `RESEARCHER_PROFILE` — `447` = R1 (doctoral). Change to include other profiles.
 - `FUNDING_PROGRAMMES` — add/remove EU programmes by their taxonomy id
   (the file lists the known ids, including legacy Horizon 2020).
+- `LIFE_SCIENCES_ONLY` / `LIFE_SCIENCE_KEYWORDS` — the field filter. Turn the
+  filter off, or edit the keyword list to add fields (e.g. `"environmental
+  science"`, `"chemistry"`, `"psycholog"`) or make it stricter.
 - `REQUEST_DELAY_SECONDS` — politeness delay between page requests.
 - `ENRICH_DETAILS` — set `False` to skip detail-page fetching entirely.
 

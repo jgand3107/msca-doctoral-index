@@ -222,6 +222,12 @@ def parse_card(card) -> dict | None:
     }
 
 
+def is_life_science(research_field: str) -> bool:
+    """True if any field tag matches a configured life-science keyword."""
+    low = (research_field or "").lower()
+    return any(kw in low for kw in config.LIFE_SCIENCE_KEYWORDS)
+
+
 def _result_count(soup: BeautifulSoup) -> int | None:
     # The portal sometimes splits "Search results" and "(215)" into separate
     # tags, so match against the whole page text rather than a single node.

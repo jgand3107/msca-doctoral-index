@@ -82,6 +82,13 @@ def main() -> None:
 
     session = scraper._session()
     records = scraper.scrape_listings(session)
+
+    if config.LIFE_SCIENCES_ONLY:
+        before = len(records)
+        records = [r for r in records if scraper.is_life_science(r["research_field"])]
+        print(f"  life-science filter: kept {len(records)}/{before} "
+              f"(dropped {before - len(records)} non-life-science)")
+
     if args.limit:
         records = records[:args.limit]
 
