@@ -13,11 +13,10 @@ Thumbs.db
 *.log
 scratch/
 
-# Unrelated personal files that happen to live in this folder
-# (kept out of the public scraper repo). Delete lines to include any.
+# Personal research files (cancer-centre PhD guides/rankings) — kept out of
+# the public scraper repo.
+phd-cancer-centres/
 *.pdf
-england-phd-ranking.html
-phd-ranking.html
 
 # Generated report snapshots
 msca_report.html
