@@ -137,6 +137,30 @@ That's it. Each week the table refreshes itself and the raw CSV URL stays curren
 
 ---
 
+## Reliability note (why there are two runners)
+
+EURAXESS intermittently serves **degraded/unfiltered pages to cloud IPs** such
+as GitHub Actions — a run may get the full ~215 offers or a near-empty page.
+To protect you, the scraper **validates every scrape** (profiles must be R1,
+funding must match, row count must be plausible) and **refuses to overwrite the
+published data with a degraded result** — a bad run fails loudly and the last
+good data stays live. It also retries up to 8 times per run to ride out the bad
+windows.
+
+Because of that cloud flakiness there are two runners:
+
+- **GitHub Actions** (`.github/workflows/weekly.yml`) — free, hands-off, runs
+  weekly in the cloud. Updates when EURAXESS cooperates; otherwise skips.
+- **Local weekly task** (`run_and_push.ps1` + Windows Task Scheduler) — runs on
+  your own machine, where EURAXESS always returns full results, and pushes the
+  update. This is the reliable one. It's registered as the scheduled task
+  **"MSCA Doctoral Weekly Scrape"** (weekly, Mondays 09:00, catches up if the PC
+  was off). Run it any time by hand:
+  ```powershell
+  powershell -ExecutionPolicy Bypass -File run_and_push.ps1
+  ```
+  Output is logged to `weekly_run.log`.
+
 ## Changing what's scraped
 
 Everything tunable is in [`config.py`](config.py):
