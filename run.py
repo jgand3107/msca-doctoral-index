@@ -16,6 +16,7 @@ import argparse
 import csv
 import json
 import os
+import sys
 
 import config
 import msca_scraper as scraper
@@ -81,7 +82,13 @@ def main() -> None:
           f"funding={list(config.FUNDING_PROGRAMMES.values())}")
 
     session = scraper._session()
-    records = scraper.scrape_listings(session)
+    try:
+        records, expected_total = scraper.scrape_validated(session)
+    except scraper.ScrapeValidationError as exc:
+        print(f"ABORTING: scrape failed validation ({exc}).", file=sys.stderr)
+        print("Existing data files were left untouched (not overwriting good "
+              "data with a degraded scrape).", file=sys.stderr)
+        sys.exit(1)
 
     if config.LIFE_SCIENCES_ONLY:
         before = len(records)

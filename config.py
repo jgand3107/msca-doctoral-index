@@ -30,9 +30,11 @@ FUNDING_PROGRAMMES = {
 REQUEST_DELAY_SECONDS = 1.0        # pause between page requests
 REQUEST_TIMEOUT = 60               # per-request timeout (seconds)
 MAX_RETRIES = 3                    # retries on transient network errors
+# A realistic browser UA: EURAXESS sometimes serves degraded/unfiltered pages
+# to obvious bots, so we present as a normal desktop browser.
 USER_AGENT = (
-    "msca-doctoral-scraper/1.0 "
-    "(weekly research index of MSCA PhD positions; contact via GitHub repo)"
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
 )
 
 # Safety cap so a portal change can never spin forever.

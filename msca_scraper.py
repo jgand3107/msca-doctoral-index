@@ -240,8 +240,60 @@ def _result_count(soup: BeautifulSoup) -> int | None:
 # --------------------------------------------------------------------------
 # Listing scrape
 # --------------------------------------------------------------------------
-def scrape_listings(session: requests.Session | None = None, verbose: bool = True) -> list[dict]:
-    """Walk every result page and return a de-duplicated list of records."""
+class ScrapeValidationError(RuntimeError):
+    """Raised when a scrape result looks degraded and must not be published."""
+
+
+def validate_scrape(records: list[dict], expected_total: int | None) -> list[str]:
+    """
+    Return a list of problems that mean the scrape is untrustworthy.
+
+    EURAXESS intermittently serves degraded/unfiltered pages (especially from
+    cloud IPs). We must never overwrite good data with such a result, so we
+    sanity-check that the facets we requested were actually applied.
+    """
+    problems = []
+    if not records:
+        return ["zero listings parsed"]
+
+    non_r1 = [r for r in records if "R1" not in (r.get("researcher_profile") or "")]
+    if non_r1:
+        problems.append(
+            f"{len(non_r1)}/{len(records)} listings are not R1 "
+            f"(profile facet not applied)")
+
+    no_prog = [r for r in records if not r.get("programme_type")]
+    if no_prog:
+        problems.append(
+            f"{len(no_prog)}/{len(records)} listings have no expected funding "
+            f"programme (funding facet not applied)")
+
+    if expected_total and len(records) < max(10, expected_total * 0.5):
+        problems.append(
+            f"only {len(records)} listings parsed vs portal's {expected_total}")
+
+    return problems
+
+
+def scrape_validated(session: requests.Session | None = None, attempts: int = 3,
+                     verbose: bool = True) -> tuple[list[dict], int | None]:
+    """Scrape with retries; only return a result that passes validation."""
+    session = session or _session()
+    problems: list[str] = []
+    for attempt in range(1, attempts + 1):
+        records, expected_total = scrape_listings(session, verbose=verbose)
+        problems = validate_scrape(records, expected_total)
+        if not problems:
+            return records, expected_total
+        if verbose:
+            print(f"  attempt {attempt}/{attempts} rejected: {'; '.join(problems)}")
+        if attempt < attempts:
+            time.sleep(5 * attempt)
+    raise ScrapeValidationError("; ".join(problems))
+
+
+def scrape_listings(session: requests.Session | None = None, verbose: bool = True):
+    """Walk every result page; return (records, portal_reported_total)."""
     session = session or _session()
     records: dict[str, dict] = {}
     expected_total = None
@@ -287,7 +339,7 @@ def scrape_listings(session: requests.Session | None = None, verbose: bool = Tru
     if verbose and expected_total is not None and len(result) != expected_total:
         print(f"  note: collected {len(result)} vs portal's {expected_total} "
               f"(listings shift between page loads; this is normal)")
-    return result
+    return result, expected_total
 
 
 # --------------------------------------------------------------------------
