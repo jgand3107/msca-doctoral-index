@@ -84,7 +84,12 @@
 - JSON line-merge duplicated a record → fixed with `.gitattributes merge=ours`.
 - Push race with concurrent Action → fixed with retry/merge in workflow.
 
+### Tue, 20 Oct 2026 — 16:30 — VHIO source built
+- **Action:** Added `vhio.py` (scrapes jobs.vhio.net Teamtailor board; JSON-LD + body deadline parse; flags predoc/PhD/fellowship listings).
+- **Result:** Parses all 16 current listings with deadlines; 0 are scholarships right now (VHIO has only staff/technician roles posted) — will auto-capture predoc/PhD when posted.
+
 ## Outstanding / Next
-- Build VHIO (Teamtailor) and AcademicTransfer (API) source scrapers.
+- Wire `vhio.py` into run.py Tier-1 (add a `source` column to the schema).
+- Build AcademicTransfer (Tier-2, via api.academictransfer.com).
 - Represent la Caixa via the deadlines calendar + any live INPhINIT positions.
-- Restructure into a `sources/` package with Tier-1 and Tier-2 outputs + two reports.
+- Produce Tier-1 + Tier-2 reports and refresh the hosted report.
