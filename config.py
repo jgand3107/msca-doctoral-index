@@ -30,6 +30,12 @@ FUNDING_PROGRAMMES = {
 REQUEST_DELAY_SECONDS = 1.0        # pause between page requests
 REQUEST_TIMEOUT = 60               # per-request timeout (seconds)
 MAX_RETRIES = 3                    # retries on transient network errors
+
+# EURAXESS intermittently serves degraded pages to cloud IPs (e.g. GitHub
+# Actions). A degraded scrape is rejected and the whole scrape is retried
+# with a fresh session; these control how hard/long we try before giving up.
+SCRAPE_ATTEMPTS = 8                # full-scrape attempts before aborting
+RETRY_BACKOFF_SECONDS = 30         # base wait between attempts (grows per try)
 # A realistic browser UA: EURAXESS sometimes serves degraded/unfiltered pages
 # to obvious bots, so we present as a normal desktop browser.
 USER_AGENT = (

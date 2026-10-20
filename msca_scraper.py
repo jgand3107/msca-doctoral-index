@@ -42,7 +42,21 @@ _CARD_LABELS = [
 # --------------------------------------------------------------------------
 def _session() -> requests.Session:
     s = requests.Session()
-    s.headers.update({"User-Agent": config.USER_AGENT, "Accept-Language": "en"})
+    s.headers.update({
+        "User-Agent": config.USER_AGENT,
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept": ("text/html,application/xhtml+xml,application/xml;q=0.9,"
+                   "image/avif,image/webp,*/*;q=0.8"),
+        "Accept-Encoding": "gzip, deflate, br",
+        "Connection": "keep-alive",
+        "Upgrade-Insecure-Requests": "1",
+    })
+    # Pre-accept the EC cookie-consent so EURAXESS serves full content.
+    s.cookies.set(
+        "cck1",
+        "%7B%22cm%22%3Atrue%2C%22all1st%22%3Atrue%2C%22closed%22%3Atrue%7D",
+        domain=".europa.eu",
+    )
     return s
 
 
@@ -275,20 +289,31 @@ def validate_scrape(records: list[dict], expected_total: int | None) -> list[str
     return problems
 
 
-def scrape_validated(session: requests.Session | None = None, attempts: int = 3,
+def scrape_validated(session: requests.Session | None = None,
+                     attempts: int | None = None,
                      verbose: bool = True) -> tuple[list[dict], int | None]:
-    """Scrape with retries; only return a result that passes validation."""
-    session = session or _session()
+    """
+    Scrape with retries; only return a result that passes validation.
+
+    Each attempt uses a fresh session (new cookies), and waits longer between
+    tries, so a cloud run can ride out EURAXESS's degraded-response windows.
+    """
+    attempts = attempts or config.SCRAPE_ATTEMPTS
     problems: list[str] = []
     for attempt in range(1, attempts + 1):
-        records, expected_total = scrape_listings(session, verbose=verbose)
+        records, expected_total = scrape_listings(_session(), verbose=verbose)
         problems = validate_scrape(records, expected_total)
         if not problems:
+            if verbose and attempt > 1:
+                print(f"  succeeded on attempt {attempt}")
             return records, expected_total
         if verbose:
             print(f"  attempt {attempt}/{attempts} rejected: {'; '.join(problems)}")
         if attempt < attempts:
-            time.sleep(5 * attempt)
+            wait = min(config.RETRY_BACKOFF_SECONDS * attempt, 90)
+            if verbose:
+                print(f"  waiting {wait}s before retry...")
+            time.sleep(wait)
     raise ScrapeValidationError("; ".join(problems))
 
 
