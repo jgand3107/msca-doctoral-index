@@ -66,6 +66,14 @@ LIFE_SCIENCE_KEYWORDS = [
     "molecular biolog", "bioinformatic", "life science",
 ]
 
+# --- Country filter ------------------------------------------------------
+# Keep only positions based in these countries (names as EURAXESS writes them;
+# note the UK is "United Kingdom"). Set to None or [] to keep all countries.
+COUNTRIES_FILTER = [
+    "Spain", "France", "United Kingdom", "Germany", "Italy", "Netherlands",
+    "Switzerland",
+]
+
 # --- Detail-page enrichment ---------------------------------------------
 # Each listing links to /jobs/<id>, whose detail page carries contract type,
 # weekly hours, required education level, the Marie Curie grant number, and

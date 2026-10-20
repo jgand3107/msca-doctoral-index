@@ -96,6 +96,13 @@ def main() -> None:
         print(f"  life-science filter: kept {len(records)}/{before} "
               f"(dropped {before - len(records)} non-life-science)")
 
+    if config.COUNTRIES_FILTER:
+        before = len(records)
+        allow = {c.lower() for c in config.COUNTRIES_FILTER}
+        records = [r for r in records if (r["country"] or "").lower() in allow]
+        print(f"  country filter: kept {len(records)}/{before} "
+              f"(countries: {', '.join(config.COUNTRIES_FILTER)})")
+
     if args.limit:
         records = records[:args.limit]
 
