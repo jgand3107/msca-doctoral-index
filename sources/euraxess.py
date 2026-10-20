@@ -213,6 +213,7 @@ def parse_card(card) -> dict | None:
         deadline_display = _clean(time_el.get_text())
 
     return {
+        "source": "EURAXESS",
         "id": job_id,
         "title": _clean(title_a.get_text()),
         "organisation": org,

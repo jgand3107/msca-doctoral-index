@@ -1,4 +1,4 @@
-name: Weekly MSCA doctoral scrape
+name: Weekly scholarship scrape
 
 on:
   schedule:
@@ -29,30 +29,31 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run scraper
-        run: python run.py
-
-      - name: Commit updated data
+      - name: Run scraper and commit valid data
         run: |
+          set +e
+          python run.py
+          run_code=$?
+          set -e
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config merge.ours.driver true   # honour .gitattributes merge=ours
           git add data/
           if git diff --staged --quiet; then
-            echo "No changes to commit."
-            exit 0
+            echo "No data changes to commit."
+          else
+            git commit -m "Weekly scholarship update ($(date -u +%Y-%m-%d))"
+            pushed=0
+            for attempt in 1 2 3; do
+              if git push; then echo "Pushed on attempt $attempt."; pushed=1; break; fi
+              echo "Push rejected; integrating remote changes (attempt $attempt)..."
+              git fetch origin main
+              git merge --no-edit origin/main || true
+            done
+            [ "$pushed" = 1 ] || { echo "Could not push." >&2; exit 1; }
           fi
-          git commit -m "Weekly MSCA doctoral update ($(date -u +%Y-%m-%d))"
-          # Push, retrying if the remote moved (e.g. a concurrent push): merge
-          # in remote commits, keeping our freshly-generated data on conflict.
-          for attempt in 1 2 3; do
-            if git push; then
-              echo "Pushed on attempt $attempt."
-              exit 0
-            fi
-            echo "Push rejected; integrating remote changes (attempt $attempt)..."
-            git fetch origin main
-            git merge --no-edit origin/main || true
-          done
-          echo "Could not push after 3 attempts." >&2
-          exit 1
+          # Propagate a primary-tier failure (valid data was still committed).
+          if [ "$run_code" -ne 0 ]; then
+            echo "Scraper reported a primary-tier failure (exit $run_code)." >&2
+            exit "$run_code"
+          fi

@@ -21,12 +21,14 @@ import config
 LIST_URL = "https://jobs.vhio.net/jobs"
 SITE = "https://jobs.vhio.net"
 
-# Title/description keywords that mark a listing as a scholarship/PhD.
+# Keywords that mark a listing as a *doctoral* scholarship (predoc / PhD).
+# Postdoc listings are explicitly excluded (see EXCLUDE_KEYWORDS) because
+# "doctoral" is a substring of "postdoctoral".
 SCHOLARSHIP_KEYWORDS = [
-    "predoctoral", "pre-doctoral", "phd", "ph.d", "doctoral", "doctorate",
-    "fellowship", "scholarship", "beca", "estudiante de doctorado",
-    "postdoctoral", "post-doctoral", "fpi", "la caixa",
+    "predoctoral", "pre-doctoral", "phd", "ph.d", "ph. d", "doctoral",
+    "doctorate", "estudiante de doctorado", "fpi", "beca predoctoral",
 ]
+EXCLUDE_KEYWORDS = ["postdoctoral", "post-doctoral", "postdoc", "post-doc"]
 
 
 def _session() -> requests.Session:
@@ -77,9 +79,18 @@ def _clean(t):
     return re.sub(r"\s+", " ", (t or "")).strip()
 
 
-def is_scholarship(title: str, text: str) -> bool:
-    blob = f"{title}\n{text}".lower()
-    return any(kw in blob for kw in SCHOLARSHIP_KEYWORDS)
+def is_scholarship(title: str, text: str = "") -> bool:
+    """
+    True for doctoral (predoc/PhD) listings, excluding postdoc.
+
+    Matches on the TITLE only — VHIO predoctoral listings say "Predoctoral" /
+    "PhD Student" in the title, whereas staff jobs only mention "PhD" in their
+    requirements, which would otherwise cause false positives.
+    """
+    t = (title or "").lower()
+    if any(x in t for x in EXCLUDE_KEYWORDS):
+        return False
+    return any(kw in t for kw in SCHOLARSHIP_KEYWORDS)
 
 
 def scrape(scholarships_only: bool = True, verbose: bool = True) -> list[dict]:

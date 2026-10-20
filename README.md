@@ -16,14 +16,35 @@ every matching listing once a week and publishes a tidy table of the important d
 
 ---
 
+## Sources & tiers
+
+This is a **multi-source** tracker. Each row carries a `source` column.
+
+**Tier 1 — main** (`data/msca_doctoral_positions.*`):
+- **EURAXESS** MSCA + COFUND doctoral (R1, life-science, 7 countries: ES, FR, UK, DE, IT, NL, CH)
+- **VHIO** (Vall d'Hebron Institute of Oncology) — predoctoral/PhD listings only (no postdoc)
+- **la Caixa** INPhINIT doctoral fellowships — tracked annual calls (expected deadlines)
+
+**Tier 2 — Netherlands** (`data/netherlands_phd.*`):
+- **AcademicTransfer** — life-science PhD vacancies in the Netherlands (via its public API)
+
+**Annual deadlines** (`data/annual_deadlines.csv`): curated big recurring schemes
+(MSCA, EMBL, Boehringer, la Caixa, FPI/FPU, UKRI DTPs, Max Planck IMPRS, Pasteur
+PPU, ETH/EPFL, SNSF…) with expected windows and official links.
+
+Code is organised under [`sources/`](sources/) (`euraxess.py`, `vhio.py`,
+`academictransfer.py`, `lacaixa.py`); [`run.py`](run.py) orchestrates the tiers
+and [`report.py`](report.py) builds the HTML reports.
+
 ## What you get
 
-Two files are regenerated on every run, in [`data/`](data/):
+Regenerated on every run, in [`data/`](data/):
 
 | File | Use |
 |------|-----|
-| `msca_doctoral_positions.csv`  | Read into R / Excel / pandas |
-| `msca_doctoral_positions.json` | Same data + run metadata (filters, timestamp) |
+| `msca_doctoral_positions.csv` / `.json`  | **Tier 1** main table (read into R / Excel / pandas) |
+| `netherlands_phd.csv` / `.json` | **Tier 2** Netherlands life-science PhD |
+| `annual_deadlines.csv` | Recurring-scheme calendar |
 
 ### Columns
 

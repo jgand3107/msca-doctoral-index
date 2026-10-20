@@ -86,6 +86,11 @@ ENRICH_DETAILS = True
 
 # --- Output --------------------------------------------------------------
 OUTPUT_DIR = "data"
+# Tier 1 (main): EURAXESS MSCA/COFUND + VHIO + la Caixa. Filename kept stable
+# so existing raw-URL / R readers keep working.
 CSV_FILE = "msca_doctoral_positions.csv"
 JSON_FILE = "msca_doctoral_positions.json"
+# Tier 2: AcademicTransfer (Netherlands) life-science PhD.
+TIER2_CSV_FILE = "netherlands_phd.csv"
+TIER2_JSON_FILE = "netherlands_phd.json"
 META_FILE = "last_run.json"
