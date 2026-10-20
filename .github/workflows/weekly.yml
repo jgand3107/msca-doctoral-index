@@ -36,10 +36,23 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config merge.ours.driver true   # honour .gitattributes merge=ours
           git add data/
           if git diff --staged --quiet; then
             echo "No changes to commit."
-          else
-            git commit -m "Weekly MSCA doctoral update ($(date -u +%Y-%m-%d))"
-            git push
+            exit 0
           fi
+          git commit -m "Weekly MSCA doctoral update ($(date -u +%Y-%m-%d))"
+          # Push, retrying if the remote moved (e.g. a concurrent push): merge
+          # in remote commits, keeping our freshly-generated data on conflict.
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "Pushed on attempt $attempt."
+              exit 0
+            fi
+            echo "Push rejected; integrating remote changes (attempt $attempt)..."
+            git fetch origin main
+            git merge --no-edit origin/main || true
+          done
+          echo "Could not push after 3 attempts." >&2
+          exit 1

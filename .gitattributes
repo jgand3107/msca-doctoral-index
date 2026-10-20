@@ -1,0 +1,7 @@
+# Generated data files: on a merge conflict keep the freshly-generated
+# version wholesale instead of line-merging (line-merging two versions of
+# these can silently interleave/duplicate records). Requires the one-liner
+# `git config merge.ours.driver true` (set in the workflow and locally).
+data/msca_doctoral_positions.json merge=ours
+data/msca_doctoral_positions.csv  merge=ours
+data/last_run.json                merge=ours
