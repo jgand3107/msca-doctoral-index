@@ -85,11 +85,23 @@
 - Push race with concurrent Action → fixed with retry/merge in workflow.
 
 ### Tue, 20 Oct 2026 — 16:30 — VHIO source built
-- **Action:** Added `vhio.py` (scrapes jobs.vhio.net Teamtailor board; JSON-LD + body deadline parse; flags predoc/PhD/fellowship listings).
-- **Result:** Parses all 16 current listings with deadlines; 0 are scholarships right now (VHIO has only staff/technician roles posted) — will auto-capture predoc/PhD when posted.
+- Added `vhio.py` (Teamtailor board). Title-only scholarship match (body "PhD"
+  in requirements caused false positives on staff jobs — fixed).
+
+### Tue, 20 Oct 2026 — ~17:00 — Multi-source tiered build complete (commit 7861f8d)
+- **Reorg:** scrapers moved to `sources/` (euraxess, vhio, academictransfer, lacaixa).
+- **AcademicTransfer:** public Bearer token extracted live from the Nuxt payload;
+  `function_types=9` = PhD; 198 NL PhD → 16 life-science. Tier 2.
+- **la Caixa:** INPhINIT Incoming/Retaining as tracked annual calls (Tier 1).
+- **run.py:** builds Tier 1 (`msca_doctoral_positions.*`, 50 rows = 48 EURAXESS
+  + 2 la Caixa + VHIO-as-available) and Tier 2 (`netherlands_phd.*`, 16); each
+  tier writes only valid data; `source` column added.
+- **report.py:** two HTML reports + annual-deadlines section.
+- **Reports published:** Tier 1 https://claude.ai/artifact/SkFqVNbr4FDREeiDBnkoBu ,
+  Tier 2 https://claude.ai/artifact/RgZkqWzQ3yvAbTir4CviUp
 
 ## Outstanding / Next
-- Wire `vhio.py` into run.py Tier-1 (add a `source` column to the schema).
-- Build AcademicTransfer (Tier-2, via api.academictransfer.com).
-- Represent la Caixa via the deadlines calendar + any live INPhINIT positions.
-- Produce Tier-1 + Tier-2 reports and refresh the hosted report.
+- (Optional) GitHub Pages so the hosted reports auto-refresh weekly.
+- la Caixa deadlines are *expected* windows — verify against official pages yearly.
+- AcademicTransfer relies on a public token extracted at runtime (robust to
+  rotation, but watch for API changes).
