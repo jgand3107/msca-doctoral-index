@@ -100,6 +100,13 @@
 - **Reports published:** Tier 1 https://claude.ai/artifact/SkFqVNbr4FDREeiDBnkoBu ,
   Tier 2 https://claude.ai/artifact/RgZkqWzQ3yvAbTir4CviUp
 
+### Wed, 21 Oct 2026 — Tier 3: industry PhD (commit ee1fa2a)
+- Generalised EURAXESS scraper to accept custom facets + optional funding
+  validation. `sources/industry.py` uses the organisation-type facet
+  (533 Large Enterprise + 537 SME/Start-up) with R1, no funding restriction.
+- 24 R1 industry positions -> 11 life-science -> 9 in the 7 countries.
+- `data/industry_phd.*`; third report https://claude.ai/artifact/AgrBbb6uNrm36AYufhnbzx
+
 ## Outstanding / Next
 - (Optional) GitHub Pages so the hosted reports auto-refresh weekly.
 - la Caixa deadlines are *expected* windows — verify against official pages yearly.
