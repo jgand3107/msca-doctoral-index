@@ -82,6 +82,13 @@ th:hover{color:var(--ink)}td a{color:var(--accent);text-decoration:none}td a:hov
 .days{font-variant-numeric:tabular-nums;white-space:nowrap}.days.urgent{color:var(--soon);font-weight:700}
 .muted{color:var(--muted)}.count{color:var(--muted);font-size:13px;margin-bottom:8px}
 footer{color:var(--muted);font-size:12px;margin-top:24px;text-align:center}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:18px 0 4px;border-bottom:1px solid var(--line)}
+.tab{background:none;border:0;border-bottom:2px solid transparent;color:var(--muted);
+font:inherit;font-weight:600;font-size:14px;padding:9px 12px;cursor:pointer}
+.tab:hover{color:var(--ink)}.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab .b{display:inline-block;margin-left:6px;background:var(--chip);color:var(--muted);
+border-radius:999px;padding:0 7px;font-size:11px}
+.panel{display:none}.panel.active{display:block}
 """
 
 
@@ -182,6 +189,112 @@ q.oninput=render;src.onchange=render;render();
 </script></body></html>"""
 
 
+def _rows_for(positions, today):
+    positions = sorted(positions, key=lambda p: (not p.get("deadline"), p.get("deadline") or ""))
+    out = []
+    for p in positions:
+        out.append({
+            "title": p.get("title", ""), "url": p.get("url", ""),
+            "org": p.get("organisation") or p.get("host_institution") or "",
+            "field": p.get("research_field", ""), "source": p.get("source", ""),
+            "country": p.get("country", ""), "open": p.get("open_date", ""),
+            "deadline": (p.get("deadline") or "")[:10],
+            "deadline_disp": p.get("deadline_display") or (p.get("deadline") or "")[:10],
+            "days": _days_left(p.get("deadline"), today),
+        })
+    return out
+
+
+def _panel(pid, positions, subtitle):
+    import collections
+    today = datetime.date.today()
+    rows = _rows_for(positions, today)
+    sources = list(collections.Counter(r["source"] for r in rows))
+    soon = sum(1 for r in rows if r["days"] is not None and 0 <= r["days"] <= 14)
+    cards = [(len(rows), "open"), (len(sources), "sources"),
+             (len({r["country"] for r in rows if r["country"]}), "countries"),
+             (soon, "close ≤14 days")]
+    cards_html = "".join(f'<div class="card"><div class="num">{v}</div>'
+                         f'<div class="lbl">{esc(l)}</div></div>' for v, l in cards)
+    src_opts = "".join(f"<option>{esc(s)}</option>" for s in sources)
+    html = f"""<div class="panel" id="p-{pid}">
+      <p class="muted" style="margin:4px 0 0">{esc(subtitle)}</p>
+      <div class="cards">{cards_html}</div>
+      <div class="controls"><input id="q-{pid}" type="search" placeholder="Search…">
+      <select id="src-{pid}"><option value="">All sources</option>{src_opts}</select></div>
+      <div class="count" id="cnt-{pid}"></div>
+      <table id="t-{pid}"><thead><tr><th data-k="title">Position</th><th data-k="source">Source</th>
+      <th data-k="country">Country</th><th data-k="open">Opened</th><th data-k="deadline">Deadline</th>
+      <th data-k="days">Days left</th></tr></thead><tbody id="tb-{pid}"></tbody></table></div>"""
+    return html, rows
+
+
+def render_combined(sections, deadlines, gen, repo):
+    """sections = list of (pid, label, subtitle, positions)."""
+    panels, data = [], {}
+    tabs = []
+    for pid, label, subtitle, positions in sections:
+        html, rows = _panel(pid, positions, subtitle)
+        panels.append(html)
+        data[pid] = rows
+        tabs.append(f'<button class="tab" data-pid="{pid}">{esc(label)}'
+                    f'<span class="b">{len(rows)}</span></button>')
+
+    # Deadlines panel (static table).
+    drows = "".join(
+        f'<tr><td><a href="{esc(d["url"])}" target="_blank" rel="noopener">{esc(d["scheme"])}</a>'
+        f'<div class="muted">{esc(d["organisation"])} · {esc(d["field"])}</div></td>'
+        f'<td>{esc(d["countries"])}</td><td>{esc(d["frequency"])}</td>'
+        f'<td>{esc(d["typical_opens"])}</td><td>{esc(d["typical_deadline"])}</td></tr>'
+        for d in deadlines)
+    panels.append(f"""<div class="panel" id="p-deadlines">
+      <p class="muted" style="margin:4px 0 10px">Typical windows from past cycles — verify on each official page.</p>
+      <table><thead><tr><th>Scheme</th><th>Countries</th><th>Frequency</th><th>Opens</th><th>Deadline</th></tr></thead>
+      <tbody>{drows}</tbody></table></div>""")
+    tabs.append(f'<button class="tab" data-pid="deadlines">Annual deadlines<span class="b">{len(deadlines)}</span></button>')
+
+    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>PhD Scholarships Tracker</title>
+<style>{STYLE}</style></head><body><div class="wrap">
+<header><h1>PhD Scholarships Tracker — Life Sciences</h1>
+<p>All sources in one place · R1 doctoral · 7 countries (ES, FR, UK, DE, IT, NL, CH) · generated {esc(gen)}</p></header>
+<div class="tabs">{"".join(tabs)}</div>
+{"".join(panels)}
+<footer>Auto-updated weekly · <a href="{esc(repo)}">{esc(repo)}</a></footer>
+</div><script>
+const PANELS={json.dumps(data, ensure_ascii=False)};
+const SC={json.dumps({'EURAXESS':'s-EURAXESS','VHIO':'s-VHIO','la Caixa':'s-laCaixa','AcademicTransfer (NL)':'s-AT','Industry (EURAXESS)':'s-Industry'})};
+const state={{}};
+function esc(s){{const d=document.createElement('div');d.textContent=s==null?'':s;return d.innerHTML;}}
+function renderPanel(pid){{const q=document.getElementById('q-'+pid),src=document.getElementById('src-'+pid),
+tb=document.getElementById('tb-'+pid),cnt=document.getElementById('cnt-'+pid);
+const st=state[pid]||(state[pid]={{sortK:'deadline',dir:1}});
+let rows=PANELS[pid].filter(r=>{{const t=(q.value||'').toLowerCase(),sf=src.value;
+if(sf&&r.source!==sf)return false;if(!t)return true;
+return (r.title+' '+r.country+' '+r.org+' '+r.source+' '+r.field).toLowerCase().includes(t);}});
+rows.sort((a,b)=>{{let x=a[st.sortK],y=b[st.sortK];if(st.sortK==='days'){{x=x==null?1e9:x;y=y==null?1e9:y;return (x-y)*st.dir;}}
+x=(x||'').toString().toLowerCase();y=(y||'').toString().toLowerCase();return x<y?-st.dir:x>y?st.dir:0;}});
+cnt.textContent=rows.length+' shown';
+tb.innerHTML=rows.map(r=>{{const u=(r.days!=null&&r.days<=14&&r.days>=0)?' urgent':'';
+const dl=r.days==null?'—':(r.days<0?'closed':r.days+'d');const cls=SC[r.source]||'';
+return `<tr><td><a href="${{r.url}}" target="_blank" rel="noopener">${{esc(r.title)}}</a>
+<div class="muted">${{esc(r.org)}} · ${{esc(r.field)}}</div></td>
+<td><span class="pill ${{cls}}">${{esc(r.source)}}</span></td><td>${{esc(r.country)}}</td>
+<td class="muted">${{esc(r.open)}}</td><td>${{esc(r.deadline_disp)}}</td>
+<td class="days${{u}}">${{dl}}</td></tr>`;}}).join('');}}
+Object.keys(PANELS).forEach(pid=>{{const q=document.getElementById('q-'+pid),src=document.getElementById('src-'+pid);
+q.oninput=()=>renderPanel(pid);src.onchange=()=>renderPanel(pid);
+document.querySelectorAll('#p-'+pid+' th[data-k]').forEach(th=>th.onclick=()=>{{
+const st=state[pid]||(state[pid]={{sortK:'deadline',dir:1}});const k=th.dataset.k;
+if(k===st.sortK)st.dir*=-1;else{{st.sortK=k;st.dir=1;}}renderPanel(pid);}});renderPanel(pid);}});
+const tabs=document.querySelectorAll('.tab'),pans=document.querySelectorAll('.panel');
+tabs.forEach(t=>t.onclick=()=>{{tabs.forEach(x=>x.classList.remove('active'));
+pans.forEach(x=>x.classList.remove('active'));t.classList.add('active');
+document.getElementById('p-'+t.dataset.pid).classList.add('active');}});
+tabs[0].classList.add('active');pans[0].classList.add('active');
+</script></body></html>"""
+
+
 def main():
     repo = "https://github.com/jgand3107/msca-doctoral-index"
     gen = datetime.date.today().isoformat()
@@ -206,6 +319,15 @@ def main():
                    "in the 7 countries", gen, repo_url=repo)
     open(os.path.join(HERE, "industry_report.html"), "w", encoding="utf-8").write(html3)
     print("wrote industry_report.html", len(t3), "positions")
+
+    # Combined: all tiers + deadlines in one tabbed document.
+    combined = render_combined([
+        ("t1", "Tier 1 · Main", "MSCA/COFUND + VHIO + la Caixa · R1 · 7 countries", t1),
+        ("t2", "Tier 2 · Netherlands", "AcademicTransfer · life-science PhD in the Netherlands", t2),
+        ("t3", "Tier 3 · Industry", "EURAXESS · company PhDs (Large Enterprise / SME)", t3),
+    ], load_deadlines(), gen, repo)
+    open(os.path.join(HERE, "scholarships_report.html"), "w", encoding="utf-8").write(combined)
+    print("wrote scholarships_report.html", len(t1) + len(t2) + len(t3), "positions (all tiers)")
 
 
 if __name__ == "__main__":
