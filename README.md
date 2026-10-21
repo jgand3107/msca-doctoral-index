@@ -28,6 +28,11 @@ This is a **multi-source** tracker. Each row carries a `source` column.
 **Tier 2 — Netherlands** (`data/netherlands_phd.*`):
 - **AcademicTransfer** — life-science PhD vacancies in the Netherlands (via its public API)
 
+**Tier 3 — Industry** (`data/industry_phd.*`):
+- **EURAXESS** R1/PhD positions at companies (Large Enterprise + SME/Start-up),
+  life-science, in the 7 countries — includes MSCA Industrial Doctorates and
+  company-funded PhDs.
+
 **Annual deadlines** (`data/annual_deadlines.csv`): curated big recurring schemes
 (MSCA, EMBL, Boehringer, la Caixa, FPI/FPU, UKRI DTPs, Max Planck IMPRS, Pasteur
 PPU, ETH/EPFL, SNSF…) with expected windows and official links.
@@ -44,6 +49,7 @@ Regenerated on every run, in [`data/`](data/):
 |------|-----|
 | `msca_doctoral_positions.csv` / `.json`  | **Tier 1** main table (read into R / Excel / pandas) |
 | `netherlands_phd.csv` / `.json` | **Tier 2** Netherlands life-science PhD |
+| `industry_phd.csv` / `.json` | **Tier 3** industry/company life-science PhD |
 | `annual_deadlines.csv` | Recurring-scheme calendar |
 
 ### Columns

@@ -25,7 +25,7 @@ import os
 import sys
 
 import config
-from sources import euraxess, vhio, academictransfer, lacaixa
+from sources import euraxess, vhio, academictransfer, lacaixa, industry
 
 # Column order for the CSVs (source first).
 COLUMNS = [
@@ -148,33 +148,59 @@ def build_tier2(args, run_ts) -> bool:
     return True
 
 
+def build_tier3(args, run_ts) -> bool:
+    print("== Tier 3: EURAXESS industry PhD positions ==")
+    try:
+        records = industry.scrape()
+    except euraxess.ScrapeValidationError as exc:
+        print(f"  ABORTING Tier 3: industry scrape degraded ({exc}); data untouched.",
+              file=sys.stderr)
+        return False
+    except Exception as exc:
+        print(f"  Industry error (Tier-3 left untouched): {exc}", file=sys.stderr)
+        return False
+    csv_path = os.path.join(args.output_dir, config.TIER3_CSV_FILE)
+    json_path = os.path.join(args.output_dir, config.TIER3_JSON_FILE)
+    finalize_and_write(records, csv_path, json_path, run_ts, "tier3-industry")
+    return True
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="Build multi-source doctoral scholarship tables.")
     ap.add_argument("--no-details", action="store_true", help="skip EURAXESS detail enrichment")
     ap.add_argument("--limit", type=int, default=0, help="cap EURAXESS listings (debug)")
     ap.add_argument("--tier1-only", action="store_true")
     ap.add_argument("--tier2-only", action="store_true")
+    ap.add_argument("--tier3-only", action="store_true")
     ap.add_argument("--output-dir", default=config.OUTPUT_DIR)
     args = ap.parse_args()
     os.makedirs(args.output_dir, exist_ok=True)
 
+    only = args.tier1_only or args.tier2_only or args.tier3_only
     run_ts = euraxess.now_iso()
     print(f"[{run_ts}] multi-source scholarship build starting")
 
-    ok1 = ok2 = True
-    if not args.tier2_only:
+    ok1 = ok2 = ok3 = True
+    if args.tier1_only or not only:
         ok1 = build_tier1(args, run_ts)
-    if not args.tier1_only:
+    if args.tier2_only or not only:
         ok2 = build_tier2(args, run_ts)
+    if args.tier3_only or not only:
+        ok3 = build_tier3(args, run_ts)
 
     with open(os.path.join(args.output_dir, config.META_FILE), "w", encoding="utf-8") as fh:
-        json.dump({"generated_at": run_ts, "tier1_ok": ok1, "tier2_ok": ok2}, fh, indent=2)
+        json.dump({"generated_at": run_ts, "tier1_ok": ok1, "tier2_ok": ok2,
+                   "tier3_ok": ok3}, fh, indent=2)
 
     # Each tier only writes valid data (a degraded tier leaves its files
     # untouched), so the runners can safely commit whatever changed. We exit
-    # non-zero only when the PRIMARY tier failed, purely as an alert signal —
-    # the runners commit valid data first, then propagate this.
-    primary_ok = ok2 if args.tier2_only else ok1
+    # non-zero only when the PRIMARY tier failed, purely as an alert signal.
+    if args.tier2_only:
+        primary_ok = ok2
+    elif args.tier3_only:
+        primary_ok = ok3
+    else:
+        primary_ok = ok1
     if not primary_ok:
         sys.exit(1)
 

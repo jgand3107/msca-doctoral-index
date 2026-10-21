@@ -93,4 +93,10 @@ JSON_FILE = "msca_doctoral_positions.json"
 # Tier 2: AcademicTransfer (Netherlands) life-science PhD.
 TIER2_CSV_FILE = "netherlands_phd.csv"
 TIER2_JSON_FILE = "netherlands_phd.json"
+# Tier 3: EURAXESS R1 positions at industry organisations (life-science, same
+# countries). Organisation types on EURAXESS: 533 = Large Enterprise,
+# 537 = Small/Medium Enterprise & Start-up.
+INDUSTRY_ORG_TYPES = [533, 537]
+TIER3_CSV_FILE = "industry_phd.csv"
+TIER3_JSON_FILE = "industry_phd.json"
 META_FILE = "last_run.json"

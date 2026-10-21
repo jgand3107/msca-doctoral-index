@@ -47,14 +47,14 @@ def load_deadlines():
 STYLE = """
 :root{--bg:#f6f7f9;--card:#fff;--ink:#15202b;--muted:#5b6b7b;--line:#e4e8ec;
 --accent:#1f6feb;--green:#0b8457;--cofund:#8257e6;--vhio:#c026d3;--caixa:#0ea5e9;
---at:#d97706;--chip:#eef2f6;--soon:#c2410c;}
+--at:#d97706;--industry:#059669;--chip:#eef2f6;--soon:#c2410c;}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1116;
 --card:#171b22;--ink:#e6edf3;--muted:#9aa7b4;--line:#262c36;--accent:#4e8cff;
 --green:#3fb984;--cofund:#a983ff;--vhio:#e879f9;--caixa:#38bdf8;--at:#fbbf24;
---chip:#1e242d;--soon:#ff8a4c;}}
+--industry:#34d399;--chip:#1e242d;--soon:#ff8a4c;}}
 :root[data-theme="dark"]{--bg:#0e1116;--card:#171b22;--ink:#e6edf3;--muted:#9aa7b4;
 --line:#262c36;--accent:#4e8cff;--green:#3fb984;--cofund:#a983ff;--vhio:#e879f9;
---caixa:#38bdf8;--at:#fbbf24;--chip:#1e242d;--soon:#ff8a4c;}
+--caixa:#38bdf8;--at:#fbbf24;--industry:#34d399;--chip:#1e242d;--soon:#ff8a4c;}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
 font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
 .wrap{max-width:1080px;margin:0 auto;padding:32px 16px 64px}
@@ -78,6 +78,7 @@ th:hover{color:var(--ink)}td a{color:var(--accent);text-decoration:none}td a:hov
 .s-VHIO{background:color-mix(in srgb,var(--vhio) 18%,transparent);color:var(--vhio)}
 .s-laCaixa{background:color-mix(in srgb,var(--caixa) 18%,transparent);color:var(--caixa)}
 .s-AT{background:color-mix(in srgb,var(--at) 20%,transparent);color:var(--at)}
+.s-Industry{background:color-mix(in srgb,var(--industry) 18%,transparent);color:var(--industry)}
 .days{font-variant-numeric:tabular-nums;white-space:nowrap}.days.urgent{color:var(--soon);font-weight:700}
 .muted{color:var(--muted)}.count{color:var(--muted);font-size:13px;margin-bottom:8px}
 footer{color:var(--muted);font-size:12px;margin-top:24px;text-align:center}
@@ -94,6 +95,8 @@ def source_class(src):
         return "s-laCaixa"
     if "academictransfer" in s:
         return "s-AT"
+    if "industry" in s:
+        return "s-Industry"
     return ""
 
 
@@ -156,7 +159,7 @@ def render(positions, title, subtitle, gen, deadlines=None, repo_url=""):
 <footer>Auto-updated weekly · <a href="{esc(repo_url)}">{esc(repo_url)}</a></footer>
 </div><script>
 const DATA={json.dumps(rows, ensure_ascii=False)};
-const SC={json.dumps({'EURAXESS':'s-EURAXESS','VHIO':'s-VHIO','la Caixa':'s-laCaixa','AcademicTransfer (NL)':'s-AT'})};
+const SC={json.dumps({'EURAXESS':'s-EURAXESS','VHIO':'s-VHIO','la Caixa':'s-laCaixa','AcademicTransfer (NL)':'s-AT','Industry (EURAXESS)':'s-Industry'})};
 const tb=document.getElementById('tb'),q=document.getElementById('q'),src=document.getElementById('src'),cnt=document.getElementById('count');
 let sortK='deadline',dir=1;
 function esc(s){{const d=document.createElement('div');d.textContent=s==null?'':s;return d.innerHTML;}}
@@ -196,6 +199,13 @@ def main():
                    gen, repo_url=repo)
     open(os.path.join(HERE, "netherlands_report.html"), "w", encoding="utf-8").write(html2)
     print("wrote netherlands_report.html", len(t2), "positions")
+
+    t3 = load_positions("industry_phd.json")
+    html3 = render(t3, "Industry PhD — Life Sciences (Tier 3)",
+                   "EURAXESS · PhD positions at companies (Large Enterprise / SME) "
+                   "in the 7 countries", gen, repo_url=repo)
+    open(os.path.join(HERE, "industry_report.html"), "w", encoding="utf-8").write(html3)
+    print("wrote industry_report.html", len(t3), "positions")
 
 
 if __name__ == "__main__":

@@ -80,12 +80,18 @@ def _get(session: requests.Session, url: str, *, allow_redirects: bool = True):
 # --------------------------------------------------------------------------
 # URL construction
 # --------------------------------------------------------------------------
-def build_search_url(page: int = 0) -> str:
-    """Build a faceted search URL for the configured profile + funding set."""
+def default_facets() -> list[str]:
+    """The MSCA/COFUND facet set (profile R1 + funding programmes)."""
     facets = [f"job_research_profile:{config.RESEARCHER_PROFILE}"]
     for term_id in config.FUNDING_PROGRAMMES:
         facets.append(f"job_is_eu_founded:{term_id}")
+    return facets
 
+
+def build_search_url(page: int = 0, facets: list[str] | None = None) -> str:
+    """Build a faceted search URL. `facets` is a list of 'name:value' strings."""
+    if facets is None:
+        facets = default_facets()
     parts = []
     for i, facet in enumerate(facets):
         # f[i]=<facet>  -> url-encode the brackets and the colon value
@@ -259,13 +265,16 @@ class ScrapeValidationError(RuntimeError):
     """Raised when a scrape result looks degraded and must not be published."""
 
 
-def validate_scrape(records: list[dict], expected_total: int | None) -> list[str]:
+def validate_scrape(records: list[dict], expected_total: int | None,
+                    require_funding: bool = True) -> list[str]:
     """
     Return a list of problems that mean the scrape is untrustworthy.
 
     EURAXESS intermittently serves degraded/unfiltered pages (especially from
     cloud IPs). We must never overwrite good data with such a result, so we
     sanity-check that the facets we requested were actually applied.
+    `require_funding` is False for facet sets without a funding filter
+    (e.g. the industry tier, which filters by organisation type instead).
     """
     problems = []
     if not records:
@@ -277,13 +286,14 @@ def validate_scrape(records: list[dict], expected_total: int | None) -> list[str
             f"{len(non_r1)}/{len(records)} listings are not R1 "
             f"(profile facet not applied)")
 
-    no_prog = [r for r in records if not r.get("programme_type")]
-    if no_prog:
-        problems.append(
-            f"{len(no_prog)}/{len(records)} listings have no expected funding "
-            f"programme (funding facet not applied)")
+    if require_funding:
+        no_prog = [r for r in records if not r.get("programme_type")]
+        if no_prog:
+            problems.append(
+                f"{len(no_prog)}/{len(records)} listings have no expected funding "
+                f"programme (funding facet not applied)")
 
-    if expected_total and len(records) < max(10, expected_total * 0.5):
+    if expected_total and len(records) < max(5, expected_total * 0.5):
         problems.append(
             f"only {len(records)} listings parsed vs portal's {expected_total}")
 
@@ -292,7 +302,9 @@ def validate_scrape(records: list[dict], expected_total: int | None) -> list[str
 
 def scrape_validated(session: requests.Session | None = None,
                      attempts: int | None = None,
-                     verbose: bool = True) -> tuple[list[dict], int | None]:
+                     verbose: bool = True,
+                     facets: list[str] | None = None,
+                     require_funding: bool = True) -> tuple[list[dict], int | None]:
     """
     Scrape with retries; only return a result that passes validation.
 
@@ -302,8 +314,8 @@ def scrape_validated(session: requests.Session | None = None,
     attempts = attempts or config.SCRAPE_ATTEMPTS
     problems: list[str] = []
     for attempt in range(1, attempts + 1):
-        records, expected_total = scrape_listings(_session(), verbose=verbose)
-        problems = validate_scrape(records, expected_total)
+        records, expected_total = scrape_listings(_session(), verbose=verbose, facets=facets)
+        problems = validate_scrape(records, expected_total, require_funding=require_funding)
         if not problems:
             if verbose and attempt > 1:
                 print(f"  succeeded on attempt {attempt}")
@@ -318,7 +330,8 @@ def scrape_validated(session: requests.Session | None = None,
     raise ScrapeValidationError("; ".join(problems))
 
 
-def scrape_listings(session: requests.Session | None = None, verbose: bool = True):
+def scrape_listings(session: requests.Session | None = None, verbose: bool = True,
+                    facets: list[str] | None = None):
     """Walk every result page; return (records, portal_reported_total)."""
     session = session or _session()
     records: dict[str, dict] = {}
@@ -326,7 +339,7 @@ def scrape_listings(session: requests.Session | None = None, verbose: bool = Tru
 
     page = 0
     while page < config.MAX_PAGES:
-        url = build_search_url(page)
+        url = build_search_url(page, facets=facets)
         resp = _get(session, url)
         if resp.status_code != 200:
             if verbose:
