@@ -107,6 +107,16 @@
 - 24 R1 industry positions -> 11 life-science -> 9 in the 7 countries.
 - `data/industry_phd.*`; third report https://claude.ai/artifact/AgrBbb6uNrm36AYufhnbzx
 
+### Wed, 21 Oct 2026 — Annual-deadline status (A) + combined report
+- `report.py` now also writes `scholarships_report.html` (tabbed: Tier 1/2/3 +
+  deadlines). Combined artifact https://claude.ai/artifact/4PgcqNCFhkNUeNS3kRBawC
+- `sources/deadlines.py`: each run estimates open/upcoming status per scheme
+  from today's date (date math, no scraping). `data/annual_deadlines_status.json`.
+- **Live check (B) not feasible:** la Caixa 403-blocks bots; EMBL has no stable
+  status page. A browser can't run in the weekly cron, so status stays estimated.
+  (la Caixa INPhINIT is MSCA-COFUND funded, so its host positions still flow
+  through the Tier-1 EURAXESS scrape when present.)
+
 ## Outstanding / Next
 - (Optional) GitHub Pages so the hosted reports auto-refresh weekly.
 - la Caixa deadlines are *expected* windows — verify against official pages yearly.
