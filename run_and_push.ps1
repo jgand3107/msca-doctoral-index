@@ -13,6 +13,10 @@ $log = Join-Path $repo 'weekly_run.log'
 python run.py *>> $log
 $runCode = $LASTEXITCODE
 
+# Regenerate the local HTML reports (incl. the combined scholarships_report.html)
+# so they stay current for viewing. They are gitignored, so not committed.
+python report.py *>> $log
+
 # Commit + push whatever data changed (valid data only is ever written).
 git config merge.ours.driver true
 git add data/
