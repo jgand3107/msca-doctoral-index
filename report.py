@@ -13,6 +13,8 @@ import html
 import json
 import os
 
+from sources import deadlines as deadlines_mod
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "data")
 
@@ -79,6 +81,11 @@ th:hover{color:var(--ink)}td a{color:var(--accent);text-decoration:none}td a:hov
 .s-laCaixa{background:color-mix(in srgb,var(--caixa) 18%,transparent);color:var(--caixa)}
 .s-AT{background:color-mix(in srgb,var(--at) 20%,transparent);color:var(--at)}
 .s-Industry{background:color-mix(in srgb,var(--industry) 18%,transparent);color:var(--industry)}
+.st{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600}
+.st-open{background:color-mix(in srgb,var(--green) 22%,transparent);color:var(--green)}
+.st-rolling{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}
+.st-upcoming{background:color-mix(in srgb,var(--at) 20%,transparent);color:var(--at)}
+.st-check{background:var(--chip);color:var(--muted)}
 .days{font-variant-numeric:tabular-nums;white-space:nowrap}.days.urgent{color:var(--soon);font-weight:700}
 .muted{color:var(--muted)}.count{color:var(--muted);font-size:13px;margin-bottom:8px}
 footer{color:var(--muted);font-size:12px;margin-top:24px;text-align:center}
@@ -140,14 +147,15 @@ def render(positions, title, subtitle, gen, deadlines=None, repo_url=""):
     dl_section = ""
     if deadlines:
         drows = "".join(
-            f'<tr><td><a href="{esc(d["url"])}" target="_blank" rel="noopener">{esc(d["scheme"])}</a>'
+            f'<tr><td><span class="st st-{esc(d.get("status","check"))}">{esc(d.get("status_label",""))}</span></td>'
+            f'<td><a href="{esc(d["url"])}" target="_blank" rel="noopener">{esc(d["scheme"])}</a>'
             f'<div class="muted">{esc(d["organisation"])} · {esc(d["field"])}</div></td>'
-            f'<td>{esc(d["countries"])}</td><td>{esc(d["frequency"])}</td>'
-            f'<td>{esc(d["typical_opens"])}</td><td>{esc(d["typical_deadline"])}</td></tr>'
+            f'<td>{esc(d["countries"])}</td><td>{esc(d["typical_opens"])}</td>'
+            f'<td>{esc(d["typical_deadline"])}</td></tr>'
             for d in deadlines)
-        dl_section = f"""<section><h2>Expected annual deadlines (recurring schemes)</h2>
-        <div class="muted" style="margin-bottom:10px">Dates are typical windows from past cycles — verify on each official page.</div>
-        <table><thead><tr><th>Scheme</th><th>Countries</th><th>Frequency</th><th>Opens</th><th>Deadline</th></tr></thead>
+        dl_section = f"""<section><h2>Recurring schemes — estimated status</h2>
+        <div class="muted" style="margin-bottom:10px">Status is <b>estimated</b> from typical past windows (not a live check) — verify on each official page.</div>
+        <table><thead><tr><th>Status (est.)</th><th>Scheme</th><th>Countries</th><th>Opens</th><th>Deadline</th></tr></thead>
         <tbody>{drows}</tbody></table></section>"""
 
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
@@ -240,16 +248,18 @@ def render_combined(sections, deadlines, gen, repo):
         tabs.append(f'<button class="tab" data-pid="{pid}">{esc(label)}'
                     f'<span class="b">{len(rows)}</span></button>')
 
-    # Deadlines panel (static table).
+    # Deadlines panel (static table with estimated status).
+    open_now = sum(1 for d in deadlines if d.get("status") == "open")
     drows = "".join(
-        f'<tr><td><a href="{esc(d["url"])}" target="_blank" rel="noopener">{esc(d["scheme"])}</a>'
+        f'<tr><td><span class="st st-{esc(d.get("status","check"))}">{esc(d.get("status_label",""))}</span></td>'
+        f'<td><a href="{esc(d["url"])}" target="_blank" rel="noopener">{esc(d["scheme"])}</a>'
         f'<div class="muted">{esc(d["organisation"])} · {esc(d["field"])}</div></td>'
-        f'<td>{esc(d["countries"])}</td><td>{esc(d["frequency"])}</td>'
-        f'<td>{esc(d["typical_opens"])}</td><td>{esc(d["typical_deadline"])}</td></tr>'
+        f'<td>{esc(d["countries"])}</td><td>{esc(d["typical_opens"])}</td>'
+        f'<td>{esc(d["typical_deadline"])}</td></tr>'
         for d in deadlines)
     panels.append(f"""<div class="panel" id="p-deadlines">
-      <p class="muted" style="margin:4px 0 10px">Typical windows from past cycles — verify on each official page.</p>
-      <table><thead><tr><th>Scheme</th><th>Countries</th><th>Frequency</th><th>Opens</th><th>Deadline</th></tr></thead>
+      <p class="muted" style="margin:4px 0 10px"><b>{open_now}</b> likely open now. Status is <b>estimated</b> from typical past windows (not a live check) — verify on each official page.</p>
+      <table><thead><tr><th>Status (est.)</th><th>Scheme</th><th>Countries</th><th>Opens</th><th>Deadline</th></tr></thead>
       <tbody>{drows}</tbody></table></div>""")
     tabs.append(f'<button class="tab" data-pid="deadlines">Annual deadlines<span class="b">{len(deadlines)}</span></button>')
 
@@ -302,7 +312,7 @@ def main():
     t1 = load_positions("msca_doctoral_positions.json")
     html1 = render(t1, "Doctoral Scholarships — Life Sciences",
                    "MSCA/COFUND + VHIO + la Caixa · R1 · 7 countries",
-                   gen, deadlines=load_deadlines(), repo_url=repo)
+                   gen, deadlines=deadlines_mod.load(), repo_url=repo)
     open(os.path.join(HERE, "msca_report.html"), "w", encoding="utf-8").write(html1)
     print("wrote msca_report.html", len(t1), "positions")
 
@@ -325,7 +335,7 @@ def main():
         ("t1", "Tier 1 · Main", "MSCA/COFUND + VHIO + la Caixa · R1 · 7 countries", t1),
         ("t2", "Tier 2 · Netherlands", "AcademicTransfer · life-science PhD in the Netherlands", t2),
         ("t3", "Tier 3 · Industry", "EURAXESS · company PhDs (Large Enterprise / SME)", t3),
-    ], load_deadlines(), gen, repo)
+    ], deadlines_mod.load(), gen, repo)
     open(os.path.join(HERE, "scholarships_report.html"), "w", encoding="utf-8").write(combined)
     print("wrote scholarships_report.html", len(t1) + len(t2) + len(t3), "positions (all tiers)")
 

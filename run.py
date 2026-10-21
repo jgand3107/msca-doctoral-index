@@ -25,7 +25,7 @@ import os
 import sys
 
 import config
-from sources import euraxess, vhio, academictransfer, lacaixa, industry
+from sources import euraxess, vhio, academictransfer, lacaixa, industry, deadlines
 
 # Column order for the CSVs (source first).
 COLUMNS = [
@@ -188,9 +188,18 @@ def main() -> None:
     if args.tier3_only or not only:
         ok3 = build_tier3(args, run_ts)
 
+    # Recurring-scheme calendar with an estimated open/upcoming status for today.
+    dl = deadlines.load(verbose=True)
+    with open(os.path.join(args.output_dir, "annual_deadlines_status.json"),
+              "w", encoding="utf-8") as fh:
+        json.dump({"generated_at": run_ts, "note": "status is estimated from "
+                   "expected windows, not a live confirmation", "schemes": dl},
+                  fh, indent=2, ensure_ascii=False)
+
     with open(os.path.join(args.output_dir, config.META_FILE), "w", encoding="utf-8") as fh:
         json.dump({"generated_at": run_ts, "tier1_ok": ok1, "tier2_ok": ok2,
-                   "tier3_ok": ok3}, fh, indent=2)
+                   "tier3_ok": ok3, "deadlines_open_now":
+                   sum(1 for r in dl if r["status"] == "open")}, fh, indent=2)
 
     # Each tier only writes valid data (a degraded tier leaves its files
     # untouched), so the runners can safely commit whatever changed. We exit
