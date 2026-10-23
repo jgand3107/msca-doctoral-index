@@ -1,33 +1,8 @@
 {
-  "generated_at": "2026-10-20T14:38:31+00:00",
+  "generated_at": "2026-10-23T10:07:19+00:00",
   "tier": "tier1-main",
-  "count": 50,
+  "count": 56,
   "positions": [
-    {
-      "source": "EURAXESS",
-      "id": "469449",
-      "title": "15 PhD positions in the MSCA Doctoral Network ORFeus: decoding the dark proteome",
-      "organisation": "Prinses Máxima Centrum",
-      "host_institution": "University of Southampton",
-      "country": "United Kingdom",
-      "number_of_offers": "1",
-      "research_field": "Biological sciences > Biology",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "Horizon Europe - MSCA",
-      "programme_type": "MSCA",
-      "open_date": "2026-09-30",
-      "deadline": "2026-10-22T21:59:59+00:00",
-      "deadline_display": "22 Oct 2026 - 23:59 (Europe/Amsterdam)",
-      "start_date": "1 Mar 2027",
-      "employment_type": "Temporary",
-      "hours_per_week": "40",
-      "education_level": "Master Degree or equivalent",
-      "grant_agreement_number": "101309891",
-      "url": "https://euraxess.ec.europa.eu/jobs/469449",
-      "detail_available": "skipped",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
-    },
     {
       "source": "EURAXESS",
       "id": "460558",
@@ -49,9 +24,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101119596",
       "url": "https://euraxess.ec.europa.eu/jobs/460558",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -74,9 +49,34 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101312030",
       "url": "https://euraxess.ec.europa.eu/jobs/464449",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
+    },
+    {
+      "source": "EURAXESS",
+      "id": "474919",
+      "title": "Development of a Dermatopathology Foundational Model",
+      "organisation": "The University of Manchester",
+      "host_institution": "University of Manchester",
+      "country": "United Kingdom",
+      "number_of_offers": "1",
+      "research_field": "Computer science Medical sciences > Cancer research",
+      "researcher_profile": "First Stage Researcher (R1)",
+      "funding_programme": "Horizon Europe - MSCA",
+      "programme_type": "MSCA",
+      "open_date": "2026-10-22",
+      "deadline": "2026-10-30T17:00:00+00:00",
+      "deadline_display": "30 Oct 2026 - 17:00 (Europe/London)",
+      "start_date": "31 Jan 2027",
+      "employment_type": "Temporary",
+      "hours_per_week": "",
+      "education_level": "Master Degree or equivalent",
+      "grant_agreement_number": "",
+      "url": "https://euraxess.ec.europa.eu/jobs/474919",
+      "detail_available": "yes",
+      "first_seen": "2026-10-23",
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -99,9 +99,9 @@
       "education_level": "",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/473849",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -124,9 +124,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/472124",
-      "detail_available": "skipped",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -149,9 +149,9 @@
       "education_level": "",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/466532",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -174,9 +174,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101312530",
       "url": "https://euraxess.ec.europa.eu/jobs/465957",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -199,9 +199,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101311592",
       "url": "https://euraxess.ec.europa.eu/jobs/470845",
-      "detail_available": "skipped",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -224,9 +224,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101311592",
       "url": "https://euraxess.ec.europa.eu/jobs/470092",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -249,9 +249,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101311592",
       "url": "https://euraxess.ec.europa.eu/jobs/470087",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -274,9 +274,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101311592",
       "url": "https://euraxess.ec.europa.eu/jobs/469861",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -299,9 +299,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101311592",
       "url": "https://euraxess.ec.europa.eu/jobs/469853",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -324,9 +324,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101311592",
       "url": "https://euraxess.ec.europa.eu/jobs/469556",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -349,9 +349,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/469152",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -374,9 +374,34 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101311592",
       "url": "https://euraxess.ec.europa.eu/jobs/470831",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
+    },
+    {
+      "source": "EURAXESS",
+      "id": "469449",
+      "title": "15 PhD positions in the MSCA Doctoral Network ORFeus: decoding the dark proteome",
+      "organisation": "Prinses Máxima Centrum",
+      "host_institution": "University of Southampton",
+      "country": "United Kingdom",
+      "number_of_offers": "1",
+      "research_field": "Biological sciences > Biology",
+      "researcher_profile": "First Stage Researcher (R1)",
+      "funding_programme": "Horizon Europe - MSCA",
+      "programme_type": "MSCA",
+      "open_date": "2026-09-30",
+      "deadline": "2026-10-31T22:59:59+00:00",
+      "deadline_display": "31 Oct 2026 - 23:59 (Europe/Amsterdam)",
+      "start_date": "1 Mar 2027",
+      "employment_type": "Temporary",
+      "hours_per_week": "40",
+      "education_level": "Master Degree or equivalent",
+      "grant_agreement_number": "101309891",
+      "url": "https://euraxess.ec.europa.eu/jobs/469449",
+      "detail_available": "no",
+      "first_seen": "2026-10-20",
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -399,9 +424,9 @@
       "education_level": "",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/462086",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -424,9 +449,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101261637",
       "url": "https://euraxess.ec.europa.eu/jobs/462078",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -449,9 +474,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101261637",
       "url": "https://euraxess.ec.europa.eu/jobs/462074",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -474,9 +499,9 @@
       "education_level": "",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/462072",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -499,9 +524,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/458763",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -524,9 +549,9 @@
       "education_level": "",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/465996",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -549,9 +574,9 @@
       "education_level": "",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/466380",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -574,9 +599,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101311007",
       "url": "https://euraxess.ec.europa.eu/jobs/469560",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -599,9 +624,9 @@
       "education_level": "",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/472196",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -624,9 +649,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/472768",
-      "detail_available": "skipped",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -649,9 +674,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/471980",
-      "detail_available": "skipped",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -674,9 +699,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101312030",
       "url": "https://euraxess.ec.europa.eu/jobs/469412",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -699,9 +724,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/471776",
-      "detail_available": "skipped",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -724,9 +749,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/471772",
-      "detail_available": "skipped",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -749,9 +774,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/471742",
-      "detail_available": "skipped",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -769,14 +794,14 @@
       "deadline": "2026-11-23T10:00:00+00:00",
       "deadline_display": "23 Nov 2026 - 10:00 (UTC)",
       "start_date": "",
-      "employment_type": "",
+      "employment_type": "Permanent",
       "hours_per_week": "",
-      "education_level": "",
+      "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/471739",
-      "detail_available": "skipped",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -799,9 +824,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/471737",
-      "detail_available": "skipped",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -824,9 +849,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/471228",
-      "detail_available": "skipped",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -849,9 +874,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/471226",
-      "detail_available": "skipped",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -874,9 +899,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/471223",
-      "detail_available": "skipped",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -899,9 +924,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/471220",
-      "detail_available": "skipped",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -924,9 +949,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/471217",
-      "detail_available": "skipped",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -949,9 +974,34 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/471213",
-      "detail_available": "skipped",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
+    },
+    {
+      "source": "EURAXESS",
+      "id": "474904",
+      "title": "IDEAS DC[15] - Design of polymeric drug delivery systems for biopharmaceuticals using green microfluidic manufacturing technologies",
+      "organisation": "MyBiotech",
+      "host_institution": "MyBiotech GmbH",
+      "country": "Germany",
+      "number_of_offers": "1",
+      "research_field": "Chemistry > Applied chemistry Chemistry > Biochemistry Engineering > Biomaterial engineering Engineering > Chemical engineering Engineering > Materials engineering Technology > Biotechnology Technology > Chemical technology Technology > Industrial technology Technology > Materials technology Technology > Nanotechnology Technology > Pharmaceutical technology Chemistry > Inorganic chemistry Environmental science > Natural resources management Pharmacological sciences > Pharmacy",
+      "researcher_profile": "First Stage Researcher (R1)",
+      "funding_programme": "Horizon Europe - MSCA",
+      "programme_type": "MSCA",
+      "open_date": "2026-10-22",
+      "deadline": "2026-11-30T22:59:00+00:00",
+      "deadline_display": "30 Nov 2026 - 23:59 (Europe/Berlin)",
+      "start_date": "1 Apr 2027",
+      "employment_type": "Temporary",
+      "hours_per_week": "40",
+      "education_level": "Master Degree or equivalent",
+      "grant_agreement_number": "101312168",
+      "url": "https://euraxess.ec.europa.eu/jobs/474904",
+      "detail_available": "yes",
+      "first_seen": "2026-10-23",
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -974,9 +1024,34 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101312030",
       "url": "https://euraxess.ec.europa.eu/jobs/472396",
-      "detail_available": "skipped",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
+    },
+    {
+      "source": "EURAXESS",
+      "id": "474624",
+      "title": "MSCA PhD position - Design and phase diagram of eutectic and amorphous binary mixtures of active pharmaceutical ingredients and excipients for enhanced dissolution and stability.",
+      "organisation": "Universitat Politècnica de Catalunya (UPC)- BarcelonaTECH",
+      "host_institution": "Universitat Politècnica de Catalunya",
+      "country": "Spain",
+      "number_of_offers": "1",
+      "research_field": "Physics > Computational physics Physics > Chemical physics Technology > Pharmaceutical technology Chemistry > Computational chemistry",
+      "researcher_profile": "First Stage Researcher (R1)",
+      "funding_programme": "Horizon Europe - MSCA",
+      "programme_type": "MSCA",
+      "open_date": "2026-10-21",
+      "deadline": "2026-11-30T22:59:59+00:00",
+      "deadline_display": "30 Nov 2026 - 23:59 (Europe/Madrid)",
+      "start_date": "1 Mar 2027",
+      "employment_type": "Temporary",
+      "hours_per_week": "",
+      "education_level": "Master Degree or equivalent",
+      "grant_agreement_number": "101312168",
+      "url": "https://euraxess.ec.europa.eu/jobs/474624",
+      "detail_available": "yes",
+      "first_seen": "2026-10-23",
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -999,9 +1074,9 @@
       "education_level": "",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/463973",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -1024,9 +1099,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101312450",
       "url": "https://euraxess.ec.europa.eu/jobs/471545",
-      "detail_available": "skipped",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -1049,9 +1124,34 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101312450",
       "url": "https://euraxess.ec.europa.eu/jobs/471538",
-      "detail_available": "skipped",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
+    },
+    {
+      "source": "EURAXESS",
+      "id": "473126",
+      "title": "FAroGels DC[6] – Hybrid Aerogel-Microencapsulation for Nutraceutical Stability and Delivery",
+      "organisation": "MyBiotech",
+      "host_institution": "MyBiotech GmbH",
+      "country": "Germany",
+      "number_of_offers": "1",
+      "research_field": "Biological sciences > Nutritional sciences Chemistry > Applied chemistry Chemistry > Biochemistry Chemistry > Inorganic chemistry Chemistry > Organic chemistry Chemistry > Other Engineering > Biomaterial engineering Engineering > Materials engineering Technology > Biotechnology Technology > Chemical technology Technology > Industrial technology Technology > Materials technology Technology Technology > Pharmaceutical technology Environmental science > Natural resources management Pharmacological sciences > Pharmacy",
+      "researcher_profile": "First Stage Researcher (R1)",
+      "funding_programme": "Horizon Europe - MSCA",
+      "programme_type": "MSCA",
+      "open_date": "2026-10-15",
+      "deadline": "2026-12-09T22:59:00+00:00",
+      "deadline_display": "9 Dec 2026 - 23:59 (Europe/Berlin)",
+      "start_date": "1 Mar 2027",
+      "employment_type": "Temporary",
+      "hours_per_week": "40",
+      "education_level": "Master Degree or equivalent",
+      "grant_agreement_number": "101312450",
+      "url": "https://euraxess.ec.europa.eu/jobs/473126",
+      "detail_available": "yes",
+      "first_seen": "2026-10-23",
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -1074,9 +1174,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101312450",
       "url": "https://euraxess.ec.europa.eu/jobs/472771",
-      "detail_available": "skipped",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -1099,9 +1199,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101312450",
       "url": "https://euraxess.ec.europa.eu/jobs/472760",
-      "detail_available": "skipped",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -1124,9 +1224,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101311807",
       "url": "https://euraxess.ec.europa.eu/jobs/473066",
-      "detail_available": "skipped",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -1149,9 +1249,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101227124",
       "url": "https://euraxess.ec.europa.eu/jobs/419721",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -1174,9 +1274,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/468049",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "EURAXESS",
@@ -1199,9 +1299,34 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101217387",
       "url": "https://euraxess.ec.europa.eu/jobs/470134",
-      "detail_available": "skipped",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
+    },
+    {
+      "source": "EURAXESS",
+      "id": "474822",
+      "title": "MSCA PhD position - Development of hybrid nanoparticles for enhanced biopharmaceutical delivery",
+      "organisation": "Universitat Politècnica de Catalunya (UPC)- BarcelonaTECH",
+      "host_institution": "Universitat Politècnica de Catalunya",
+      "country": "Spain",
+      "number_of_offers": "1",
+      "research_field": "Physics > Applied physics Chemistry > Physical chemistry Technology > Nanotechnology Technology > Pharmaceutical technology",
+      "researcher_profile": "First Stage Researcher (R1)",
+      "funding_programme": "Horizon Europe - MSCA",
+      "programme_type": "MSCA",
+      "open_date": "2026-10-22",
+      "deadline": "2027-01-30T22:59:59+00:00",
+      "deadline_display": "30 Jan 2027 - 23:59 (Europe/Madrid)",
+      "start_date": "1 Mar 2027",
+      "employment_type": "Temporary",
+      "hours_per_week": "",
+      "education_level": "Master Degree or equivalent",
+      "grant_agreement_number": "101312168",
+      "url": "https://euraxess.ec.europa.eu/jobs/474822",
+      "detail_available": "yes",
+      "first_seen": "2026-10-23",
+      "last_seen": "2026-10-23"
     },
     {
       "source": "la Caixa",
@@ -1226,7 +1351,7 @@
       "url": "https://fundacionlacaixa.org/en/doctoral-inphinit-fellowships-incoming",
       "detail_available": "call",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "source": "la Caixa",
@@ -1251,7 +1376,32 @@
       "url": "https://fundacionlacaixa.org/en/doctoral-inphinit-fellowships-retaining",
       "detail_available": "call",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
+    },
+    {
+      "source": "EURAXESS",
+      "id": "474248",
+      "title": "15 PhD Positions Available – MSCA Doctoral Network IDEAS | Amorphous Pharmaceutical Materials",
+      "organisation": "Université de Lille",
+      "host_institution": "University of Lille",
+      "country": "France",
+      "number_of_offers": "2",
+      "research_field": "Physics > Chemical physics Physics > Condensed matter properties Physics > Computational physics Physics > Applied physics Chemistry > Physical chemistry Chemistry > Analytical chemistry Chemistry > Biochemistry Chemistry > Inorganic chemistry Engineering > Materials engineering Engineering > Chemical engineering Engineering > Biomedical engineering Pharmacological sciences > Pharmacy Technology > Biotechnology Technology > Pharmaceutical technology Technology > Materials technology Technology > Industrial technology Technology > Chemical technology Technology > Nanotechnology",
+      "researcher_profile": "First Stage Researcher (R1)",
+      "funding_programme": "Horizon Europe - MSCA",
+      "programme_type": "MSCA",
+      "open_date": "2026-10-20",
+      "deadline": "2027-10-31T22:59:59+00:00",
+      "deadline_display": "31 Oct 2027 - 23:59 (Europe/Paris)",
+      "start_date": "",
+      "employment_type": "Temporary",
+      "hours_per_week": "",
+      "education_level": "Bachelor Degree or equivalent",
+      "grant_agreement_number": "101312168",
+      "url": "https://euraxess.ec.europa.eu/jobs/474248",
+      "detail_available": "yes",
+      "first_seen": "2026-10-23",
+      "last_seen": "2026-10-23"
     }
   ]
 }
