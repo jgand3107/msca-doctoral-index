@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-23T10:07:19+00:00",
-  "tier1_ok": true,
+  "generated_at": "2026-10-26T11:44:32+00:00",
+  "tier1_ok": false,
   "tier2_ok": true,
-  "tier3_ok": true,
+  "tier3_ok": false,
   "deadlines_open_now": 6
 }

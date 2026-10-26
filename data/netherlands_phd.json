@@ -1,58 +1,8 @@
 {
-  "generated_at": "2026-10-23T10:07:19+00:00",
+  "generated_at": "2026-10-26T11:44:32+00:00",
   "tier": "tier2-netherlands",
-  "count": 17,
+  "count": 15,
   "positions": [
-    {
-      "source": "AcademicTransfer (NL)",
-      "id": "at-364392",
-      "title": "PhD candidate 'Quest for genetic causes of bleeding tendency'",
-      "organisation": "UMCR",
-      "host_institution": "UMCR",
-      "country": "Netherlands",
-      "number_of_offers": "1",
-      "research_field": "Life sciences",
-      "researcher_profile": "PhD",
-      "funding_programme": "",
-      "programme_type": "AcademicTransfer",
-      "open_date": "2026-10-01",
-      "deadline": "2026-10-25",
-      "deadline_display": "2026-10-25",
-      "start_date": "",
-      "employment_type": "",
-      "hours_per_week": "36.0",
-      "education_level": "",
-      "grant_agreement_number": "",
-      "url": "https://www.academictransfer.com/en/jobs/364392/phd-candidate-quest-for-genetic-causes-of-bleeding-tendency/",
-      "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-23"
-    },
-    {
-      "source": "AcademicTransfer (NL)",
-      "id": "at-364313",
-      "title": "Biocueing in daily life – physiological triggers for stress assessment and intervention",
-      "organisation": "University of Twente (UT)",
-      "host_institution": "University of Twente (UT)",
-      "country": "Netherlands",
-      "number_of_offers": "1",
-      "research_field": "Life sciences",
-      "researcher_profile": "PhD",
-      "funding_programme": "",
-      "programme_type": "AcademicTransfer",
-      "open_date": "2026-09-29",
-      "deadline": "2026-10-25",
-      "deadline_display": "2026-10-25",
-      "start_date": "",
-      "employment_type": "",
-      "hours_per_week": "40.0",
-      "education_level": "",
-      "grant_agreement_number": "",
-      "url": "https://www.academictransfer.com/en/jobs/364313/biocueing-in-daily-life-physiological-triggers-for-stress-assessment-and-intervention/",
-      "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-23"
-    },
     {
       "source": "AcademicTransfer (NL)",
       "id": "at-364835",
@@ -76,7 +26,7 @@
       "url": "https://www.academictransfer.com/en/jobs/364835/phd-candidate-development-of-an-integrated-system-for-breast-cancer-imaging-focus-point-ultrasound/",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-10-26"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -101,7 +51,7 @@
       "url": "https://www.academictransfer.com/en/jobs/364834/phd-candidate-development-of-an-integrated-system-for-breast-cancer-imaging-focus-point-x-ray/",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-10-26"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -126,7 +76,7 @@
       "url": "https://www.academictransfer.com/en/jobs/364340/phd-position-eeg-and-neurobiological-markers/",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-10-26"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -151,7 +101,7 @@
       "url": "https://www.academictransfer.com/en/jobs/364869/junior-onderzoeker-arts-onderzoeker-stop-ovarian-cancer-implementatie-project/",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-10-26"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -176,7 +126,7 @@
       "url": "https://www.academictransfer.com/en/jobs/364591/phd-position-10-fte-4-years-in-deep-sea-benthic-ecology-in-the-arctic-ocean/",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-10-26"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -201,7 +151,7 @@
       "url": "https://www.academictransfer.com/en/jobs/364582/msca-dn-flexcat-catenin-inhibitors-in-colorectal-cancer/",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-10-26"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -226,7 +176,7 @@
       "url": "https://www.academictransfer.com/en/jobs/364327/phd-position-on-biophysical-origins-of-rna-toxicity-in-huntingtons-disease/",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-10-26"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -251,7 +201,7 @@
       "url": "https://www.academictransfer.com/en/jobs/364169/phd-candidate-in-explainable-machine-learning-for-studying-biology-at-single-cell-resolution/",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-10-26"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -276,7 +226,7 @@
       "url": "https://www.academictransfer.com/en/jobs/364010/phd-position-single-molecule-biophysic/",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-10-26"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -301,7 +251,7 @@
       "url": "https://www.academictransfer.com/en/jobs/364904/phd-epidemiology-of-kidney-replacement-therapy-in-europe/",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-10-26"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -326,7 +276,7 @@
       "url": "https://www.academictransfer.com/en/jobs/364847/phd-student-in-cellular-neuroscience/",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-10-26"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -351,7 +301,7 @@
       "url": "https://www.academictransfer.com/en/jobs/363906/phd-in-contrast-ultrasound-imaging-of-nanobubbles-for-cancer-diagnostics/",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-10-26"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -376,7 +326,7 @@
       "url": "https://www.academictransfer.com/en/jobs/364914/promovendus-cardiogenetica-cardiomyopathie-en-risicovoorspelling/",
       "detail_available": "yes",
       "first_seen": "2026-10-23",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-10-26"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -401,7 +351,7 @@
       "url": "https://www.academictransfer.com/en/jobs/364892/phd-position-transcranial-ultrasound-stimulation-and-computational-affective-neuroscience/",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-10-26"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -426,7 +376,7 @@
       "url": "https://www.academictransfer.com/en/jobs/364649/finding-the-environmental-causes-of-childhood-and-early-onset-cancer-cue-can/",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-10-26"
     }
   ]
 }
