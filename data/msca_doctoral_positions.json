@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-26T17:54:57+00:00",
+  "generated_at": "2026-10-27T09:35:08+00:00",
   "tier": "tier1-main",
-  "count": 57,
+  "count": 58,
   "positions": [
     {
       "source": "EURAXESS",
@@ -11,6 +11,7 @@
       "host_institution": "Deeplife",
       "country": "France",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, France, Deeplife, Paris, 75013, 8 Rue Jean Antoine de Baïf Number of offers: 1, France, CNRS-UMR9031 Integrative structural biology, Villeneuve d'Ascq, 59658, Avenue de Halley",
       "research_field": "Computer science > Modelling tools Biological sciences > Biological engineering",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -26,7 +27,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/460558",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -36,6 +37,7 @@
       "host_institution": "newcastle university",
       "country": "United Kingdom",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, United Kingdom, newcastle university, Newcastle upon Tyne, NE1 3BZ",
       "research_field": "Neurosciences",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -51,7 +53,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/464449",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -61,6 +63,7 @@
       "host_institution": "University of Manchester",
       "country": "United Kingdom",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, United Kingdom, University of Manchester",
       "research_field": "Computer science Medical sciences > Cancer research",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -76,7 +79,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/474919",
       "detail_available": "yes",
       "first_seen": "2026-10-23",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -86,6 +89,7 @@
       "host_institution": "Justus Liebig University (JLU) Giessen",
       "country": "Germany",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Germany, Justus Liebig University (JLU) Giessen",
       "research_field": "Biological sciences > Other",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -101,7 +105,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/473849",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -111,6 +115,7 @@
       "host_institution": "Amsterdam UMC  Sweden",
       "country": "Netherlands",
       "number_of_offers": "4",
+      "locations": "Number of offers: 4, Netherlands, Amsterdam UMC Number of offers: 3, Sweden, Karolinska Institutet Number of offers: 2, Poland, Jagiellonian University Number of offers: 2, Norway, University of Oslo Number of offers: 2, Austria, Medical University of Innsbruck Number of offers: 1, Netherlands, Leiden University Medical Center (LUMC) Number of offers: 1, Germany, Justus Liebig University Giessen",
       "research_field": "Medical sciences > Health sciences Biological sciences > Biology Biological sciences > Other Neurosciences > Neurobiology Medical sciences > Other",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -126,7 +131,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/472124",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -136,6 +141,7 @@
       "host_institution": "Centro de Investigaciones sobre Desertificación (CIDE",
       "country": "Spain",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Spain, Centro de Investigaciones sobre Desertificación (CIDE, CSIC-UV-GVA), Moncada, 46113, Valencia, Carretera CV-315, km 10.7",
       "research_field": "Biological sciences",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -151,7 +157,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/466532",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -161,6 +167,7 @@
       "host_institution": "Centro de Investigaciones sobre Desertificación (CIDE",
       "country": "Spain",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Spain, Centro de Investigaciones sobre Desertificación (CIDE, CSIC-UV-GVA), Moncada, 46113, Valencia, Carretera CV-315 Km 10,7",
       "research_field": "Biological sciences",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -176,7 +183,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/465957",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -186,6 +193,7 @@
       "host_institution": "University of Sussex",
       "country": "United Kingdom",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, United Kingdom, University of Sussex",
       "research_field": "Chemistry > Biochemistry",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -201,7 +209,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/470845",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -211,6 +219,7 @@
       "host_institution": "Georg August University Göttingen",
       "country": "Germany",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Germany, Georg August University Göttingen, Göttingen",
       "research_field": "Chemistry > Biochemistry",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -224,9 +233,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101311592",
       "url": "https://euraxess.ec.europa.eu/jobs/470092",
-      "detail_available": "no",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -236,6 +245,7 @@
       "host_institution": "University of Milan",
       "country": "Italy",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Italy, University of Milan, Milan",
       "research_field": "Chemistry > Biochemistry",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -249,9 +259,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101311592",
       "url": "https://euraxess.ec.europa.eu/jobs/470087",
-      "detail_available": "no",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -261,6 +271,7 @@
       "host_institution": "Helmholtz Zentrum Munich",
       "country": "Germany",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Germany, Helmholtz Zentrum Munich",
       "research_field": "Chemistry > Biochemistry",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -274,9 +285,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101311592",
       "url": "https://euraxess.ec.europa.eu/jobs/469861",
-      "detail_available": "no",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -286,6 +297,7 @@
       "host_institution": "JMU Würzburg",
       "country": "Germany",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Germany, JMU Würzburg",
       "research_field": "Chemistry > Biochemistry",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -299,9 +311,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101311592",
       "url": "https://euraxess.ec.europa.eu/jobs/469853",
-      "detail_available": "no",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -311,6 +323,7 @@
       "host_institution": "JMU Würzburg",
       "country": "Germany",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Germany, JMU Würzburg, Würzburg",
       "research_field": "Chemistry > Biochemistry",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -326,7 +339,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/469556",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -336,6 +349,7 @@
       "host_institution": "Université d'Angers",
       "country": "France",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, France, Université d'Angers, ANGERS, 49933 , 4, Rue Larrey",
       "research_field": "Biological sciences > Biology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -351,7 +365,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/469152",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -361,6 +375,7 @@
       "host_institution": "Princess Maxima Center",
       "country": "Netherlands",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Netherlands, Princess Maxima Center, Utrecht",
       "research_field": "Chemistry > Biochemistry",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -376,7 +391,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/470831",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -386,6 +401,7 @@
       "host_institution": "University of Southampton",
       "country": "United Kingdom",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, United Kingdom, University of Southampton, Southampton Number of offers: 1, Germany, Max Delbrück Center for Molecular Medicine (MDC), Berlin Number of offers: 1, Norway, University of Oslo, Oslo Number of offers: 1, United Kingdom, The Institute of Cancer Research (ICR), London Number of offers: 1, Germany, University of Freiburg, Freiburg Number of offers: 2, Netherlands, Hubrecht Institute (KNAW), Utrecht Number of offers: 1, United Kingdom, University of Leeds, Leeds Number of offers: 1, Spain, Hospital del Mar Research Institute, Barcelona Number of offers: 1, Belgium, Ghent University, Ghent Number of offers: 1, United Kingdom, University of Dundee, Dundee Number of offers: 1, Ireland, University College Cork, Cork Number of offers: 1, Netherlands, Princess Máxima Center for Pediatric Oncology, Utrecht Number of offers: 1, Netherlands, Netherlands Cancer Institute (NKI-AVL), Amsterdam Number of offers: 1, Switzerland, University of Lausanne, Lausanne",
       "research_field": "Biological sciences > Biology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -401,7 +417,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/469449",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -411,6 +427,7 @@
       "host_institution": "ENS - PSL (Ecole Normale Supérieure)",
       "country": "France",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, France, ENS - PSL (Ecole Normale Supérieure), Paris, 75005, 24 rue Lhomond",
       "research_field": "Physics > Statistical physics Chemistry > Biochemistry Biological sciences > Biological engineering",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe – COFUND",
@@ -426,7 +443,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/462086",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -436,6 +453,7 @@
       "host_institution": "ESPCI Paris - PSL (Ecole Supérieure de Physique et de Chimie Industrielles de la ville de Paris)",
       "country": "France",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, France, ESPCI Paris - PSL (Ecole Supérieure de Physique et de Chimie Industrielles de la ville de Paris), Paris, 75005, 7 Quai Saint Bernard, Barre Cassan, A Building, 1st floor",
       "research_field": "Physics > Biophysics Biological sciences > Botany",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe – COFUND",
@@ -451,7 +469,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/462078",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -461,6 +479,7 @@
       "host_institution": "ENSCP - PSL (Ecole Nationale Supérieure de Chimie Paris)",
       "country": "France",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, France, ENSCP - PSL (Ecole Nationale Supérieure de Chimie Paris), Paris, 75005, 6 rue Jean Calvin - IPGG",
       "research_field": "Chemistry > Organic chemistry Physics > Applied physics Biological sciences > Other",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe – COFUND",
@@ -476,7 +495,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/462074",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -486,6 +505,7 @@
       "host_institution": "ENS - PSL (Ecole Normale Supérieure)",
       "country": "France",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, France, ENS - PSL (Ecole Normale Supérieure), Paris, 75005, 24 rue Lhomond",
       "research_field": "Chemistry > Physical chemistry Physics > Biophysics Biological sciences > Biology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe – COFUND",
@@ -501,7 +521,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/462072",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -511,6 +531,7 @@
       "host_institution": "Princess Maxima Center",
       "country": "Netherlands",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Netherlands, Princess Maxima Center",
       "research_field": "Biological sciences > Biology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -526,7 +547,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/458763",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -536,6 +557,7 @@
       "host_institution": "University of Fribourg",
       "country": "Switzerland",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Switzerland, University of Fribourg, Fribourg, 1700, Fribourg",
       "research_field": "Neurosciences > Neurobiology Biological sciences > Other",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -551,7 +573,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/465996",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -561,6 +583,7 @@
       "host_institution": "TU Delft",
       "country": "Netherlands",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Netherlands, TU Delft, Delft, 2628CD, Mekelweg 5",
       "research_field": "Biological sciences > Biological engineering Biological sciences > Biology Physics > Biophysics",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -576,7 +599,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/466380",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -586,6 +609,7 @@
       "host_institution": "Department of Medicine and Surgery",
       "country": "Italy",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Italy, Department of Medicine and Surgery, Perugia, 06132, Perugia, Piazza l.Severi 1/8",
       "research_field": "Biological sciences > Biology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -599,9 +623,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101311007",
       "url": "https://euraxess.ec.europa.eu/jobs/469560",
-      "detail_available": "no",
+      "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -611,6 +635,7 @@
       "host_institution": "Microfluidics Innovation Center",
       "country": "France",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, France, Microfluidics Innovation Center, Paris, 75011, Ile de France, 172 rue de Charonne",
       "research_field": "Engineering > Biomedical engineering Neurosciences > Neurobiology Physics",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -626,7 +651,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/472196",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -636,6 +661,7 @@
       "host_institution": "CBI (CNRS-University of Toulouse)",
       "country": "France",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, France, CBI (CNRS-University of Toulouse)",
       "research_field": "Biological sciences > Biology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -651,7 +677,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/472768",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -661,6 +687,7 @@
       "host_institution": "Unité de biologie moléculaire",
       "country": "France",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, France, Unité de biologie moléculaire, cellulaire et du développement, TOULOUSE",
       "research_field": "Chemistry Physics > Biophysics Biological sciences > Biological engineering",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -676,7 +703,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471980",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -686,6 +713,7 @@
       "host_institution": "Fundación MEDINA",
       "country": "Spain",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Spain, Fundación MEDINA, Granada, 18016, Andalucía, Av del Conocimiento, 34",
       "research_field": "Medical sciences > Health sciences Biological sciences > Biology Neurosciences > Neurobiology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -701,7 +729,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/469412",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -711,6 +739,7 @@
       "host_institution": "IPBS (CNRS-University of Toulouse)",
       "country": "France",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, France, IPBS (CNRS-University of Toulouse)",
       "research_field": "Biological sciences > Biology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe – COFUND",
@@ -726,7 +755,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471776",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -736,6 +765,7 @@
       "host_institution": "IPBS (CNRS-University of Toulouse)",
       "country": "France",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, France, IPBS (CNRS-University of Toulouse)",
       "research_field": "Biological sciences > Biology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe – COFUND",
@@ -751,7 +781,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471772",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -761,6 +791,7 @@
       "host_institution": "IPBS (CNRS-University of Toulouse)",
       "country": "France",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, France, IPBS (CNRS-University of Toulouse)",
       "research_field": "Biological sciences > Biology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe – COFUND",
@@ -776,7 +807,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471742",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -786,6 +817,7 @@
       "host_institution": "IPBS (CNRS-University of Toulouse)",
       "country": "France",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, France, IPBS (CNRS-University of Toulouse)",
       "research_field": "Biological sciences > Biology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe – COFUND",
@@ -801,7 +833,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471739",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -811,6 +843,7 @@
       "host_institution": "IPBS (CNRS-University of Toulouse)",
       "country": "France",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, France, IPBS (CNRS-University of Toulouse)",
       "research_field": "Biological sciences > Biology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe – COFUND",
@@ -826,7 +859,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471737",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -836,6 +869,7 @@
       "host_institution": "CBI (Centre for Integrative Biology)",
       "country": "France",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, France, CBI (Centre for Integrative Biology)",
       "research_field": "Biological sciences > Biology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe – COFUND",
@@ -851,7 +885,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471228",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -861,6 +895,7 @@
       "host_institution": "CBI (Centre for Integrative Biology)",
       "country": "France",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, France, CBI (Centre for Integrative Biology)",
       "research_field": "Biological sciences > Biology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe – COFUND",
@@ -876,7 +911,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471226",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -886,6 +921,7 @@
       "host_institution": "CBI (Centre for Integrative Biology)",
       "country": "France",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, France, CBI (Centre for Integrative Biology)",
       "research_field": "Biological sciences > Biology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe – COFUND",
@@ -901,7 +937,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471223",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -911,6 +947,7 @@
       "host_institution": "CBI (Centre for Integrative Biology)",
       "country": "France",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, France, CBI (Centre for Integrative Biology)",
       "research_field": "Biological sciences > Biology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe – COFUND",
@@ -926,7 +963,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471220",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -936,6 +973,7 @@
       "host_institution": "CBI (Centre for Integrative Biology)",
       "country": "France",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, France, CBI (Centre for Integrative Biology)",
       "research_field": "Biological sciences > Biology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe – COFUND",
@@ -951,7 +989,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471217",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -961,6 +999,7 @@
       "host_institution": "The CBI (Centre for Integrative Biology)",
       "country": "France",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, France, The CBI (Centre for Integrative Biology)",
       "research_field": "Biological sciences > Biology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe – COFUND",
@@ -976,7 +1015,33 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471213",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
+    },
+    {
+      "source": "EURAXESS",
+      "id": "475533",
+      "title": "PhD Vacancy (DC11_microwireEDM): Hybrid modelling of micro-wire EDM for deterministic micromanufacturing of medical micro-surgical instruments",
+      "organisation": "University of Pisa",
+      "host_institution": "University of Pisa",
+      "country": "Italy",
+      "number_of_offers": "1",
+      "locations": "Number of offers: 1, Italy, University of Pisa, PISA, 56121, PI, Largo Lucio Lazzarino 2",
+      "research_field": "Engineering > Industrial engineering Engineering > Biomedical engineering Engineering > Microengineering Engineering > Mechanical engineering",
+      "researcher_profile": "First Stage Researcher (R1)",
+      "funding_programme": "Horizon Europe - MSCA",
+      "programme_type": "MSCA",
+      "open_date": "2026-10-26",
+      "deadline": "2026-11-26T22:59:59+00:00",
+      "deadline_display": "26 Nov 2026 - 23:59 (Europe/Rome)",
+      "start_date": "31 Dec 2026",
+      "employment_type": "Temporary",
+      "hours_per_week": "37",
+      "education_level": "Master Degree or equivalent",
+      "grant_agreement_number": "101312169",
+      "url": "https://euraxess.ec.europa.eu/jobs/475533",
+      "detail_available": "yes",
+      "first_seen": "2026-10-27",
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -986,6 +1051,7 @@
       "host_institution": "MyBiotech GmbH",
       "country": "Germany",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Germany, MyBiotech GmbH, Überherrn, 66802, INDUSTRIESTRASSE 1B",
       "research_field": "Chemistry > Applied chemistry Chemistry > Biochemistry Engineering > Biomaterial engineering Engineering > Chemical engineering Engineering > Materials engineering Technology > Biotechnology Technology > Chemical technology Technology > Industrial technology Technology > Materials technology Technology > Nanotechnology Technology > Pharmaceutical technology Chemistry > Inorganic chemistry Environmental science > Natural resources management Pharmacological sciences > Pharmacy",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -1001,7 +1067,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/474904",
       "detail_available": "yes",
       "first_seen": "2026-10-23",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -1011,6 +1077,7 @@
       "host_institution": "Institut de la Vision",
       "country": "France",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, France, Institut de la Vision, Paris, 75012, 17 rue Moreau",
       "research_field": "Biological sciences > Biology Medical sciences > Other Neurosciences > Other",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -1026,7 +1093,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/472396",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -1036,6 +1103,7 @@
       "host_institution": "University of Pisa - Department of Civil and Industrial Engineering",
       "country": "Italy",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Italy, University of Pisa - Department of Civil and Industrial Engineering, Pisa, 56122, PI, Largo Lucio Lazzarino, 2",
       "research_field": "Engineering > Biomaterial engineering Engineering > Materials engineering Technology > Pharmaceutical technology Technology > Materials technology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -1051,7 +1119,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/474916",
       "detail_available": "yes",
       "first_seen": "2026-10-26",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -1061,6 +1129,7 @@
       "host_institution": "Universitat Politècnica de Catalunya",
       "country": "Spain",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Spain, Universitat Politècnica de Catalunya, Barcelona, Barcelona",
       "research_field": "Physics > Computational physics Physics > Chemical physics Technology > Pharmaceutical technology Chemistry > Computational chemistry",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -1076,7 +1145,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/474624",
       "detail_available": "yes",
       "first_seen": "2026-10-23",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -1086,6 +1155,7 @@
       "host_institution": "Empa",
       "country": "Switzerland",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Switzerland, Empa, St. Gallen, 9014, Lerchenfeldstrasse 5",
       "research_field": "Chemistry > Other Engineering > Biomedical engineering Technology > Nanotechnology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -1101,7 +1171,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/463973",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -1111,6 +1181,7 @@
       "host_institution": "University of Santiago de Compostela",
       "country": "Spain",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Spain, University of Santiago de Compostela, Santiago de Compotela, 15782, A Coruña, Campus Vida s/n",
       "research_field": "Pharmacological sciences Chemistry",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -1126,7 +1197,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471545",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -1136,6 +1207,7 @@
       "host_institution": "University of Santiago de Compostela",
       "country": "Spain",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Spain, University of Santiago de Compostela, Santiago de Compotela, 15782, A Coruña, Campus Vida s/n",
       "research_field": "Pharmacological sciences Chemistry",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -1151,7 +1223,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471538",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -1161,6 +1233,7 @@
       "host_institution": "MyBiotech GmbH",
       "country": "Germany",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Germany, MyBiotech GmbH, Überherrn, 66802, Industriestrasse 1B",
       "research_field": "Biological sciences > Nutritional sciences Chemistry > Applied chemistry Chemistry > Biochemistry Chemistry > Inorganic chemistry Chemistry > Organic chemistry Chemistry > Other Engineering > Biomaterial engineering Engineering > Materials engineering Technology > Biotechnology Technology > Chemical technology Technology > Industrial technology Technology > Materials technology Technology Technology > Pharmaceutical technology Environmental science > Natural resources management Pharmacological sciences > Pharmacy",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -1176,7 +1249,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/473126",
       "detail_available": "yes",
       "first_seen": "2026-10-23",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -1186,6 +1259,7 @@
       "host_institution": "University of Udine",
       "country": "Italy",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Italy, University of Udine, Udine, 33100, Udine, Via delle Scienze 206",
       "research_field": "Agricultural sciences > Agricultural products",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -1201,7 +1275,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/472771",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -1211,6 +1285,7 @@
       "host_institution": "University of Udine",
       "country": "Italy",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Italy, University of Udine, Udine, 33100, Udine, Via delle Scienze 206",
       "research_field": "Agricultural sciences > Agricultural products",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -1226,7 +1301,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/472760",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -1236,6 +1311,7 @@
       "host_institution": "University of Padova",
       "country": "Italy",
       "number_of_offers": "2",
+      "locations": "Number of offers: 2, Italy, University of Padova, Padova, 35131 Number of offers: 3, United Kingdom, University of Warwick, Coventry Number of offers: 1, Sweden, KTH Royal Institute of Technology, Stockholm Number of offers: 2, Austria, University of Vienna, Wien Number of offers: 1, Switzerland, ETH Zurich, Zurich Number of offers: 1, Netherlands, University of Twente, Enschede Number of offers: 1, Germany, Covestro Deutschland AG, Leverkusen Number of offers: 1, United Kingdom, Syngenta Ltd, Bracknell Number of offers: 1, Germany, Bayer AG, Leverkusen Number of offers: 1, Germany, BIOWEG Gmbh, Quakenbrück Number of offers: 1, Germany, LignLabs Gmbh, Wiesbaden",
       "research_field": "Chemistry Biological sciences Environmental science",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -1251,7 +1327,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/473066",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -1261,6 +1337,7 @@
       "host_institution": "FRESCI by SCIENCE&STRATEGY SL",
       "country": "Spain",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Spain, FRESCI by SCIENCE&STRATEGY SL, Terrassa, 08221, Barcelona",
       "research_field": "Computer science > Systems design Neurosciences > Neurobiology Engineering > Biomedical engineering",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -1276,7 +1353,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/419721",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -1286,6 +1363,7 @@
       "host_institution": "University of Toulouse",
       "country": "France",
       "number_of_offers": "8",
+      "locations": "Number of offers: 8, France, University of Toulouse, Toulouse, occitania Number of offers: 4, France, University of Montpellier, Montpellier, OCCITANIA Number of offers: 2, France, University of Perpignan Via Domitia Number of offers: 3, Spain, University of Girona, Girona Number of offers: 1, Spain, Autonomous University of Barcelona, Barcelona Number of offers: 2, Spain, Open University of Catalonia, Barcelona Number of offers: 1, Spain, Rovira i Virgili University, TARRAGONA Number of offers: 2, Spain, Ramon Llull University, BARCELONA Number of offers: 2, Spain, University of Vic – Central University of Catalonia, VIC Number of offers: 2, Spain, Institute of Chemical Research of Catalonia - ICIQ, TARRAGONA Number of offers: 2, Spain, Centre for Genomic Regulation, BARCELONA Number of offers: 4, Spain, University of the Balearic Islands, PALMA, BALEARIC ISLANDS",
       "research_field": "Agricultural sciences Biological sciences Chemistry Computer science Engineering Environmental science Ethics in natural sciences Geosciences Technology > Biotechnology Sociology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -1301,7 +1379,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/468049",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -1311,6 +1389,7 @@
       "host_institution": "TIGEM - Telethon Institute of Genetics and Medicine",
       "country": "Italy",
       "number_of_offers": "5",
+      "locations": "Number of offers: 5, Italy, TIGEM - Telethon Institute of Genetics and Medicine, Pozzuoli (Na), 80078, Via Campi Flegrei, 34 Number of offers: 5, Italy, SR-Tiget - San Raffaele Telethon Institute for Gene Therapy, Milano, 20132, Via Olgettina, 60",
       "research_field": "Biological sciences Chemistry Medical sciences Pharmacological sciences Other",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe – COFUND",
@@ -1326,7 +1405,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/470134",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -1336,6 +1415,7 @@
       "host_institution": "Universitat Politècnica de Catalunya",
       "country": "Spain",
       "number_of_offers": "1",
+      "locations": "Number of offers: 1, Spain, Universitat Politècnica de Catalunya, Barcelona, Barcelona",
       "research_field": "Physics > Applied physics Chemistry > Physical chemistry Technology > Nanotechnology Technology > Pharmaceutical technology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -1351,7 +1431,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/474822",
       "detail_available": "yes",
       "first_seen": "2026-10-23",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "la Caixa",
@@ -1376,7 +1456,7 @@
       "url": "https://fundacionlacaixa.org/en/doctoral-inphinit-fellowships-incoming",
       "detail_available": "call",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "la Caixa",
@@ -1401,7 +1481,7 @@
       "url": "https://fundacionlacaixa.org/en/doctoral-inphinit-fellowships-retaining",
       "detail_available": "call",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     {
       "source": "EURAXESS",
@@ -1411,6 +1491,7 @@
       "host_institution": "University of Lille",
       "country": "France",
       "number_of_offers": "2",
+      "locations": "Number of offers: 2, France, University of Lille, Villeneuve d'Ascq, 59655, Nord, Cité scientifique Number of offers: 2, Italy, University of Pisa, Pisa, Lungarno Antonio Pacinotti, 43 Number of offers: 2, Poland, University of Silesia in Katowice, Katowice, Bankowa 12 Number of offers: 2, Belgium, Université Catholique de Louvain, Louvain la Neuve, Place de l'Université 1 Number of offers: 1, Belgium, Janssen Pharmaceutica (Johnson & Johnson Innovative Medicine), Beerse, Turnhoutseweg 30 Number of offers: 1, Ireland, Trinity College Dublin, Dublin, College Green Number of offers: 1, Czech Republic, Zentiva, Prague, U kabelovny 529/16 Number of offers: 1, Portugal, NOVA University of Lisbon, Lisbon, Campolide Number of offers: 2, Spain, Polytechnic University of Catalonia, Barcelona, Carrer de Jordi Girona, Les Corts Number of offers: 1, Germany, MyBiotech GmbH, Überherrn-Altforweiler, Industriestraße 1b",
       "research_field": "Physics > Chemical physics Physics > Condensed matter properties Physics > Computational physics Physics > Applied physics Chemistry > Physical chemistry Chemistry > Analytical chemistry Chemistry > Biochemistry Chemistry > Inorganic chemistry Engineering > Materials engineering Engineering > Chemical engineering Engineering > Biomedical engineering Pharmacological sciences > Pharmacy Technology > Biotechnology Technology > Pharmaceutical technology Technology > Materials technology Technology > Industrial technology Technology > Chemical technology Technology > Nanotechnology",
       "researcher_profile": "First Stage Researcher (R1)",
       "funding_programme": "Horizon Europe - MSCA",
@@ -1426,7 +1507,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/474248",
       "detail_available": "yes",
       "first_seen": "2026-10-23",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     }
   ]
 }
