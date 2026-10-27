@@ -1,13 +1,7 @@
 {
-<<<<<<< HEAD
-  "generated_at": "2026-10-26T17:54:57+00:00",
+  "generated_at": "2026-10-27T09:17:07+00:00",
   "tier": "tier2-netherlands",
   "count": 16,
-=======
-  "generated_at": "2026-10-26T11:44:32+00:00",
-  "tier": "tier2-netherlands",
-  "count": 15,
->>>>>>> origin/main
   "positions": [
     {
       "source": "AcademicTransfer (NL)",
@@ -31,8 +25,8 @@
       "grant_agreement_number": "",
       "url": "https://www.academictransfer.com/en/jobs/364835/phd-candidate-development-of-an-integrated-system-for-breast-cancer-imaging-focus-point-ultrasound/",
       "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "first_seen": "2026-10-27",
+      "last_seen": "2026-10-27"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -56,8 +50,8 @@
       "grant_agreement_number": "",
       "url": "https://www.academictransfer.com/en/jobs/364834/phd-candidate-development-of-an-integrated-system-for-breast-cancer-imaging-focus-point-x-ray/",
       "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "first_seen": "2026-10-27",
+      "last_seen": "2026-10-27"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -81,8 +75,8 @@
       "grant_agreement_number": "",
       "url": "https://www.academictransfer.com/en/jobs/364340/phd-position-eeg-and-neurobiological-markers/",
       "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "first_seen": "2026-10-27",
+      "last_seen": "2026-10-27"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -106,8 +100,8 @@
       "grant_agreement_number": "",
       "url": "https://www.academictransfer.com/en/jobs/364869/junior-onderzoeker-arts-onderzoeker-stop-ovarian-cancer-implementatie-project/",
       "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "first_seen": "2026-10-27",
+      "last_seen": "2026-10-27"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -131,8 +125,8 @@
       "grant_agreement_number": "",
       "url": "https://www.academictransfer.com/en/jobs/364591/phd-position-10-fte-4-years-in-deep-sea-benthic-ecology-in-the-arctic-ocean/",
       "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "first_seen": "2026-10-27",
+      "last_seen": "2026-10-27"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -156,8 +150,8 @@
       "grant_agreement_number": "",
       "url": "https://www.academictransfer.com/en/jobs/364582/msca-dn-flexcat-catenin-inhibitors-in-colorectal-cancer/",
       "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "first_seen": "2026-10-27",
+      "last_seen": "2026-10-27"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -181,8 +175,8 @@
       "grant_agreement_number": "",
       "url": "https://www.academictransfer.com/en/jobs/364327/phd-position-on-biophysical-origins-of-rna-toxicity-in-huntingtons-disease/",
       "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "first_seen": "2026-10-27",
+      "last_seen": "2026-10-27"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -206,8 +200,8 @@
       "grant_agreement_number": "",
       "url": "https://www.academictransfer.com/en/jobs/364169/phd-candidate-in-explainable-machine-learning-for-studying-biology-at-single-cell-resolution/",
       "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "first_seen": "2026-10-27",
+      "last_seen": "2026-10-27"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -231,8 +225,8 @@
       "grant_agreement_number": "",
       "url": "https://www.academictransfer.com/en/jobs/364010/phd-position-single-molecule-biophysic/",
       "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "first_seen": "2026-10-27",
+      "last_seen": "2026-10-27"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -256,8 +250,8 @@
       "grant_agreement_number": "",
       "url": "https://www.academictransfer.com/en/jobs/364904/phd-epidemiology-of-kidney-replacement-therapy-in-europe/",
       "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "first_seen": "2026-10-27",
+      "last_seen": "2026-10-27"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -281,8 +275,8 @@
       "grant_agreement_number": "",
       "url": "https://www.academictransfer.com/en/jobs/364847/phd-student-in-cellular-neuroscience/",
       "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "first_seen": "2026-10-27",
+      "last_seen": "2026-10-27"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -306,8 +300,8 @@
       "grant_agreement_number": "",
       "url": "https://www.academictransfer.com/en/jobs/363906/phd-in-contrast-ultrasound-imaging-of-nanobubbles-for-cancer-diagnostics/",
       "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "first_seen": "2026-10-27",
+      "last_seen": "2026-10-27"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -331,8 +325,8 @@
       "grant_agreement_number": "",
       "url": "https://www.academictransfer.com/en/jobs/364914/promovendus-cardiogenetica-cardiomyopathie-en-risicovoorspelling/",
       "detail_available": "yes",
-      "first_seen": "2026-10-23",
-      "last_seen": "2026-10-26"
+      "first_seen": "2026-10-27",
+      "last_seen": "2026-10-27"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -356,8 +350,8 @@
       "grant_agreement_number": "",
       "url": "https://www.academictransfer.com/en/jobs/364892/phd-position-transcranial-ultrasound-stimulation-and-computational-affective-neuroscience/",
       "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
+      "first_seen": "2026-10-27",
+      "last_seen": "2026-10-27"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -381,9 +375,8 @@
       "grant_agreement_number": "",
       "url": "https://www.academictransfer.com/en/jobs/364649/finding-the-environmental-causes-of-childhood-and-early-onset-cancer-cue-can/",
       "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26"
-<<<<<<< HEAD
+      "first_seen": "2026-10-27",
+      "last_seen": "2026-10-27"
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -407,10 +400,8 @@
       "grant_agreement_number": "",
       "url": "https://www.academictransfer.com/en/jobs/365035/phd-position-in-neuroimaging-llm-genetics-and-cross-species-comparison/",
       "detail_available": "yes",
-      "first_seen": "2026-10-26",
-      "last_seen": "2026-10-26"
-=======
->>>>>>> origin/main
+      "first_seen": "2026-10-27",
+      "last_seen": "2026-10-27"
     }
   ]
 }
