@@ -117,6 +117,14 @@
   (la Caixa INPhINIT is MSCA-COFUND funded, so its host positions still flow
   through the Tier-1 EURAXESS scrape when present.)
 
+### Mon, 27 Oct 2026 — France (Montpellier/Lyon) tracker
+- New sources/france.py: EURAXESS France (filtered by city — parse_card now
+  keeps raw work-location string) + LinkedIn public guest search; PhD +
+  life-science in config.FRANCE_CITIES. Added `city` column, build_france step,
+  France tab in combined report. First run: 6 (5 EURAXESS + 1 LinkedIn).
+- Fixed: data/netherlands_phd.* had unresolved git conflict markers (a merge
+  ran without merge.ours.driver) which broke report.py; regenerated cleanly.
+
 ## Outstanding / Next
 - (Optional) GitHub Pages so the hosted reports auto-refresh weekly.
 - la Caixa deadlines are *expected* windows — verify against official pages yearly.
