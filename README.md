@@ -33,6 +33,12 @@ This is a **multi-source** tracker. Each row carries a `source` column.
   life-science, in the 7 countries — includes MSCA Industrial Doctorates and
   company-funded PhDs.
 
+**France — Montpellier & Lyon** (`data/france_biotech_phd.*`):
+- Biotech/life-science PhD vacancies in those two cities, from **EURAXESS France**
+  (filtered by city) + **LinkedIn** public guest search. Cities configurable in
+  `config.py` → `FRANCE_CITIES`. (LinkedIn guest coverage is partial and may be
+  blocked from cloud IPs — it yields more on the local runner.)
+
 **Annual deadlines** (`data/annual_deadlines.csv`): curated big recurring schemes
 (MSCA, EMBL, Boehringer, la Caixa, FPI/FPU, UKRI DTPs, Max Planck IMPRS, Pasteur
 PPU, ETH/EPFL, SNSF…) with expected windows and official links.

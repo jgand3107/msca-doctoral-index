@@ -49,14 +49,14 @@ def load_deadlines():
 STYLE = """
 :root{--bg:#f6f7f9;--card:#fff;--ink:#15202b;--muted:#5b6b7b;--line:#e4e8ec;
 --accent:#1f6feb;--green:#0b8457;--cofund:#8257e6;--vhio:#c026d3;--caixa:#0ea5e9;
---at:#d97706;--industry:#059669;--chip:#eef2f6;--soon:#c2410c;}
+--at:#d97706;--industry:#059669;--linkedin:#0a66c2;--chip:#eef2f6;--soon:#c2410c;}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1116;
 --card:#171b22;--ink:#e6edf3;--muted:#9aa7b4;--line:#262c36;--accent:#4e8cff;
 --green:#3fb984;--cofund:#a983ff;--vhio:#e879f9;--caixa:#38bdf8;--at:#fbbf24;
---industry:#34d399;--chip:#1e242d;--soon:#ff8a4c;}}
+--industry:#34d399;--linkedin:#539be8;--chip:#1e242d;--soon:#ff8a4c;}}
 :root[data-theme="dark"]{--bg:#0e1116;--card:#171b22;--ink:#e6edf3;--muted:#9aa7b4;
 --line:#262c36;--accent:#4e8cff;--green:#3fb984;--cofund:#a983ff;--vhio:#e879f9;
---caixa:#38bdf8;--at:#fbbf24;--industry:#34d399;--chip:#1e242d;--soon:#ff8a4c;}
+--caixa:#38bdf8;--at:#fbbf24;--industry:#34d399;--linkedin:#539be8;--chip:#1e242d;--soon:#ff8a4c;}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
 font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
 .wrap{max-width:1080px;margin:0 auto;padding:32px 16px 64px}
@@ -86,6 +86,7 @@ th:hover{color:var(--ink)}td a{color:var(--accent);text-decoration:none}td a:hov
 .st-rolling{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}
 .st-upcoming{background:color-mix(in srgb,var(--at) 20%,transparent);color:var(--at)}
 .st-check{background:var(--chip);color:var(--muted)}
+.s-LinkedIn{background:color-mix(in srgb,var(--linkedin) 18%,transparent);color:var(--linkedin)}
 .days{font-variant-numeric:tabular-nums;white-space:nowrap}.days.urgent{color:var(--soon);font-weight:700}
 .muted{color:var(--muted)}.count{color:var(--muted);font-size:13px;margin-bottom:8px}
 footer{color:var(--muted);font-size:12px;margin-top:24px;text-align:center}
@@ -111,6 +112,8 @@ def source_class(src):
         return "s-AT"
     if "industry" in s:
         return "s-Industry"
+    if "linkedin" in s:
+        return "s-LinkedIn"
     return ""
 
 
@@ -174,7 +177,7 @@ def render(positions, title, subtitle, gen, deadlines=None, repo_url=""):
 <footer>Auto-updated weekly · <a href="{esc(repo_url)}">{esc(repo_url)}</a></footer>
 </div><script>
 const DATA={json.dumps(rows, ensure_ascii=False)};
-const SC={json.dumps({'EURAXESS':'s-EURAXESS','VHIO':'s-VHIO','la Caixa':'s-laCaixa','AcademicTransfer (NL)':'s-AT','Industry (EURAXESS)':'s-Industry'})};
+const SC={json.dumps({'EURAXESS':'s-EURAXESS','VHIO':'s-VHIO','la Caixa':'s-laCaixa','AcademicTransfer (NL)':'s-AT','Industry (EURAXESS)':'s-Industry','LinkedIn':'s-LinkedIn'})};
 const tb=document.getElementById('tb'),q=document.getElementById('q'),src=document.getElementById('src'),cnt=document.getElementById('count');
 let sortK='deadline',dir=1;
 function esc(s){{const d=document.createElement('div');d.textContent=s==null?'':s;return d.innerHTML;}}
@@ -273,7 +276,7 @@ def render_combined(sections, deadlines, gen, repo):
 <footer>Auto-updated weekly · <a href="{esc(repo)}">{esc(repo)}</a></footer>
 </div><script>
 const PANELS={json.dumps(data, ensure_ascii=False)};
-const SC={json.dumps({'EURAXESS':'s-EURAXESS','VHIO':'s-VHIO','la Caixa':'s-laCaixa','AcademicTransfer (NL)':'s-AT','Industry (EURAXESS)':'s-Industry'})};
+const SC={json.dumps({'EURAXESS':'s-EURAXESS','VHIO':'s-VHIO','la Caixa':'s-laCaixa','AcademicTransfer (NL)':'s-AT','Industry (EURAXESS)':'s-Industry','LinkedIn':'s-LinkedIn'})};
 const state={{}};
 function esc(s){{const d=document.createElement('div');d.textContent=s==null?'':s;return d.innerHTML;}}
 function renderPanel(pid){{const q=document.getElementById('q-'+pid),src=document.getElementById('src-'+pid),
@@ -330,11 +333,19 @@ def main():
     open(os.path.join(HERE, "industry_report.html"), "w", encoding="utf-8").write(html3)
     print("wrote industry_report.html", len(t3), "positions")
 
+    tfr = load_positions("france_biotech_phd.json")
+    htmlfr = render(tfr, "France PhD — Montpellier & Lyon (biotech)",
+                    "EURAXESS + LinkedIn · life-science PhD in Montpellier & Lyon",
+                    gen, repo_url=repo)
+    open(os.path.join(HERE, "france_report.html"), "w", encoding="utf-8").write(htmlfr)
+    print("wrote france_report.html", len(tfr), "positions")
+
     # Combined: all tiers + deadlines in one tabbed document.
     combined = render_combined([
         ("t1", "Tier 1 · Main", "MSCA/COFUND + VHIO + la Caixa · R1 · 7 countries", t1),
         ("t2", "Tier 2 · Netherlands", "AcademicTransfer · life-science PhD in the Netherlands", t2),
         ("t3", "Tier 3 · Industry", "EURAXESS · company PhDs (Large Enterprise / SME)", t3),
+        ("fr", "France · MTP/Lyon", "EURAXESS + LinkedIn · biotech PhD in Montpellier & Lyon", tfr),
     ], deadlines_mod.load(), gen, repo)
     open(os.path.join(HERE, "scholarships_report.html"), "w", encoding="utf-8").write(combined)
     print("wrote scholarships_report.html", len(t1) + len(t2) + len(t3), "positions (all tiers)")

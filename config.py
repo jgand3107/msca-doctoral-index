@@ -99,4 +99,10 @@ TIER2_JSON_FILE = "netherlands_phd.json"
 INDUSTRY_ORG_TYPES = [533, 537]
 TIER3_CSV_FILE = "industry_phd.csv"
 TIER3_JSON_FILE = "industry_phd.json"
+# France city tracker: biotech/life-science PhD in named cities (EURAXESS + LinkedIn).
+FRANCE_ENABLED = True
+FRANCE_COUNTRY_CODE = 793           # EURAXESS country code for France
+FRANCE_CITIES = ["Montpellier", "Lyon"]
+FRANCE_CSV_FILE = "france_biotech_phd.csv"
+FRANCE_JSON_FILE = "france_biotech_phd.json"
 META_FILE = "last_run.json"

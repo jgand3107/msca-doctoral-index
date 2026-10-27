@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
   "generated_at": "2026-10-26T17:54:57+00:00",
   "tier": "tier2-netherlands",
   "count": 16,
+=======
+  "generated_at": "2026-10-26T11:44:32+00:00",
+  "tier": "tier2-netherlands",
+  "count": 15,
+>>>>>>> origin/main
   "positions": [
     {
       "source": "AcademicTransfer (NL)",
@@ -377,6 +383,7 @@
       "detail_available": "yes",
       "first_seen": "2026-10-20",
       "last_seen": "2026-10-26"
+<<<<<<< HEAD
     },
     {
       "source": "AcademicTransfer (NL)",
@@ -402,6 +409,8 @@
       "detail_available": "yes",
       "first_seen": "2026-10-26",
       "last_seen": "2026-10-26"
+=======
+>>>>>>> origin/main
     }
   ]
 }

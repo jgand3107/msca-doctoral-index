@@ -25,12 +25,12 @@ import os
 import sys
 
 import config
-from sources import euraxess, vhio, academictransfer, lacaixa, industry, deadlines
+from sources import euraxess, vhio, academictransfer, lacaixa, industry, deadlines, france
 
 # Column order for the CSVs (source first).
 COLUMNS = [
     "source", "id", "title", "programme_type", "funding_programme",
-    "researcher_profile", "organisation", "host_institution", "country",
+    "researcher_profile", "organisation", "host_institution", "country", "city",
     "research_field", "number_of_offers", "open_date", "deadline",
     "deadline_display", "start_date", "employment_type", "hours_per_week",
     "education_level", "grant_agreement_number", "url", "detail_available",
@@ -165,6 +165,24 @@ def build_tier3(args, run_ts) -> bool:
     return True
 
 
+def build_france(args, run_ts) -> bool:
+    if not getattr(config, "FRANCE_ENABLED", False):
+        return True
+    print("== France: Montpellier/Lyon biotech PhD (EURAXESS + LinkedIn) ==")
+    try:
+        records = france.scrape()
+    except euraxess.ScrapeValidationError as exc:
+        print(f"  ABORTING France: EURAXESS degraded ({exc}); data untouched.", file=sys.stderr)
+        return False
+    except Exception as exc:
+        print(f"  France error (left untouched): {exc}", file=sys.stderr)
+        return False
+    csv_path = os.path.join(args.output_dir, config.FRANCE_CSV_FILE)
+    json_path = os.path.join(args.output_dir, config.FRANCE_JSON_FILE)
+    finalize_and_write(records, csv_path, json_path, run_ts, "france-mtp-lyon")
+    return True
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="Build multi-source doctoral scholarship tables.")
     ap.add_argument("--no-details", action="store_true", help="skip EURAXESS detail enrichment")
@@ -172,21 +190,24 @@ def main() -> None:
     ap.add_argument("--tier1-only", action="store_true")
     ap.add_argument("--tier2-only", action="store_true")
     ap.add_argument("--tier3-only", action="store_true")
+    ap.add_argument("--france-only", action="store_true")
     ap.add_argument("--output-dir", default=config.OUTPUT_DIR)
     args = ap.parse_args()
     os.makedirs(args.output_dir, exist_ok=True)
 
-    only = args.tier1_only or args.tier2_only or args.tier3_only
+    only = args.tier1_only or args.tier2_only or args.tier3_only or args.france_only
     run_ts = euraxess.now_iso()
     print(f"[{run_ts}] multi-source scholarship build starting")
 
-    ok1 = ok2 = ok3 = True
+    ok1 = ok2 = ok3 = okfr = True
     if args.tier1_only or not only:
         ok1 = build_tier1(args, run_ts)
     if args.tier2_only or not only:
         ok2 = build_tier2(args, run_ts)
     if args.tier3_only or not only:
         ok3 = build_tier3(args, run_ts)
+    if args.france_only or not only:
+        okfr = build_france(args, run_ts)
 
     # Recurring-scheme calendar with an estimated open/upcoming status for today.
     dl = deadlines.load(verbose=True)
@@ -198,7 +219,7 @@ def main() -> None:
 
     with open(os.path.join(args.output_dir, config.META_FILE), "w", encoding="utf-8") as fh:
         json.dump({"generated_at": run_ts, "tier1_ok": ok1, "tier2_ok": ok2,
-                   "tier3_ok": ok3, "deadlines_open_now":
+                   "tier3_ok": ok3, "france_ok": okfr, "deadlines_open_now":
                    sum(1 for r in dl if r["status"] == "open")}, fh, indent=2)
 
     # Each tier only writes valid data (a degraded tier leaves its files
@@ -208,6 +229,8 @@ def main() -> None:
         primary_ok = ok2
     elif args.tier3_only:
         primary_ok = ok3
+    elif args.france_only:
+        primary_ok = okfr
     else:
         primary_ok = ok1
     if not primary_ok:

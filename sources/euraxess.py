@@ -226,6 +226,7 @@ def parse_card(card) -> dict | None:
         "host_institution": loc["host_institution"],
         "country": loc["country"],
         "number_of_offers": loc["offers"],
+        "locations": _clean(work_raw),       # raw work-location string (city/address)
         "research_field": research_field,
         "researcher_profile": profile,
         "funding_programme": funding,
