@@ -90,9 +90,6 @@ OUTPUT_DIR = "data"
 # so existing raw-URL / R readers keep working.
 CSV_FILE = "msca_doctoral_positions.csv"
 JSON_FILE = "msca_doctoral_positions.json"
-# Tier 2: AcademicTransfer (Netherlands) life-science PhD.
-TIER2_CSV_FILE = "netherlands_phd.csv"
-TIER2_JSON_FILE = "netherlands_phd.json"
 # Tier 3: EURAXESS R1 positions at industry organisations (life-science, same
 # countries). Organisation types on EURAXESS: 533 = Large Enterprise,
 # 537 = Small/Medium Enterprise & Start-up.
@@ -105,4 +102,9 @@ FRANCE_COUNTRY_CODE = 793           # EURAXESS country code for France
 FRANCE_CITIES = ["Montpellier", "Lyon"]
 FRANCE_CSV_FILE = "france_biotech_phd.csv"
 FRANCE_JSON_FILE = "france_biotech_phd.json"
+# Cancer-centres radar: every PhD from the curated institutes (see
+# sources/cancer_radar.py CENTRES). doctorat.gouv.fr + EURAXESS Spain + VHIO.
+RADAR_ENABLED = True
+RADAR_CSV_FILE = "cancer_centres_radar.csv"
+RADAR_JSON_FILE = "cancer_centres_radar.json"
 META_FILE = "last_run.json"

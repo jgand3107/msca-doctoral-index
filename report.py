@@ -2,8 +2,8 @@
 Generate the HTML reports from the scraped data.
 
   python report.py
-    -> msca_report.html          (Tier 1: MSCA/COFUND + VHIO + la Caixa, + deadlines)
-    -> netherlands_report.html   (Tier 2: AcademicTransfer life-science PhD)
+    -> msca_report.html / industry_report.html / france_report.html /
+       cancer_radar_report.html, and scholarships_report.html (combined, tabbed).
 """
 from __future__ import annotations
 
@@ -49,14 +49,14 @@ def load_deadlines():
 STYLE = """
 :root{--bg:#f6f7f9;--card:#fff;--ink:#15202b;--muted:#5b6b7b;--line:#e4e8ec;
 --accent:#1f6feb;--green:#0b8457;--cofund:#8257e6;--vhio:#c026d3;--caixa:#0ea5e9;
---at:#d97706;--industry:#059669;--linkedin:#0a66c2;--chip:#eef2f6;--soon:#c2410c;}
+--at:#d97706;--industry:#059669;--linkedin:#0a66c2;--doctorat:#0f766e;--chip:#eef2f6;--soon:#c2410c;}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1116;
 --card:#171b22;--ink:#e6edf3;--muted:#9aa7b4;--line:#262c36;--accent:#4e8cff;
 --green:#3fb984;--cofund:#a983ff;--vhio:#e879f9;--caixa:#38bdf8;--at:#fbbf24;
---industry:#34d399;--linkedin:#539be8;--chip:#1e242d;--soon:#ff8a4c;}}
+--industry:#34d399;--linkedin:#539be8;--doctorat:#2dd4bf;--chip:#1e242d;--soon:#ff8a4c;}}
 :root[data-theme="dark"]{--bg:#0e1116;--card:#171b22;--ink:#e6edf3;--muted:#9aa7b4;
 --line:#262c36;--accent:#4e8cff;--green:#3fb984;--cofund:#a983ff;--vhio:#e879f9;
---caixa:#38bdf8;--at:#fbbf24;--industry:#34d399;--linkedin:#539be8;--chip:#1e242d;--soon:#ff8a4c;}
+--caixa:#38bdf8;--at:#fbbf24;--industry:#34d399;--linkedin:#539be8;--doctorat:#2dd4bf;--chip:#1e242d;--soon:#ff8a4c;}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
 font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
 .wrap{max-width:1080px;margin:0 auto;padding:32px 16px 64px}
@@ -87,6 +87,7 @@ th:hover{color:var(--ink)}td a{color:var(--accent);text-decoration:none}td a:hov
 .st-upcoming{background:color-mix(in srgb,var(--at) 20%,transparent);color:var(--at)}
 .st-check{background:var(--chip);color:var(--muted)}
 .s-LinkedIn{background:color-mix(in srgb,var(--linkedin) 18%,transparent);color:var(--linkedin)}
+.s-Doctorat{background:color-mix(in srgb,var(--doctorat) 20%,transparent);color:var(--doctorat)}
 .days{font-variant-numeric:tabular-nums;white-space:nowrap}.days.urgent{color:var(--soon);font-weight:700}
 .muted{color:var(--muted)}.count{color:var(--muted);font-size:13px;margin-bottom:8px}
 footer{color:var(--muted);font-size:12px;margin-top:24px;text-align:center}
@@ -114,6 +115,8 @@ def source_class(src):
         return "s-Industry"
     if "linkedin" in s:
         return "s-LinkedIn"
+    if "doctorat" in s:
+        return "s-Doctorat"
     return ""
 
 
@@ -177,7 +180,7 @@ def render(positions, title, subtitle, gen, deadlines=None, repo_url=""):
 <footer>Auto-updated weekly · <a href="{esc(repo_url)}">{esc(repo_url)}</a></footer>
 </div><script>
 const DATA={json.dumps(rows, ensure_ascii=False)};
-const SC={json.dumps({'EURAXESS':'s-EURAXESS','VHIO':'s-VHIO','la Caixa':'s-laCaixa','AcademicTransfer (NL)':'s-AT','Industry (EURAXESS)':'s-Industry','LinkedIn':'s-LinkedIn'})};
+const SC={json.dumps({'EURAXESS':'s-EURAXESS','VHIO':'s-VHIO','la Caixa':'s-laCaixa','AcademicTransfer (NL)':'s-AT','Industry (EURAXESS)':'s-Industry','LinkedIn':'s-LinkedIn','doctorat.gouv.fr':'s-Doctorat'})};
 const tb=document.getElementById('tb'),q=document.getElementById('q'),src=document.getElementById('src'),cnt=document.getElementById('count');
 let sortK='deadline',dir=1;
 function esc(s){{const d=document.createElement('div');d.textContent=s==null?'':s;return d.innerHTML;}}
@@ -276,7 +279,7 @@ def render_combined(sections, deadlines, gen, repo):
 <footer>Auto-updated weekly · <a href="{esc(repo)}">{esc(repo)}</a></footer>
 </div><script>
 const PANELS={json.dumps(data, ensure_ascii=False)};
-const SC={json.dumps({'EURAXESS':'s-EURAXESS','VHIO':'s-VHIO','la Caixa':'s-laCaixa','AcademicTransfer (NL)':'s-AT','Industry (EURAXESS)':'s-Industry','LinkedIn':'s-LinkedIn'})};
+const SC={json.dumps({'EURAXESS':'s-EURAXESS','VHIO':'s-VHIO','la Caixa':'s-laCaixa','AcademicTransfer (NL)':'s-AT','Industry (EURAXESS)':'s-Industry','LinkedIn':'s-LinkedIn','doctorat.gouv.fr':'s-Doctorat'})};
 const state={{}};
 function esc(s){{const d=document.createElement('div');d.textContent=s==null?'':s;return d.innerHTML;}}
 function renderPanel(pid){{const q=document.getElementById('q-'+pid),src=document.getElementById('src-'+pid),
@@ -319,13 +322,6 @@ def main():
     open(os.path.join(HERE, "msca_report.html"), "w", encoding="utf-8").write(html1)
     print("wrote msca_report.html", len(t1), "positions")
 
-    t2 = load_positions("netherlands_phd.json")
-    html2 = render(t2, "Netherlands PhD — Life Sciences (Tier 2)",
-                   "AcademicTransfer · life-science PhD vacancies in the Netherlands",
-                   gen, repo_url=repo)
-    open(os.path.join(HERE, "netherlands_report.html"), "w", encoding="utf-8").write(html2)
-    print("wrote netherlands_report.html", len(t2), "positions")
-
     t3 = load_positions("industry_phd.json")
     html3 = render(t3, "Industry PhD — Life Sciences (Tier 3)",
                    "EURAXESS · PhD positions at companies (Large Enterprise / SME) "
@@ -335,20 +331,28 @@ def main():
 
     tfr = load_positions("france_biotech_phd.json")
     htmlfr = render(tfr, "France PhD — Montpellier & Lyon (biotech)",
-                    "EURAXESS + LinkedIn · life-science PhD in Montpellier & Lyon",
+                    "EURAXESS + LinkedIn + doctorat.gouv.fr · Montpellier & Lyon",
                     gen, repo_url=repo)
     open(os.path.join(HERE, "france_report.html"), "w", encoding="utf-8").write(htmlfr)
     print("wrote france_report.html", len(tfr), "positions")
 
+    tcr = load_positions("cancer_centres_radar.json")
+    htmlcr = render(tcr, "Cancer-Centre PhD Radar — Spain & France",
+                    "Every PhD from the top cancer institutes · doctorat.gouv.fr + EURAXESS + VHIO",
+                    gen, repo_url=repo)
+    open(os.path.join(HERE, "cancer_radar_report.html"), "w", encoding="utf-8").write(htmlcr)
+    print("wrote cancer_radar_report.html", len(tcr), "positions")
+
     # Combined: all tiers + deadlines in one tabbed document.
     combined = render_combined([
         ("t1", "Tier 1 · Main", "MSCA/COFUND + VHIO + la Caixa · R1 · 7 countries", t1),
-        ("t2", "Tier 2 · Netherlands", "AcademicTransfer · life-science PhD in the Netherlands", t2),
         ("t3", "Tier 3 · Industry", "EURAXESS · company PhDs (Large Enterprise / SME)", t3),
-        ("fr", "France · MTP/Lyon", "EURAXESS + LinkedIn · biotech PhD in Montpellier & Lyon", tfr),
+        ("fr", "France · MTP/Lyon", "EURAXESS + LinkedIn + doctorat.gouv.fr · biotech PhD in Montpellier & Lyon", tfr),
+        ("cr", "Cancer centres", "Every PhD from the top cancer institutes (Spain & France)", tcr),
     ], deadlines_mod.load(), gen, repo)
     open(os.path.join(HERE, "scholarships_report.html"), "w", encoding="utf-8").write(combined)
-    print("wrote scholarships_report.html", len(t1) + len(t2) + len(t3), "positions (all tiers)")
+    print("wrote scholarships_report.html",
+          len(t1) + len(t3) + len(tfr) + len(tcr), "positions (all tabs)")
 
 
 if __name__ == "__main__":

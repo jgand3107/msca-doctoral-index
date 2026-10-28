@@ -25,9 +25,6 @@ This is a **multi-source** tracker. Each row carries a `source` column.
 - **VHIO** (Vall d'Hebron Institute of Oncology) — predoctoral/PhD listings only (no postdoc)
 - **la Caixa** INPhINIT doctoral fellowships — tracked annual calls (expected deadlines)
 
-**Tier 2 — Netherlands** (`data/netherlands_phd.*`):
-- **AcademicTransfer** — life-science PhD vacancies in the Netherlands (via its public API)
-
 **Tier 3 — Industry** (`data/industry_phd.*`):
 - **EURAXESS** R1/PhD positions at companies (Large Enterprise + SME/Start-up),
   life-science, in the 7 countries — includes MSCA Industrial Doctorates and
@@ -35,17 +32,27 @@ This is a **multi-source** tracker. Each row carries a `source` column.
 
 **France — Montpellier & Lyon** (`data/france_biotech_phd.*`):
 - Biotech/life-science PhD vacancies in those two cities, from **EURAXESS France**
-  (filtered by city) + **LinkedIn** public guest search. Cities configurable in
-  `config.py` → `FRANCE_CITIES`. (LinkedIn guest coverage is partial and may be
-  blocked from cloud IPs — it yields more on the local runner.)
+  (filtered by city) + **doctorat.gouv.fr** (the French national doctoral portal,
+  JSON API, discipline "Biologie, médecine et santé") + **LinkedIn** public guest
+  search. Cities configurable in `config.py` → `FRANCE_CITIES`. (LinkedIn guest
+  coverage is partial and may be blocked from cloud IPs — more on the local runner.)
+
+**Cancer-centres radar** (`data/cancer_centres_radar.*`):
+- Tracks **every PhD** from a curated list of top cancer institutes in Spain &
+  France (see `sources/cancer_radar.py` → `CENTRES`). Sources: **doctorat.gouv.fr**
+  (French institutes), **EURAXESS Spain** (Spanish institutes), **VHIO**.
+  Matching is by institute name/alias against each offer's lab/organisation/city
+  — strong coverage, but an offer that never names its institute (e.g. listed only
+  under a parent university) can slip through. Add/edit institutes in `CENTRES`.
 
 **Annual deadlines** (`data/annual_deadlines.csv`): curated big recurring schemes
 (MSCA, EMBL, Boehringer, la Caixa, FPI/FPU, UKRI DTPs, Max Planck IMPRS, Pasteur
 PPU, ETH/EPFL, SNSF…) with expected windows and official links.
 
 Code is organised under [`sources/`](sources/) (`euraxess.py`, `vhio.py`,
-`academictransfer.py`, `lacaixa.py`); [`run.py`](run.py) orchestrates the tiers
-and [`report.py`](report.py) builds the HTML reports.
+`lacaixa.py`, `industry.py`, `france.py`, `cancer_radar.py`, `deadlines.py`);
+[`run.py`](run.py) orchestrates the tiers and [`report.py`](report.py) builds
+the HTML reports.
 
 ## What you get
 
@@ -54,7 +61,6 @@ Regenerated on every run, in [`data/`](data/):
 | File | Use |
 |------|-----|
 | `msca_doctoral_positions.csv` / `.json`  | **Tier 1** main table (read into R / Excel / pandas) |
-| `netherlands_phd.csv` / `.json` | **Tier 2** Netherlands life-science PhD |
 | `industry_phd.csv` / `.json` | **Tier 3** industry/company life-science PhD |
 | `annual_deadlines.csv` | Recurring-scheme calendar |
 

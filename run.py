@@ -5,14 +5,15 @@ Tier 1 (main report)  -> data/msca_doctoral_positions.csv / .json
     EURAXESS MSCA+COFUND (R1, life-science, selected countries)
     + VHIO predoctoral/PhD listings
     + la Caixa INPhINIT tracked calls
-Tier 2 (Netherlands)  -> data/netherlands_phd.csv / .json
-    AcademicTransfer life-science PhD vacancies
+Tier 3 (Industry)     -> data/industry_phd.csv / .json
+France (MTP/Lyon)     -> data/france_biotech_phd.csv / .json
+Cancer-centre radar   -> data/cancer_centres_radar.csv / .json
 Plus the curated data/annual_deadlines.csv (recurring schemes).
 
 Usage:
-    python run.py                 # full build (both tiers)
+    python run.py                 # full build
     python run.py --no-details    # skip EURAXESS detail enrichment (faster)
-    python run.py --tier1-only / --tier2-only
+    python run.py --tier1-only / --tier3-only / --france-only / --radar-only
 
 The weekly runners (GitHub Actions / run_and_push.ps1) just call `python run.py`.
 """
@@ -25,13 +26,13 @@ import os
 import sys
 
 import config
-from sources import euraxess, vhio, academictransfer, lacaixa, industry, deadlines, france
+from sources import euraxess, vhio, lacaixa, industry, deadlines, france, cancer_radar
 
 # Column order for the CSVs (source first).
 COLUMNS = [
     "source", "id", "title", "programme_type", "funding_programme",
-    "researcher_profile", "organisation", "host_institution", "country", "city",
-    "research_field", "number_of_offers", "open_date", "deadline",
+    "researcher_profile", "organisation", "host_institution", "centre",
+    "country", "city", "research_field", "number_of_offers", "open_date", "deadline",
     "deadline_display", "start_date", "employment_type", "hours_per_week",
     "education_level", "grant_agreement_number", "url", "detail_available",
     "first_seen", "last_seen",
@@ -132,22 +133,6 @@ def build_tier1(args, run_ts) -> bool:
     return True
 
 
-def build_tier2(args, run_ts) -> bool:
-    print("== Tier 2: AcademicTransfer (Netherlands, life-science PhD) ==")
-    try:
-        records = academictransfer.scrape()
-    except Exception as exc:
-        print(f"  AcademicTransfer error (Tier-2 left untouched): {exc}", file=sys.stderr)
-        return False
-    if not records:
-        print("  no Tier-2 records returned; leaving existing data untouched")
-        return False
-    csv_path = os.path.join(args.output_dir, config.TIER2_CSV_FILE)
-    json_path = os.path.join(args.output_dir, config.TIER2_JSON_FILE)
-    finalize_and_write(records, csv_path, json_path, run_ts, "tier2-netherlands")
-    return True
-
-
 def build_tier3(args, run_ts) -> bool:
     print("== Tier 3: EURAXESS industry PhD positions ==")
     try:
@@ -183,31 +168,49 @@ def build_france(args, run_ts) -> bool:
     return True
 
 
+def build_radar(args, run_ts) -> bool:
+    if not getattr(config, "RADAR_ENABLED", False):
+        return True
+    print("== Cancer-centres radar (doctorat.gouv.fr + EURAXESS Spain + VHIO) ==")
+    try:
+        records = cancer_radar.scrape()
+    except euraxess.ScrapeValidationError as exc:
+        print(f"  ABORTING radar: EURAXESS Spain degraded ({exc}); data untouched.", file=sys.stderr)
+        return False
+    except Exception as exc:
+        print(f"  Radar error (left untouched): {exc}", file=sys.stderr)
+        return False
+    csv_path = os.path.join(args.output_dir, config.RADAR_CSV_FILE)
+    json_path = os.path.join(args.output_dir, config.RADAR_JSON_FILE)
+    finalize_and_write(records, csv_path, json_path, run_ts, "cancer-radar")
+    return True
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="Build multi-source doctoral scholarship tables.")
     ap.add_argument("--no-details", action="store_true", help="skip EURAXESS detail enrichment")
     ap.add_argument("--limit", type=int, default=0, help="cap EURAXESS listings (debug)")
     ap.add_argument("--tier1-only", action="store_true")
-    ap.add_argument("--tier2-only", action="store_true")
     ap.add_argument("--tier3-only", action="store_true")
     ap.add_argument("--france-only", action="store_true")
+    ap.add_argument("--radar-only", action="store_true")
     ap.add_argument("--output-dir", default=config.OUTPUT_DIR)
     args = ap.parse_args()
     os.makedirs(args.output_dir, exist_ok=True)
 
-    only = args.tier1_only or args.tier2_only or args.tier3_only or args.france_only
+    only = args.tier1_only or args.tier3_only or args.france_only or args.radar_only
     run_ts = euraxess.now_iso()
     print(f"[{run_ts}] multi-source scholarship build starting")
 
-    ok1 = ok2 = ok3 = okfr = True
+    ok1 = ok3 = okfr = okr = True
     if args.tier1_only or not only:
         ok1 = build_tier1(args, run_ts)
-    if args.tier2_only or not only:
-        ok2 = build_tier2(args, run_ts)
     if args.tier3_only or not only:
         ok3 = build_tier3(args, run_ts)
     if args.france_only or not only:
         okfr = build_france(args, run_ts)
+    if args.radar_only or not only:
+        okr = build_radar(args, run_ts)
 
     # Recurring-scheme calendar with an estimated open/upcoming status for today.
     dl = deadlines.load(verbose=True)
@@ -218,19 +221,19 @@ def main() -> None:
                   fh, indent=2, ensure_ascii=False)
 
     with open(os.path.join(args.output_dir, config.META_FILE), "w", encoding="utf-8") as fh:
-        json.dump({"generated_at": run_ts, "tier1_ok": ok1, "tier2_ok": ok2,
-                   "tier3_ok": ok3, "france_ok": okfr, "deadlines_open_now":
+        json.dump({"generated_at": run_ts, "tier1_ok": ok1, "tier3_ok": ok3,
+                   "france_ok": okfr, "radar_ok": okr, "deadlines_open_now":
                    sum(1 for r in dl if r["status"] == "open")}, fh, indent=2)
 
     # Each tier only writes valid data (a degraded tier leaves its files
     # untouched), so the runners can safely commit whatever changed. We exit
     # non-zero only when the PRIMARY tier failed, purely as an alert signal.
-    if args.tier2_only:
-        primary_ok = ok2
-    elif args.tier3_only:
+    if args.tier3_only:
         primary_ok = ok3
     elif args.france_only:
         primary_ok = okfr
+    elif args.radar_only:
+        primary_ok = okr
     else:
         primary_ok = ok1
     if not primary_ok:

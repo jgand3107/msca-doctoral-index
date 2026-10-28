@@ -20,7 +20,50 @@ import config
 from sources import euraxess
 
 LINKEDIN_API = "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
+DOCTORAT_API = "https://app.doctorat.gouv.fr/api/propositions-these"
+DOCTORAT_LIFE_CODE = "5"   # domaineScientifique "Biologie, médecine et santé"
 _UA = {"User-Agent": euraxess.config.USER_AGENT, "Accept": "text/html"}
+_JSON_HDR = {"User-Agent": euraxess.config.USER_AGENT, "Accept": "application/json"}
+
+
+def _d10(s):
+    return (s or "")[:10]
+
+
+def fetch_doctorat_all():
+    """Fetch all offers from the French national doctoral portal (raw items)."""
+    try:
+        r = requests.get(DOCTORAT_API, params={
+            "page": 0, "size": 1500, "sortField": "dateMiseEnLigne",
+            "sortDirection": "DESC"}, headers=_JSON_HDR, timeout=euraxess.config.REQUEST_TIMEOUT)
+        return r.json().get("content", []) if r.status_code == 200 else []
+    except (requests.RequestException, ValueError):
+        return []
+
+
+def doctorat_record(it, city, source="doctorat.gouv.fr"):
+    """Map a doctorat.gouv offer item to a common-schema record."""
+    fin = it.get("financementTypes")
+    fin = ", ".join(fin) if isinstance(fin, list) else (fin or "")
+    url = (it.get("urlCandidature") or it.get("urlInfosComplementaires")
+           or f"https://app.doctorat.gouv.fr/propositions/{it.get('id')}")
+    return {
+        "source": source, "id": "dg-" + str(it.get("id")),
+        "title": (it.get("theseTitre") or it.get("theseTitreAnglais") or "").strip(),
+        "organisation": it.get("etablissementLibelle") or "",
+        "host_institution": it.get("uniteRechercheLibelle") or it.get("etablissementLibelle") or "",
+        "country": "France", "city": city,
+        "research_field": it.get("domaine") or "",
+        "researcher_profile": "PhD", "funding_programme": fin,
+        "programme_type": "doctorat.gouv.fr", "number_of_offers": "",
+        "locations": (it.get("uniteRechercheVille") or it.get("etablissementVille") or ""),
+        "open_date": _d10(it.get("dateMiseEnLigne")),
+        "deadline": _d10(it.get("dateLimiteCandidature")),
+        "deadline_display": _d10(it.get("dateLimiteCandidature")),
+        "start_date": _d10(it.get("dateDebutThese")),
+        "employment_type": "", "hours_per_week": "", "education_level": "",
+        "grant_agreement_number": "", "url": url, "detail_available": "yes",
+    }
 
 _LIFE = ["biolog", "biotech", "biomed", "cancer", "oncolog", "immunolog", "neuro",
          "genom", "genetic", "molecular", "cell", "rna", "protein", "microbio",
@@ -134,9 +177,34 @@ def _linkedin(cities, verbose):
     return recs
 
 
+def _doctorat_gouv(cities, verbose):
+    """French national doctoral portal — biotech/life-science offers in `cities`."""
+    items = fetch_doctorat_all()
+    cu = [(c, c.upper()) for c in cities]
+    out = []
+    for it in items:
+        city_raw = (it.get("uniteRechercheVille") or it.get("etablissementVille") or "").upper()
+        match = next((c for c, u in cu if u in city_raw), None)
+        if not match:
+            continue
+        if str(it.get("domaineScientifique")) != DOCTORAT_LIFE_CODE:
+            continue
+        out.append(france_doctorat_record(it, match))
+    if verbose:
+        print(f"  doctorat.gouv.fr: {len(out)} biotech/life-science PhD in {cities}")
+    return out
+
+
+def france_doctorat_record(it, city):
+    rec = doctorat_record(it, city)
+    rec["research_field"] = rec["research_field"] or "Biologie, médecine et santé"
+    return rec
+
+
 def scrape(verbose: bool = True) -> list[dict]:
     cities = config.FRANCE_CITIES
     records = _euraxess_france(cities, verbose)
+    records += _doctorat_gouv(cities, verbose)
     try:
         records += _linkedin(cities, verbose)
     except Exception as exc:
