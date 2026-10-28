@@ -125,6 +125,17 @@
 - Fixed: data/netherlands_phd.* had unresolved git conflict markers (a merge
   ran without merge.ours.driver) which broke report.py; regenerated cleanly.
 
+### Wed, 28 Oct 2026 — doctorat.gouv.fr, cancer radar, drop Netherlands
+- Added app.doctorat.gouv.fr (French national doctoral portal, JSON API
+  /api/propositions-these) to the France tracker. France now 19.
+- New sources/cancer_radar.py: every PhD from 25+5 curated cancer institutes
+  (Spain & France), matched by institute alias. Sources: doctorat.gouv.fr +
+  EURAXESS Spain + VHIO. data/cancer_centres_radar.*; "Cancer centres" tab +
+  `centre` column. First run: 12 across 6 centres (CRCL, IUCT, CNIO, IRB, VHIO, IMIM).
+  Artifact https://claude.ai/artifact/CRAzaekWV6bvTP32FRCNqr
+- Removed Tier 2 (Netherlands / AcademicTransfer) entirely at user request.
+  NOTE: Netherlands is still one of the 7 Tier-1 COUNTRIES_FILTER countries.
+
 ## Outstanding / Next
 - (Optional) GitHub Pages so the hosted reports auto-refresh weekly.
 - la Caixa deadlines are *expected* windows — verify against official pages yearly.
