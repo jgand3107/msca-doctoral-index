@@ -66,13 +66,13 @@ LIFE_SCIENCE_KEYWORDS = [
     "molecular biolog", "bioinformatic", "life science",
 ]
 
-# --- Country filter ------------------------------------------------------
-# Keep only positions based in these countries (names as EURAXESS writes them;
-# note the UK is "United Kingdom"). Set to None or [] to keep all countries.
-COUNTRIES_FILTER = [
-    "Spain", "France", "United Kingdom", "Germany", "Italy", "Netherlands",
-    "Switzerland",
-]
+# --- Country filters (per tab) -------------------------------------------
+# Tab 1 (MSCA/COFUND) countries, and Tab 4 (industry) countries.
+# Names as EURAXESS writes them (the UK is "United Kingdom").
+MSCA_COUNTRIES = ["France", "Spain", "Italy", "United Kingdom"]
+INDUSTRY_COUNTRIES = ["France", "Spain"]
+# Back-compat alias (unused by the per-tab builds).
+COUNTRIES_FILTER = MSCA_COUNTRIES
 
 # --- Detail-page enrichment ---------------------------------------------
 # Each listing links to /jobs/<id>, whose detail page carries contract type,
@@ -86,22 +86,27 @@ ENRICH_DETAILS = True
 
 # --- Output --------------------------------------------------------------
 OUTPUT_DIR = "data"
-# Tier 1 (main): EURAXESS MSCA/COFUND + VHIO + la Caixa. Filename kept stable
-# so existing raw-URL / R readers keep working.
+# Tab 1 (MSCA): EURAXESS MSCA/COFUND (life-science, MSCA_COUNTRIES). Filename
+# kept stable so existing raw-URL / R readers keep working.
 CSV_FILE = "msca_doctoral_positions.csv"
 JSON_FILE = "msca_doctoral_positions.json"
-# Tier 3: EURAXESS R1 positions at industry organisations (life-science, same
-# countries). Organisation types on EURAXESS: 533 = Large Enterprise,
-# 537 = Small/Medium Enterprise & Start-up.
+# Tab 4 (industry): EURAXESS R1 at industry organisations (life-science,
+# INDUSTRY_COUNTRIES). 533 = Large Enterprise, 537 = SME & Start-up.
 INDUSTRY_ORG_TYPES = [533, 537]
 TIER3_CSV_FILE = "industry_phd.csv"
 TIER3_JSON_FILE = "industry_phd.json"
-# France city tracker: biotech/life-science PhD in named cities (EURAXESS + LinkedIn).
+# Tab 2 (everything France): all life-science PhD in France
+# (EURAXESS France + doctorat.gouv.fr + LinkedIn).
 FRANCE_ENABLED = True
 FRANCE_COUNTRY_CODE = 793           # EURAXESS country code for France
-FRANCE_CITIES = ["Montpellier", "Lyon"]
-FRANCE_CSV_FILE = "france_biotech_phd.csv"
-FRANCE_JSON_FILE = "france_biotech_phd.json"
+FRANCE_CSV_FILE = "france_phd.csv"
+FRANCE_JSON_FILE = "france_phd.json"
+# Tab 3 (everything Spain): all life-science PhD in Spain
+# (EURAXESS Spain + VHIO + la Caixa).
+SPAIN_ENABLED = True
+SPAIN_COUNTRY_CODE = 788            # EURAXESS country code for Spain
+SPAIN_CSV_FILE = "spain_phd.csv"
+SPAIN_JSON_FILE = "spain_phd.json"
 # Cancer-centres radar: every PhD from the curated institutes (see
 # sources/cancer_radar.py CENTRES). doctorat.gouv.fr + EURAXESS Spain + VHIO.
 RADAR_ENABLED = True

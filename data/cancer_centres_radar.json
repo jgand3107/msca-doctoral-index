@@ -1,36 +1,8 @@
 {
-  "generated_at": "2026-10-28T12:42:39+00:00",
+  "generated_at": "2026-10-29T09:46:16+00:00",
   "tier": "cancer-radar",
-  "count": 12,
+  "count": 7,
   "positions": [
-    {
-      "source": "EURAXESS",
-      "id": "473423",
-      "title": "R1 Predoctoral Researcher (Pharmacokinetic Nanoparticles Research Group)",
-      "organisation": "Vall d'Hebron Institute of Oncology (VHIO)",
-      "host_institution": "VHIR",
-      "country": "Spain",
-      "number_of_offers": "1",
-      "locations": "Number of offers: 1, Spain, VHIR",
-      "research_field": "Biological sciences > Biology",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "Other EU programme",
-      "programme_type": "",
-      "open_date": "2026-10-16",
-      "deadline": "2026-10-28T22:59:59+00:00",
-      "deadline_display": "28 Oct 2026 - 23:59 (Europe/Andorra)",
-      "start_date": "",
-      "employment_type": "",
-      "hours_per_week": "",
-      "education_level": "",
-      "grant_agreement_number": "",
-      "url": "https://euraxess.ec.europa.eu/jobs/473423",
-      "detail_available": "",
-      "centre": "Vall d'Hebron Institute of Oncology (VHIO)",
-      "city": "Barcelona",
-      "first_seen": "2026-10-28",
-      "last_seen": "2026-10-28"
-    },
     {
       "source": "doctorat.gouv.fr",
       "id": "dg-15605",
@@ -57,119 +29,7 @@
       "detail_available": "yes",
       "centre": "Centre Léon Bérard / CRCL",
       "first_seen": "2026-10-28",
-      "last_seen": "2026-10-28"
-    },
-    {
-      "source": "EURAXESS",
-      "id": "471547",
-      "title": "Postdoctoral Researcher in Bioinformatics, Spatial Transcriptomics and Digital Pathology in Gastric Cancer",
-      "organisation": "IRB Barcelona",
-      "host_institution": "INSTITUT DE RECERCA BIOMEDICA DE LLEIDA",
-      "country": "Spain",
-      "number_of_offers": "1",
-      "locations": "Number of offers: 1, Spain, INSTITUT DE RECERCA BIOMEDICA DE LLEIDA",
-      "research_field": "Medical sciences > Health sciences",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "Not funded by a EU programme",
-      "programme_type": "",
-      "open_date": "2026-10-08",
-      "deadline": "2026-10-30T11:00:00+00:00",
-      "deadline_display": "30 Oct 2026 - 12:00 (Europe/Madrid)",
-      "start_date": "",
-      "employment_type": "",
-      "hours_per_week": "",
-      "education_level": "",
-      "grant_agreement_number": "",
-      "url": "https://euraxess.ec.europa.eu/jobs/471547",
-      "detail_available": "",
-      "centre": "IRB Barcelona",
-      "city": "Barcelona",
-      "first_seen": "2026-10-28",
-      "last_seen": "2026-10-28"
-    },
-    {
-      "source": "EURAXESS",
-      "id": "465036",
-      "title": "Postdoctoral opportunity – Juan de la Cierva 2026",
-      "organisation": "IRB Barcelona",
-      "host_institution": "IRBLleida",
-      "country": "Spain",
-      "number_of_offers": "1",
-      "locations": "Number of offers: 1, Spain, IRBLleida, Lleida, Lleida",
-      "research_field": "Medical sciences > Health sciences",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "Other EU programme",
-      "programme_type": "",
-      "open_date": "2026-09-10",
-      "deadline": "2026-10-30T11:00:00+00:00",
-      "deadline_display": "30 Oct 2026 - 12:00 (Europe/Madrid)",
-      "start_date": "",
-      "employment_type": "",
-      "hours_per_week": "",
-      "education_level": "",
-      "grant_agreement_number": "",
-      "url": "https://euraxess.ec.europa.eu/jobs/465036",
-      "detail_available": "",
-      "centre": "IRB Barcelona",
-      "city": "Barcelona",
-      "first_seen": "2026-10-28",
-      "last_seen": "2026-10-28"
-    },
-    {
-      "source": "EURAXESS",
-      "id": "471518",
-      "title": "DIGITAL GENOMICS GROUP Predoctoral Research Assistant for the Digital Genomics Group",
-      "organisation": "CNIO",
-      "host_institution": "LA FUNDACIÓN DEL SECTOR PÚBLICO ESTATAL CENTRO NACIONAL DE INVESTIGACIONES ONCOLÓGICAS CARLOS III F.S.P. CNIO",
-      "country": "Spain",
-      "number_of_offers": "1",
-      "locations": "Number of offers: 1, Spain, LA FUNDACIÓN DEL SECTOR PÚBLICO ESTATAL CENTRO NACIONAL DE INVESTIGACIONES ONCOLÓGICAS CARLOS III F.S.P. CNIO, Madrid, 28029, Madrid, C/Melchor Fernández Almagro 3",
-      "research_field": "Biological sciences > Biology",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "Not funded by a EU programme",
-      "programme_type": "",
-      "open_date": "2026-10-08",
-      "deadline": "2026-11-01T22:59:00+00:00",
-      "deadline_display": "1 Nov 2026 - 23:59 (Europe/Madrid)",
-      "start_date": "",
-      "employment_type": "",
-      "hours_per_week": "",
-      "education_level": "",
-      "grant_agreement_number": "",
-      "url": "https://euraxess.ec.europa.eu/jobs/471518",
-      "detail_available": "",
-      "centre": "CNIO",
-      "city": "Madrid",
-      "first_seen": "2026-10-28",
-      "last_seen": "2026-10-28"
-    },
-    {
-      "source": "EURAXESS",
-      "id": "466894",
-      "title": "Neuroscience PhD position (4-year funded)",
-      "organisation": "IMIM / Hospital del Mar",
-      "host_institution": "Hospital del Mar Research Institute",
-      "country": "Spain",
-      "number_of_offers": "1",
-      "locations": "Number of offers: 1, Spain, Hospital del Mar Research Institute, Barcelona",
-      "research_field": "Biological sciences",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "Not funded by a EU programme",
-      "programme_type": "",
-      "open_date": "2026-09-19",
-      "deadline": "2026-11-01T23:00:00+00:00",
-      "deadline_display": "1 Nov 2026 - 23:00 (UTC)",
-      "start_date": "",
-      "employment_type": "",
-      "hours_per_week": "",
-      "education_level": "",
-      "grant_agreement_number": "",
-      "url": "https://euraxess.ec.europa.eu/jobs/466894",
-      "detail_available": "",
-      "centre": "IMIM / Hospital del Mar",
-      "city": "Barcelona",
-      "first_seen": "2026-10-28",
-      "last_seen": "2026-10-28"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -197,7 +57,7 @@
       "centre": "CNIO",
       "city": "Madrid",
       "first_seen": "2026-10-28",
-      "last_seen": "2026-10-28"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "doctorat.gouv.fr",
@@ -225,7 +85,7 @@
       "detail_available": "yes",
       "centre": "IUCT-Oncopole / CRCT",
       "first_seen": "2026-10-28",
-      "last_seen": "2026-10-28"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "doctorat.gouv.fr",
@@ -253,7 +113,7 @@
       "detail_available": "yes",
       "centre": "IUCT-Oncopole / CRCT",
       "first_seen": "2026-10-28",
-      "last_seen": "2026-10-28"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "doctorat.gouv.fr",
@@ -281,7 +141,7 @@
       "detail_available": "yes",
       "centre": "IUCT-Oncopole / CRCT",
       "first_seen": "2026-10-28",
-      "last_seen": "2026-10-28"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "doctorat.gouv.fr",
@@ -309,7 +169,7 @@
       "detail_available": "yes",
       "centre": "Centre Léon Bérard / CRCL",
       "first_seen": "2026-10-28",
-      "last_seen": "2026-10-28"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "doctorat.gouv.fr",
@@ -337,7 +197,7 @@
       "detail_available": "yes",
       "centre": "Centre Léon Bérard / CRCL",
       "first_seen": "2026-10-28",
-      "last_seen": "2026-10-28"
+      "last_seen": "2026-10-29"
     }
   ]
 }

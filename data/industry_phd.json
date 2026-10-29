@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-27T09:35:08+00:00",
-  "tier": "tier3-industry",
-  "count": 12,
+  "generated_at": "2026-10-29T09:46:16+00:00",
+  "tier": "tab4-industry",
+  "count": 9,
   "positions": [
     {
       "source": "Industry (EURAXESS)",
@@ -27,7 +27,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/460558",
       "detail_available": "",
       "first_seen": "2026-10-21",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "Industry (EURAXESS)",
@@ -53,7 +53,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471283",
       "detail_available": "",
       "first_seen": "2026-10-21",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "Industry (EURAXESS)",
@@ -79,7 +79,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/473181",
       "detail_available": "",
       "first_seen": "2026-10-21",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "Industry (EURAXESS)",
@@ -105,7 +105,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/472196",
       "detail_available": "",
       "first_seen": "2026-10-21",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "Industry (EURAXESS)",
@@ -131,7 +131,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/474648",
       "detail_available": "",
       "first_seen": "2026-10-23",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "Industry (EURAXESS)",
@@ -157,33 +157,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/474022",
       "detail_available": "",
       "first_seen": "2026-10-21",
-      "last_seen": "2026-10-27"
-    },
-    {
-      "source": "Industry (EURAXESS)",
-      "id": "466077",
-      "title": "PhD Decision Support for Agricultural Water Management",
-      "organisation": "ABG - Association Bernard Gregory",
-      "host_institution": "Agroscope",
-      "country": "Switzerland",
-      "number_of_offers": "1",
-      "locations": "Number of offers: 1, Switzerland, Agroscope, Zürich",
-      "research_field": "Environmental science > Ecology Agricultural sciences > Agronomics Technology",
-      "researcher_profile": "Recognised Researcher (R2) Leading Researcher (R4) First Stage Researcher (R1) Established Researcher (R3)",
-      "funding_programme": "Not funded by a EU programme",
-      "programme_type": "Industry",
-      "open_date": "2026-09-16",
-      "deadline": "2026-11-24T22:00:00+00:00",
-      "deadline_display": "24 Nov 2026 - 22:00 (UTC)",
-      "start_date": "",
-      "employment_type": "",
-      "hours_per_week": "",
-      "education_level": "",
-      "grant_agreement_number": "",
-      "url": "https://euraxess.ec.europa.eu/jobs/466077",
-      "detail_available": "",
-      "first_seen": "2026-10-21",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "Industry (EURAXESS)",
@@ -209,59 +183,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/474336",
       "detail_available": "",
       "first_seen": "2026-10-21",
-      "last_seen": "2026-10-27"
-    },
-    {
-      "source": "Industry (EURAXESS)",
-      "id": "474904",
-      "title": "IDEAS DC[15] - Design of polymeric drug delivery systems for biopharmaceuticals using green microfluidic manufacturing technologies",
-      "organisation": "MyBiotech",
-      "host_institution": "MyBiotech GmbH",
-      "country": "Germany",
-      "number_of_offers": "1",
-      "locations": "Number of offers: 1, Germany, MyBiotech GmbH, Überherrn, 66802, INDUSTRIESTRASSE 1B",
-      "research_field": "Chemistry > Applied chemistry Chemistry > Biochemistry Engineering > Biomaterial engineering Engineering > Chemical engineering Engineering > Materials engineering Technology > Biotechnology Technology > Chemical technology Technology > Industrial technology Technology > Materials technology Technology > Nanotechnology Technology > Pharmaceutical technology Chemistry > Inorganic chemistry Environmental science > Natural resources management Pharmacological sciences > Pharmacy",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "Horizon Europe - MSCA",
-      "programme_type": "Industry",
-      "open_date": "2026-10-22",
-      "deadline": "2026-11-30T22:59:00+00:00",
-      "deadline_display": "30 Nov 2026 - 23:59 (Europe/Berlin)",
-      "start_date": "",
-      "employment_type": "",
-      "hours_per_week": "",
-      "education_level": "",
-      "grant_agreement_number": "",
-      "url": "https://euraxess.ec.europa.eu/jobs/474904",
-      "detail_available": "",
-      "first_seen": "2026-10-23",
-      "last_seen": "2026-10-27"
-    },
-    {
-      "source": "Industry (EURAXESS)",
-      "id": "473126",
-      "title": "FAroGels DC[6] – Hybrid Aerogel-Microencapsulation for Nutraceutical Stability and Delivery",
-      "organisation": "MyBiotech",
-      "host_institution": "MyBiotech GmbH",
-      "country": "Germany",
-      "number_of_offers": "1",
-      "locations": "Number of offers: 1, Germany, MyBiotech GmbH, Überherrn, 66802, Industriestrasse 1B",
-      "research_field": "Biological sciences > Nutritional sciences Chemistry > Applied chemistry Chemistry > Biochemistry Chemistry > Inorganic chemistry Chemistry > Organic chemistry Chemistry > Other Engineering > Biomaterial engineering Engineering > Materials engineering Technology > Biotechnology Technology > Chemical technology Technology > Industrial technology Technology > Materials technology Technology Technology > Pharmaceutical technology Environmental science > Natural resources management Pharmacological sciences > Pharmacy",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "Horizon Europe - MSCA",
-      "programme_type": "Industry",
-      "open_date": "2026-10-15",
-      "deadline": "2026-12-09T22:59:00+00:00",
-      "deadline_display": "9 Dec 2026 - 23:59 (Europe/Berlin)",
-      "start_date": "",
-      "employment_type": "",
-      "hours_per_week": "",
-      "education_level": "",
-      "grant_agreement_number": "",
-      "url": "https://euraxess.ec.europa.eu/jobs/473126",
-      "detail_available": "",
-      "first_seen": "2026-10-23",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "Industry (EURAXESS)",
@@ -287,7 +209,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/419721",
       "detail_available": "",
       "first_seen": "2026-10-21",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "Industry (EURAXESS)",
@@ -313,7 +235,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/425691",
       "detail_available": "",
       "first_seen": "2026-10-21",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     }
   ]
 }

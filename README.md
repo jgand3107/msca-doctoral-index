@@ -16,52 +16,50 @@ every matching listing once a week and publishes a tidy table of the important d
 
 ---
 
-## Sources & tiers
+## Tabs (organised by geography)
 
-This is a **multi-source** tracker. Each row carries a `source` column.
+Each row carries a `source` column. The combined report has these tabs:
 
-**Tier 1 — main** (`data/msca_doctoral_positions.*`):
-- **EURAXESS** MSCA + COFUND doctoral (R1, life-science, 7 countries: ES, FR, UK, DE, IT, NL, CH)
-- **VHIO** (Vall d'Hebron Institute of Oncology) — predoctoral/PhD listings only (no postdoc)
-- **la Caixa** INPhINIT doctoral fellowships — tracked annual calls (expected deadlines)
+**1. MSCA** (`data/msca_doctoral_positions.*`): EURAXESS **MSCA + COFUND** doctoral
+(R1, life-science) in **France, Spain, Italy, UK**.
 
-**Tier 3 — Industry** (`data/industry_phd.*`):
-- **EURAXESS** R1/PhD positions at companies (Large Enterprise + SME/Start-up),
-  life-science, in the 7 countries — includes MSCA Industrial Doctorates and
-  company-funded PhDs.
+**2. France** (`data/france_phd.*`): **all** life-science PhD in France, from
+**EURAXESS France** + **doctorat.gouv.fr** (French national doctoral portal, JSON
+API, discipline "Biologie, médecine et santé").
 
-**France — Montpellier & Lyon** (`data/france_biotech_phd.*`):
-- Biotech/life-science PhD vacancies in those two cities, from **EURAXESS France**
-  (filtered by city) + **doctorat.gouv.fr** (the French national doctoral portal,
-  JSON API, discipline "Biologie, médecine et santé") + **LinkedIn** public guest
-  search. Cities configurable in `config.py` → `FRANCE_CITIES`. (LinkedIn guest
-  coverage is partial and may be blocked from cloud IPs — more on the local runner.)
+**3. Spain** (`data/spain_phd.*`): **all** life-science PhD in Spain, from
+**EURAXESS Spain** + **VHIO** (Vall d'Hebron Institute of Oncology) + **la Caixa**
+INPhINIT tracked calls.
 
-**Cancer-centres radar** (`data/cancer_centres_radar.*`):
-- Tracks **every PhD** from a curated list of top cancer institutes in Spain &
-  France (see `sources/cancer_radar.py` → `CENTRES`). Sources: **doctorat.gouv.fr**
-  (French institutes), **EURAXESS Spain** (Spanish institutes), **VHIO**.
-  Matching is by institute name/alias against each offer's lab/organisation/city
-  — strong coverage, but an offer that never names its institute (e.g. listed only
-  under a parent university) can slip through. Add/edit institutes in `CENTRES`.
+**4. Industry** (`data/industry_phd.*`): EURAXESS R1/PhD at companies (Large
+Enterprise + SME/Start-up), life-science, in **France & Spain**.
 
-**Annual deadlines** (`data/annual_deadlines.csv`): curated big recurring schemes
-(MSCA, EMBL, Boehringer, la Caixa, FPI/FPU, UKRI DTPs, Max Planck IMPRS, Pasteur
-PPU, ETH/EPFL, SNSF…) with expected windows and official links.
+**5. Cancer-centres radar** (`data/cancer_centres_radar.*`): **every PhD** from a
+curated list of top cancer institutes in Spain & France (see
+`sources/cancer_radar.py` → `CENTRES`), via doctorat.gouv.fr + EURAXESS Spain + VHIO,
+matched by institute name/alias (an offer that never names its institute can slip
+through).
 
-Code is organised under [`sources/`](sources/) (`euraxess.py`, `vhio.py`,
-`lacaixa.py`, `industry.py`, `france.py`, `cancer_radar.py`, `deadlines.py`);
-[`run.py`](run.py) orchestrates the tiers and [`report.py`](report.py) builds
-the HTML reports.
+**Annual deadlines** (`data/annual_deadlines.csv` + `_status.json`): curated big
+recurring schemes with expected windows, official links, and an estimated status.
+
+Country sets are in `config.py` (`MSCA_COUNTRIES`, `INDUSTRY_COUNTRIES`). Each
+EURAXESS facet set is scraped once per run and shared across tabs. Code lives in
+[`sources/`](sources/) (`euraxess`, `france`, `spain`, `vhio`, `lacaixa`,
+`cancer_radar`, `deadlines`); [`run.py`](run.py) orchestrates, [`report.py`](report.py)
+builds the HTML.
 
 ## What you get
 
 Regenerated on every run, in [`data/`](data/):
 
-| File | Use |
+| File | Tab |
 |------|-----|
-| `msca_doctoral_positions.csv` / `.json`  | **Tier 1** main table (read into R / Excel / pandas) |
-| `industry_phd.csv` / `.json` | **Tier 3** industry/company life-science PhD |
+| `msca_doctoral_positions.csv` / `.json` | MSCA (FR/ES/IT/UK) |
+| `france_phd.csv` / `.json` | Everything France |
+| `spain_phd.csv` / `.json` | Everything Spain |
+| `industry_phd.csv` / `.json` | Industry (FR/ES) |
+| `cancer_centres_radar.csv` / `.json` | Cancer-centres radar |
 | `annual_deadlines.csv` | Recurring-scheme calendar |
 
 ### Columns

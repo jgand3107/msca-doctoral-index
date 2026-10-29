@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-27T09:35:08+00:00",
-  "tier": "tier1-main",
-  "count": 58,
+  "generated_at": "2026-10-29T09:46:16+00:00",
+  "tier": "tab1-msca",
+  "count": 43,
   "positions": [
     {
       "source": "EURAXESS",
@@ -27,7 +27,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/460558",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -53,7 +53,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/464449",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -79,59 +79,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/474919",
       "detail_available": "yes",
       "first_seen": "2026-10-23",
-      "last_seen": "2026-10-27"
-    },
-    {
-      "source": "EURAXESS",
-      "id": "473849",
-      "title": "PhD (MCSA): Role of macrophages in lung cancer-infection niche",
-      "organisation": "AUMC",
-      "host_institution": "Justus Liebig University (JLU) Giessen",
-      "country": "Germany",
-      "number_of_offers": "1",
-      "locations": "Number of offers: 1, Germany, Justus Liebig University (JLU) Giessen",
-      "research_field": "Biological sciences > Other",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "Horizon Europe - MSCA",
-      "programme_type": "MSCA",
-      "open_date": "2026-10-19",
-      "deadline": "2026-10-30T22:59:00+00:00",
-      "deadline_display": "30 Oct 2026 - 23:59 (Europe/Amsterdam)",
-      "start_date": "",
-      "employment_type": "",
-      "hours_per_week": "",
-      "education_level": "",
-      "grant_agreement_number": "",
-      "url": "https://euraxess.ec.europa.eu/jobs/473849",
-      "detail_available": "no",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
-    },
-    {
-      "source": "EURAXESS",
-      "id": "472124",
-      "title": "MSCA-Doctoral Network ‘MERIT’ invites applications for 15 PhD positions",
-      "organisation": "AUMC",
-      "host_institution": "Amsterdam UMC  Sweden",
-      "country": "Netherlands",
-      "number_of_offers": "4",
-      "locations": "Number of offers: 4, Netherlands, Amsterdam UMC Number of offers: 3, Sweden, Karolinska Institutet Number of offers: 2, Poland, Jagiellonian University Number of offers: 2, Norway, University of Oslo Number of offers: 2, Austria, Medical University of Innsbruck Number of offers: 1, Netherlands, Leiden University Medical Center (LUMC) Number of offers: 1, Germany, Justus Liebig University Giessen",
-      "research_field": "Medical sciences > Health sciences Biological sciences > Biology Biological sciences > Other Neurosciences > Neurobiology Medical sciences > Other",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "Horizon Europe - MSCA",
-      "programme_type": "MSCA",
-      "open_date": "2026-10-12",
-      "deadline": "2026-10-30T22:59:00+00:00",
-      "deadline_display": "30 Oct 2026 - 23:59 (Europe/Amsterdam)",
-      "start_date": "1 Apr 2027",
-      "employment_type": "Temporary",
-      "hours_per_week": "",
-      "education_level": "Master Degree or equivalent",
-      "grant_agreement_number": "",
-      "url": "https://euraxess.ec.europa.eu/jobs/472124",
-      "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -157,7 +105,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/466532",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -183,7 +131,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/465957",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -207,35 +155,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101311592",
       "url": "https://euraxess.ec.europa.eu/jobs/470845",
-      "detail_available": "yes",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
-    },
-    {
-      "source": "EURAXESS",
-      "id": "470092",
-      "title": "MSCA Doctoral Network PhD position: Structure-based design of novel peptide-derived β-catenin inhibitors",
-      "organisation": "Technical University of Vienna",
-      "host_institution": "Georg August University Göttingen",
-      "country": "Germany",
-      "number_of_offers": "1",
-      "locations": "Number of offers: 1, Germany, Georg August University Göttingen, Göttingen",
-      "research_field": "Chemistry > Biochemistry",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "Horizon Europe - MSCA",
-      "programme_type": "MSCA",
-      "open_date": "2026-10-02",
-      "deadline": "2026-10-31T22:59:00+00:00",
-      "deadline_display": "31 Oct 2026 - 23:59 (Europe/Vienna)",
-      "start_date": "1 Jan 2027",
-      "employment_type": "Temporary",
-      "hours_per_week": "40",
-      "education_level": "Master Degree or equivalent",
-      "grant_agreement_number": "101311592",
-      "url": "https://euraxess.ec.europa.eu/jobs/470092",
-      "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -259,87 +181,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101311592",
       "url": "https://euraxess.ec.europa.eu/jobs/470087",
-      "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
-    },
-    {
-      "source": "EURAXESS",
-      "id": "469861",
-      "title": "MSCA Doctoral Network PhD position: Bioinformatic- and machine-learning-based search for new β-catenin peptide binders",
-      "organisation": "Technical University of Vienna",
-      "host_institution": "Helmholtz Zentrum Munich",
-      "country": "Germany",
-      "number_of_offers": "1",
-      "locations": "Number of offers: 1, Germany, Helmholtz Zentrum Munich",
-      "research_field": "Chemistry > Biochemistry",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "Horizon Europe - MSCA",
-      "programme_type": "MSCA",
-      "open_date": "2026-10-01",
-      "deadline": "2026-10-31T22:59:00+00:00",
-      "deadline_display": "31 Oct 2026 - 23:59 (Europe/Vienna)",
-      "start_date": "1 Jan 2027",
-      "employment_type": "Temporary",
-      "hours_per_week": "40",
-      "education_level": "Master Degree or equivalent",
-      "grant_agreement_number": "101311592",
-      "url": "https://euraxess.ec.europa.eu/jobs/469861",
-      "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
-    },
-    {
-      "source": "EURAXESS",
-      "id": "469853",
-      "title": "MSCA Doctoral Network PhD position: Generation and Screening of Chemically Diverse Cyclic Peptide Libraries",
-      "organisation": "Technical University of Vienna",
-      "host_institution": "JMU Würzburg",
-      "country": "Germany",
-      "number_of_offers": "1",
-      "locations": "Number of offers: 1, Germany, JMU Würzburg",
-      "research_field": "Chemistry > Biochemistry",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "Horizon Europe - MSCA",
-      "programme_type": "MSCA",
-      "open_date": "2026-10-01",
-      "deadline": "2026-10-31T22:59:00+00:00",
-      "deadline_display": "31 Oct 2026 - 23:59 (Europe/Vienna)",
-      "start_date": "1 Jan 2027",
-      "employment_type": "Temporary",
-      "hours_per_week": "40",
-      "education_level": "Master Degree or equivalent",
-      "grant_agreement_number": "101311592",
-      "url": "https://euraxess.ec.europa.eu/jobs/469853",
-      "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
-    },
-    {
-      "source": "EURAXESS",
-      "id": "469556",
-      "title": "MSCA Doctoral Network PhD position: Discovery and profiling of novel β-catenin binders",
-      "organisation": "Technical University of Vienna",
-      "host_institution": "JMU Würzburg",
-      "country": "Germany",
-      "number_of_offers": "1",
-      "locations": "Number of offers: 1, Germany, JMU Würzburg, Würzburg",
-      "research_field": "Chemistry > Biochemistry",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "Horizon Europe - MSCA",
-      "programme_type": "MSCA",
-      "open_date": "2026-09-30",
-      "deadline": "2026-10-31T22:59:00+00:00",
-      "deadline_display": "31 Oct 2026 - 23:59 (Europe/Vienna)",
-      "start_date": "1 Jan 2027",
-      "employment_type": "Temporary",
-      "hours_per_week": "40",
-      "education_level": "Master Degree or equivalent",
-      "grant_agreement_number": "101311592",
-      "url": "https://euraxess.ec.europa.eu/jobs/469556",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -365,33 +209,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/469152",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
-    },
-    {
-      "source": "EURAXESS",
-      "id": "470831",
-      "title": "MSCA Doctoral Network PhD position: β-catenin inhibition in models of colorectal cancer initiation and development",
-      "organisation": "Technical University of Vienna",
-      "host_institution": "Princess Maxima Center",
-      "country": "Netherlands",
-      "number_of_offers": "1",
-      "locations": "Number of offers: 1, Netherlands, Princess Maxima Center, Utrecht",
-      "research_field": "Chemistry > Biochemistry",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "Horizon Europe - MSCA",
-      "programme_type": "MSCA",
-      "open_date": "2026-10-06",
-      "deadline": "2026-10-31T22:59:15+00:00",
-      "deadline_display": "31 Oct 2026 - 23:59 (Europe/Vienna)",
-      "start_date": "1 Jan 2027",
-      "employment_type": "Temporary",
-      "hours_per_week": "36",
-      "education_level": "Master Degree or equivalent",
-      "grant_agreement_number": "101311592",
-      "url": "https://euraxess.ec.europa.eu/jobs/470831",
-      "detail_available": "yes",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -417,7 +235,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/469449",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -443,7 +261,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/462086",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -469,7 +287,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/462078",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -495,7 +313,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/462074",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -521,85 +339,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/462072",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
-    },
-    {
-      "source": "EURAXESS",
-      "id": "458763",
-      "title": "PhD position in the Artegiani & Hendriks group VISI-ON-BRAIN project",
-      "organisation": "Prinses Máxima Centrum",
-      "host_institution": "Princess Maxima Center",
-      "country": "Netherlands",
-      "number_of_offers": "1",
-      "locations": "Number of offers: 1, Netherlands, Princess Maxima Center",
-      "research_field": "Biological sciences > Biology",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "Horizon Europe - MSCA",
-      "programme_type": "MSCA",
-      "open_date": "2026-08-05",
-      "deadline": "2026-11-01T12:00:00+00:00",
-      "deadline_display": "1 Nov 2026 - 13:00 (Europe/Amsterdam)",
-      "start_date": "",
-      "employment_type": "Temporary",
-      "hours_per_week": "",
-      "education_level": "Master Degree or equivalent",
-      "grant_agreement_number": "",
-      "url": "https://euraxess.ec.europa.eu/jobs/458763",
-      "detail_available": "no",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
-    },
-    {
-      "source": "EURAXESS",
-      "id": "465996",
-      "title": "PhD Position: Autophagy and Retinal Degeneration:",
-      "organisation": "University of Fribourg",
-      "host_institution": "University of Fribourg",
-      "country": "Switzerland",
-      "number_of_offers": "1",
-      "locations": "Number of offers: 1, Switzerland, University of Fribourg, Fribourg, 1700, Fribourg",
-      "research_field": "Neurosciences > Neurobiology Biological sciences > Other",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "Horizon Europe - MSCA",
-      "programme_type": "MSCA",
-      "open_date": "2026-09-15",
-      "deadline": "2026-11-01T16:00:00+00:00",
-      "deadline_display": "1 Nov 2026 - 17:00 (Europe/Zurich)",
-      "start_date": "",
-      "employment_type": "",
-      "hours_per_week": "",
-      "education_level": "",
-      "grant_agreement_number": "",
-      "url": "https://euraxess.ec.europa.eu/jobs/465996",
-      "detail_available": "no",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
-    },
-    {
-      "source": "EURAXESS",
-      "id": "466380",
-      "title": "PhD Position Single-Molecule Biophysic",
-      "organisation": "Delft University of Technology via AcademicTransfer",
-      "host_institution": "TU Delft",
-      "country": "Netherlands",
-      "number_of_offers": "1",
-      "locations": "Number of offers: 1, Netherlands, TU Delft, Delft, 2628CD, Mekelweg 5",
-      "research_field": "Biological sciences > Biological engineering Biological sciences > Biology Physics > Biophysics",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "Horizon Europe - MSCA",
-      "programme_type": "MSCA",
-      "open_date": "2026-09-17",
-      "deadline": "2026-11-01T22:59:59+00:00",
-      "deadline_display": "1 Nov 2026 - 22:59 (UTC)",
-      "start_date": "",
-      "employment_type": "",
-      "hours_per_week": "",
-      "education_level": "",
-      "grant_agreement_number": "",
-      "url": "https://euraxess.ec.europa.eu/jobs/466380",
-      "detail_available": "no",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -623,9 +363,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101311007",
       "url": "https://euraxess.ec.europa.eu/jobs/469560",
-      "detail_available": "yes",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -651,7 +391,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/472196",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -677,7 +417,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/472768",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -703,7 +443,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471980",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -729,7 +469,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/469412",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -755,7 +495,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471776",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -781,7 +521,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471772",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -807,7 +547,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471742",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -833,7 +573,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471739",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -859,7 +599,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471737",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -885,7 +625,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471228",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -911,7 +651,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471226",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -937,7 +677,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471223",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -963,7 +703,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471220",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -989,7 +729,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471217",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -1013,9 +753,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "",
       "url": "https://euraxess.ec.europa.eu/jobs/471213",
-      "detail_available": "yes",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -1041,33 +781,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/475533",
       "detail_available": "yes",
       "first_seen": "2026-10-27",
-      "last_seen": "2026-10-27"
-    },
-    {
-      "source": "EURAXESS",
-      "id": "474904",
-      "title": "IDEAS DC[15] - Design of polymeric drug delivery systems for biopharmaceuticals using green microfluidic manufacturing technologies",
-      "organisation": "MyBiotech",
-      "host_institution": "MyBiotech GmbH",
-      "country": "Germany",
-      "number_of_offers": "1",
-      "locations": "Number of offers: 1, Germany, MyBiotech GmbH, Überherrn, 66802, INDUSTRIESTRASSE 1B",
-      "research_field": "Chemistry > Applied chemistry Chemistry > Biochemistry Engineering > Biomaterial engineering Engineering > Chemical engineering Engineering > Materials engineering Technology > Biotechnology Technology > Chemical technology Technology > Industrial technology Technology > Materials technology Technology > Nanotechnology Technology > Pharmaceutical technology Chemistry > Inorganic chemistry Environmental science > Natural resources management Pharmacological sciences > Pharmacy",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "Horizon Europe - MSCA",
-      "programme_type": "MSCA",
-      "open_date": "2026-10-22",
-      "deadline": "2026-11-30T22:59:00+00:00",
-      "deadline_display": "30 Nov 2026 - 23:59 (Europe/Berlin)",
-      "start_date": "1 Apr 2027",
-      "employment_type": "Temporary",
-      "hours_per_week": "40",
-      "education_level": "Master Degree or equivalent",
-      "grant_agreement_number": "101312168",
-      "url": "https://euraxess.ec.europa.eu/jobs/474904",
-      "detail_available": "yes",
-      "first_seen": "2026-10-23",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -1093,7 +807,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/472396",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -1119,7 +833,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/474916",
       "detail_available": "yes",
       "first_seen": "2026-10-26",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -1145,33 +859,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/474624",
       "detail_available": "yes",
       "first_seen": "2026-10-23",
-      "last_seen": "2026-10-27"
-    },
-    {
-      "source": "EURAXESS",
-      "id": "463973",
-      "title": "PhD Position on Nanozyme-based coating for antimicrobial implants",
-      "organisation": "Academic Positions",
-      "host_institution": "Empa",
-      "country": "Switzerland",
-      "number_of_offers": "1",
-      "locations": "Number of offers: 1, Switzerland, Empa, St. Gallen, 9014, Lerchenfeldstrasse 5",
-      "research_field": "Chemistry > Other Engineering > Biomedical engineering Technology > Nanotechnology",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "Horizon Europe - MSCA",
-      "programme_type": "MSCA",
-      "open_date": "2026-09-05",
-      "deadline": "2026-12-02T22:59:59+00:00",
-      "deadline_display": "2 Dec 2026 - 22:59 (UTC)",
-      "start_date": "",
-      "employment_type": "Temporary",
-      "hours_per_week": "",
-      "education_level": "",
-      "grant_agreement_number": "",
-      "url": "https://euraxess.ec.europa.eu/jobs/463973",
-      "detail_available": "no",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -1197,7 +885,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471545",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -1223,33 +911,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/471538",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
-    },
-    {
-      "source": "EURAXESS",
-      "id": "473126",
-      "title": "FAroGels DC[6] – Hybrid Aerogel-Microencapsulation for Nutraceutical Stability and Delivery",
-      "organisation": "MyBiotech",
-      "host_institution": "MyBiotech GmbH",
-      "country": "Germany",
-      "number_of_offers": "1",
-      "locations": "Number of offers: 1, Germany, MyBiotech GmbH, Überherrn, 66802, Industriestrasse 1B",
-      "research_field": "Biological sciences > Nutritional sciences Chemistry > Applied chemistry Chemistry > Biochemistry Chemistry > Inorganic chemistry Chemistry > Organic chemistry Chemistry > Other Engineering > Biomaterial engineering Engineering > Materials engineering Technology > Biotechnology Technology > Chemical technology Technology > Industrial technology Technology > Materials technology Technology Technology > Pharmaceutical technology Environmental science > Natural resources management Pharmacological sciences > Pharmacy",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "Horizon Europe - MSCA",
-      "programme_type": "MSCA",
-      "open_date": "2026-10-15",
-      "deadline": "2026-12-09T22:59:00+00:00",
-      "deadline_display": "9 Dec 2026 - 23:59 (Europe/Berlin)",
-      "start_date": "1 Mar 2027",
-      "employment_type": "Temporary",
-      "hours_per_week": "40",
-      "education_level": "Master Degree or equivalent",
-      "grant_agreement_number": "101312450",
-      "url": "https://euraxess.ec.europa.eu/jobs/473126",
-      "detail_available": "yes",
-      "first_seen": "2026-10-23",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -1275,7 +937,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/472771",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -1301,7 +963,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/472760",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -1327,7 +989,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/473066",
       "detail_available": "yes",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -1353,7 +1015,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/419721",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -1379,7 +1041,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/468049",
       "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -1403,9 +1065,9 @@
       "education_level": "Master Degree or equivalent",
       "grant_agreement_number": "101217387",
       "url": "https://euraxess.ec.europa.eu/jobs/470134",
-      "detail_available": "yes",
+      "detail_available": "no",
       "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -1431,57 +1093,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/474822",
       "detail_available": "yes",
       "first_seen": "2026-10-23",
-      "last_seen": "2026-10-27"
-    },
-    {
-      "source": "la Caixa",
-      "id": "lacaixa-la-caixa-inphinit-incoming",
-      "title": "la Caixa INPhINIT Incoming — doctoral fellowships",
-      "organisation": "\"la Caixa\" Foundation",
-      "host_institution": "Spanish research centres (host of choice)",
-      "country": "Spain",
-      "number_of_offers": "",
-      "research_field": "STEM / life sciences at Severo Ochoa / Maria de Maeztu / Carlos III accredited Spanish centres",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "la Caixa INPhINIT",
-      "programme_type": "la Caixa",
-      "open_date": "",
-      "deadline": "2027-02-04",
-      "deadline_display": "2027-02-04 (expected — verify on official page)",
-      "start_date": "",
-      "employment_type": "",
-      "hours_per_week": "",
-      "education_level": "",
-      "grant_agreement_number": "",
-      "url": "https://fundacionlacaixa.org/en/doctoral-inphinit-fellowships-incoming",
-      "detail_available": "call",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
-    },
-    {
-      "source": "la Caixa",
-      "id": "lacaixa-la-caixa-inphinit-retaining",
-      "title": "la Caixa INPhINIT Retaining — doctoral fellowships",
-      "organisation": "\"la Caixa\" Foundation",
-      "host_institution": "Spanish research centres (host of choice)",
-      "country": "Spain",
-      "number_of_offers": "",
-      "research_field": "All disciplines, for researchers in Spain or Portugal",
-      "researcher_profile": "First Stage Researcher (R1)",
-      "funding_programme": "la Caixa INPhINIT",
-      "programme_type": "la Caixa",
-      "open_date": "",
-      "deadline": "2027-04-15",
-      "deadline_display": "2027-04-15 (expected — verify on official page)",
-      "start_date": "",
-      "employment_type": "",
-      "hours_per_week": "",
-      "education_level": "",
-      "grant_agreement_number": "",
-      "url": "https://fundacionlacaixa.org/en/doctoral-inphinit-fellowships-retaining",
-      "detail_available": "call",
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     },
     {
       "source": "EURAXESS",
@@ -1507,7 +1119,7 @@
       "url": "https://euraxess.ec.europa.eu/jobs/474248",
       "detail_available": "yes",
       "first_seen": "2026-10-23",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-10-29"
     }
   ]
 }

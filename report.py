@@ -316,43 +316,36 @@ def main():
     gen = datetime.date.today().isoformat()
 
     t1 = load_positions("msca_doctoral_positions.json")
-    html1 = render(t1, "Doctoral Scholarships — Life Sciences",
-                   "MSCA/COFUND + VHIO + la Caixa · R1 · 7 countries",
-                   gen, deadlines=deadlines_mod.load(), repo_url=repo)
-    open(os.path.join(HERE, "msca_report.html"), "w", encoding="utf-8").write(html1)
-    print("wrote msca_report.html", len(t1), "positions")
-
+    tfr = load_positions("france_phd.json")
+    tsp = load_positions("spain_phd.json")
     t3 = load_positions("industry_phd.json")
-    html3 = render(t3, "Industry PhD — Life Sciences (Tier 3)",
-                   "EURAXESS · PhD positions at companies (Large Enterprise / SME) "
-                   "in the 7 countries", gen, repo_url=repo)
-    open(os.path.join(HERE, "industry_report.html"), "w", encoding="utf-8").write(html3)
-    print("wrote industry_report.html", len(t3), "positions")
-
-    tfr = load_positions("france_biotech_phd.json")
-    htmlfr = render(tfr, "France PhD — Montpellier & Lyon (biotech)",
-                    "EURAXESS + LinkedIn + doctorat.gouv.fr · Montpellier & Lyon",
-                    gen, repo_url=repo)
-    open(os.path.join(HERE, "france_report.html"), "w", encoding="utf-8").write(htmlfr)
-    print("wrote france_report.html", len(tfr), "positions")
-
     tcr = load_positions("cancer_centres_radar.json")
-    htmlcr = render(tcr, "Cancer-Centre PhD Radar — Spain & France",
-                    "Every PhD from the top cancer institutes · doctorat.gouv.fr + EURAXESS + VHIO",
-                    gen, repo_url=repo)
-    open(os.path.join(HERE, "cancer_radar_report.html"), "w", encoding="utf-8").write(htmlcr)
-    print("wrote cancer_radar_report.html", len(tcr), "positions")
 
-    # Combined: all tiers + deadlines in one tabbed document.
+    # Combined: all tabs in one tabbed document.
     combined = render_combined([
-        ("t1", "Tier 1 · Main", "MSCA/COFUND + VHIO + la Caixa · R1 · 7 countries", t1),
-        ("t3", "Tier 3 · Industry", "EURAXESS · company PhDs (Large Enterprise / SME)", t3),
-        ("fr", "France · MTP/Lyon", "EURAXESS + LinkedIn + doctorat.gouv.fr · biotech PhD in Montpellier & Lyon", tfr),
+        ("t1", "MSCA", "MSCA/COFUND doctoral funding · France, Spain, Italy, UK", t1),
+        ("fr", "France", "Everything France · life-science PhD (EURAXESS + doctorat.gouv.fr)", tfr),
+        ("sp", "Spain", "Everything Spain · life-science PhD (EURAXESS + VHIO + la Caixa)", tsp),
+        ("in", "Industry", "Industry PhD in France & Spain (Large Enterprise / SME)", t3),
         ("cr", "Cancer centres", "Every PhD from the top cancer institutes (Spain & France)", tcr),
     ], deadlines_mod.load(), gen, repo)
     open(os.path.join(HERE, "scholarships_report.html"), "w", encoding="utf-8").write(combined)
     print("wrote scholarships_report.html",
-          len(t1) + len(t3) + len(tfr) + len(tcr), "positions (all tabs)")
+          len(t1) + len(tfr) + len(tsp) + len(t3) + len(tcr), "positions (all tabs)")
+
+    # Standalone single-tab reports (handy for sharing one view).
+    for data, fname, title, sub in [
+        (t1, "msca_report.html", "MSCA/COFUND — FR/ES/IT/UK", "MSCA doctoral funding"),
+        (tfr, "france_report.html", "France PhD — Life Sciences", "Everything France"),
+        (tsp, "spain_report.html", "Spain PhD — Life Sciences", "Everything Spain"),
+        (t3, "industry_report.html", "Industry PhD — FR/ES", "Company PhDs"),
+        (tcr, "cancer_radar_report.html", "Cancer-Centre PhD Radar — Spain & France",
+         "Every PhD from the top cancer institutes"),
+    ]:
+        html = render(data, title, sub, gen,
+                      deadlines=(deadlines_mod.load() if data is t1 else None), repo_url=repo)
+        open(os.path.join(HERE, fname), "w", encoding="utf-8").write(html)
+        print("wrote", fname, len(data), "positions")
 
 
 if __name__ == "__main__":

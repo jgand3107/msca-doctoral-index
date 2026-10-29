@@ -96,9 +96,9 @@ def match_centre(text: str, country: str | None = None):
     return None
 
 
-def _from_doctorat():
+def _from_doctorat(items):
     out = []
-    for it in france.fetch_doctorat_all():
+    for it in (items or []):
         blob = " ".join(str(it.get(k) or "") for k in (
             "uniteRechercheLibelle", "etablissementLibelle",
             "uniteRechercheVille", "etablissementVille", "theseTitre"))
@@ -111,37 +111,35 @@ def _from_doctorat():
     return out
 
 
-def _from_euraxess_spain():
-    try:
-        recs, _ = euraxess.scrape_validated(
-            facets=["job_research_profile:447", "job_country:788"],
-            require_funding=False, verbose=False)
-    except euraxess.ScrapeValidationError:
-        return []
+def _from_euraxess_spain(spain_records):
     out = []
-    for r in recs:
+    for r in dict((id(x), x) for x in (spain_records or [])).values():
         blob = " ".join(str(r.get(k) or "") for k in
                         ("organisation", "host_institution", "locations", "title"))
         c = match_centre(blob, country="Spain")
         if not c:
             continue
-        r["source"] = "EURAXESS"
-        r["centre"] = c["name"]
-        r["city"] = c["city"]
-        out.append(r)
+        rec = dict(r)  # copy so we don't clobber the Spain tab's records
+        rec["source"] = "EURAXESS"
+        rec["centre"] = c["name"]
+        rec["city"] = c["city"]
+        out.append(rec)
     return out
 
 
-def _from_vhio():
-    recs = vhio.scrape(scholarships_only=True, verbose=False)
-    for r in recs:
-        r["centre"] = "Vall d'Hebron Institute of Oncology (VHIO)"
-        r["city"] = "Barcelona"
-    return recs
+def _from_vhio(vhio_records):
+    out = []
+    for r in (vhio_records or []):
+        rec = dict(r)
+        rec["centre"] = "Vall d'Hebron Institute of Oncology (VHIO)"
+        rec["city"] = "Barcelona"
+        out.append(rec)
+    return out
 
 
-def scrape(verbose: bool = True) -> list[dict]:
-    out = _from_doctorat() + _from_euraxess_spain() + _from_vhio()
+def build(doctorat_items, spain_records, vhio_records, verbose: bool = True) -> list[dict]:
+    out = (_from_doctorat(doctorat_items) + _from_euraxess_spain(spain_records)
+           + _from_vhio(vhio_records))
     seen = {}
     for r in out:
         seen.setdefault(r.get("url") or r.get("id"), r)
@@ -155,3 +153,18 @@ def scrape(verbose: bool = True) -> list[dict]:
         for name, n in by.most_common():
             print(f"      {n:2}  {name}")
     return recs
+
+
+def scrape(verbose: bool = True) -> list[dict]:
+    """Standalone: fetch the data sources, then build (for --radar-only runs)."""
+    try:
+        spain, _ = euraxess.scrape_validated(
+            facets=["job_research_profile:447", "job_country:788"],
+            require_funding=False, verbose=False)
+    except euraxess.ScrapeValidationError:
+        spain = []
+    try:
+        vhio_recs = vhio.scrape(scholarships_only=True, verbose=False)
+    except Exception:
+        vhio_recs = []
+    return build(france.fetch_doctorat_all(), spain, vhio_recs, verbose=verbose)

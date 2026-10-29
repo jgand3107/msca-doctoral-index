@@ -1,19 +1,19 @@
 """
-Entry point: build the multi-source doctoral-scholarship tables.
+Entry point: build the geographic doctoral-scholarship tabs.
 
-Tier 1 (main report)  -> data/msca_doctoral_positions.csv / .json
-    EURAXESS MSCA+COFUND (R1, life-science, selected countries)
-    + VHIO predoctoral/PhD listings
-    + la Caixa INPhINIT tracked calls
-Tier 3 (Industry)     -> data/industry_phd.csv / .json
-France (MTP/Lyon)     -> data/france_biotech_phd.csv / .json
-Cancer-centre radar   -> data/cancer_centres_radar.csv / .json
-Plus the curated data/annual_deadlines.csv (recurring schemes).
+Tab 1 MSCA       -> data/msca_doctoral_positions.*  (MSCA/COFUND, FR/ES/IT/UK)
+Tab 2 France     -> data/france_phd.*               (all life-science PhD in FR)
+Tab 3 Spain      -> data/spain_phd.*                 (all life-science PhD in ES)
+Tab 4 Industry   -> data/industry_phd.*             (industry PhD in FR & ES)
+Cancer radar     -> data/cancer_centres_radar.*     (top cancer institutes)
+Plus data/annual_deadlines_status.json (recurring schemes, estimated status).
+
+Each EURAXESS facet set is scraped at most once per run and shared across tabs.
 
 Usage:
     python run.py                 # full build
     python run.py --no-details    # skip EURAXESS detail enrichment (faster)
-    python run.py --tier1-only / --tier3-only / --france-only / --radar-only
+    python run.py --msca-only / --france-only / --spain-only / --industry-only / --radar-only
 
 The weekly runners (GitHub Actions / run_and_push.ps1) just call `python run.py`.
 """
@@ -26,7 +26,7 @@ import os
 import sys
 
 import config
-from sources import euraxess, vhio, lacaixa, industry, deadlines, france, cancer_radar
+from sources import euraxess, vhio, deadlines, france, spain, cancer_radar
 
 # Column order for the CSVs (source first).
 COLUMNS = [
@@ -88,83 +88,120 @@ def finalize_and_write(records, csv_path, json_path, run_ts, label, meta_extra=N
     print(f"  wrote {len(records)} rows -> {csv_path}")
 
 
-def build_tier1(args, run_ts) -> bool:
-    """EURAXESS + VHIO + la Caixa. Returns False if it aborted (no write)."""
-    print("== Tier 1: EURAXESS (MSCA/COFUND) + VHIO + la Caixa ==")
-    session = euraxess._session()
-    try:
-        records, expected_total = euraxess.scrape_validated(session)
-    except euraxess.ScrapeValidationError as exc:
-        print(f"  ABORTING Tier 1: EURAXESS scrape failed validation ({exc}).",
-              file=sys.stderr)
-        print("  Tier-1 data left untouched (not overwriting good data).",
-              file=sys.stderr)
-        return False
+# --- Shared EURAXESS scrapes (each facet set scraped at most once per run) ---
+_EUR_CACHE: dict = {}
+_SHARED: dict = {}
 
+
+def eur(facets, require_funding=False):
+    """Cached EURAXESS scrape. Returns records, or None if degraded."""
+    key = (tuple(facets), require_funding)
+    if key not in _EUR_CACHE:
+        try:
+            recs, _ = euraxess.scrape_validated(
+                facets=list(facets), require_funding=require_funding, verbose=False)
+            _EUR_CACHE[key] = recs
+        except euraxess.ScrapeValidationError as exc:
+            print(f"  EURAXESS scrape degraded ({exc})", file=sys.stderr)
+            _EUR_CACHE[key] = None
+    return _EUR_CACHE[key]
+
+
+def _profile_country(code):
+    return [f"job_research_profile:{config.RESEARCHER_PROFILE}", f"job_country:{code}"]
+
+
+def doctorat_items():
+    if "doctorat" not in _SHARED:
+        _SHARED["doctorat"] = france.fetch_doctorat_all()
+    return _SHARED["doctorat"]
+
+
+def vhio_records():
+    if "vhio" not in _SHARED:
+        try:
+            _SHARED["vhio"] = vhio.scrape(scholarships_only=True, verbose=False)
+        except Exception as exc:
+            print(f"  VHIO error (skipped): {exc}", file=sys.stderr)
+            _SHARED["vhio"] = []
+    return _SHARED["vhio"]
+
+
+def build_msca(args, run_ts) -> bool:
+    """Tab 1: EURAXESS MSCA/COFUND, life-science, MSCA_COUNTRIES."""
+    print("== Tab 1: MSCA/COFUND (FR/ES/IT/UK) ==")
+    base = eur(euraxess.default_facets(), require_funding=True)
+    if base is None:
+        print("  ABORTING Tab 1: degraded; data untouched.", file=sys.stderr)
+        return False
+    records = [dict(r) for r in base]
     if config.LIFE_SCIENCES_ONLY:
-        before = len(records)
         records = [r for r in records if euraxess.is_life_science(r["research_field"])]
-        print(f"  life-science filter: kept {len(records)}/{before}")
-    if config.COUNTRIES_FILTER:
-        before = len(records)
-        allow = {c.lower() for c in config.COUNTRIES_FILTER}
-        records = [r for r in records if (r["country"] or "").lower() in allow]
-        print(f"  country filter: kept {len(records)}/{before}")
+    allow = {c.lower() for c in config.MSCA_COUNTRIES}
+    records = [r for r in records if (r["country"] or "").lower() in allow]
+    print(f"  MSCA: {len(records)} life-science in {config.MSCA_COUNTRIES}")
     if args.limit:
         records = records[:args.limit]
-
     if config.ENRICH_DETAILS and not args.no_details:
-        print("  enriching EURAXESS detail pages (best-effort)...")
-        euraxess.enrich_all(records, session)
+        print("  enriching detail pages (best-effort)...")
+        euraxess.enrich_all(records)
     else:
         for r in records:
             r["detail_available"] = r.get("detail_available") or "skipped"
-
-    # Additional Tier-1 sources.
-    try:
-        records += vhio.scrape(scholarships_only=True)
-    except Exception as exc:  # a source failure must not sink the whole tier
-        print(f"  VHIO source error (skipped): {exc}", file=sys.stderr)
-    records += lacaixa.scrape()
-
-    csv_path = os.path.join(args.output_dir, config.CSV_FILE)
-    json_path = os.path.join(args.output_dir, config.JSON_FILE)
-    finalize_and_write(records, csv_path, json_path, run_ts, "tier1-main")
-    return True
-
-
-def build_tier3(args, run_ts) -> bool:
-    print("== Tier 3: EURAXESS industry PhD positions ==")
-    try:
-        records = industry.scrape()
-    except euraxess.ScrapeValidationError as exc:
-        print(f"  ABORTING Tier 3: industry scrape degraded ({exc}); data untouched.",
-              file=sys.stderr)
-        return False
-    except Exception as exc:
-        print(f"  Industry error (Tier-3 left untouched): {exc}", file=sys.stderr)
-        return False
-    csv_path = os.path.join(args.output_dir, config.TIER3_CSV_FILE)
-    json_path = os.path.join(args.output_dir, config.TIER3_JSON_FILE)
-    finalize_and_write(records, csv_path, json_path, run_ts, "tier3-industry")
+    finalize_and_write(records, os.path.join(args.output_dir, config.CSV_FILE),
+                       os.path.join(args.output_dir, config.JSON_FILE), run_ts, "tab1-msca")
     return True
 
 
 def build_france(args, run_ts) -> bool:
     if not getattr(config, "FRANCE_ENABLED", False):
         return True
-    print("== France: Montpellier/Lyon biotech PhD (EURAXESS + LinkedIn) ==")
-    try:
-        records = france.scrape()
-    except euraxess.ScrapeValidationError as exc:
-        print(f"  ABORTING France: EURAXESS degraded ({exc}); data untouched.", file=sys.stderr)
+    print("== Tab 2: everything France (life-science) ==")
+    fr = eur(_profile_country(config.FRANCE_COUNTRY_CODE))
+    if fr is None:
+        print("  ABORTING Tab 2: EURAXESS France degraded; data untouched.", file=sys.stderr)
         return False
-    except Exception as exc:
-        print(f"  France error (left untouched): {exc}", file=sys.stderr)
+    records = france.build([dict(r) for r in fr], doctorat_items())
+    finalize_and_write(records, os.path.join(args.output_dir, config.FRANCE_CSV_FILE),
+                       os.path.join(args.output_dir, config.FRANCE_JSON_FILE), run_ts, "france-all")
+    return True
+
+
+def build_spain(args, run_ts) -> bool:
+    if not getattr(config, "SPAIN_ENABLED", False):
+        return True
+    print("== Tab 3: everything Spain (life-science) ==")
+    sp = eur(_profile_country(config.SPAIN_COUNTRY_CODE))
+    if sp is None:
+        print("  ABORTING Tab 3: EURAXESS Spain degraded; data untouched.", file=sys.stderr)
         return False
-    csv_path = os.path.join(args.output_dir, config.FRANCE_CSV_FILE)
-    json_path = os.path.join(args.output_dir, config.FRANCE_JSON_FILE)
-    finalize_and_write(records, csv_path, json_path, run_ts, "france-mtp-lyon")
+    records = spain.build([dict(r) for r in sp], vhio_records())
+    finalize_and_write(records, os.path.join(args.output_dir, config.SPAIN_CSV_FILE),
+                       os.path.join(args.output_dir, config.SPAIN_JSON_FILE), run_ts, "spain-all")
+    return True
+
+
+def build_industry(args, run_ts) -> bool:
+    print("== Tab 4: Industry PhD (FR/ES) ==")
+    facets = [f"job_research_profile:{config.RESEARCHER_PROFILE}"]
+    facets += [f"job_organisation_type:{o}" for o in config.INDUSTRY_ORG_TYPES]
+    base = eur(facets)
+    if base is None:
+        print("  ABORTING Tab 4: degraded; data untouched.", file=sys.stderr)
+        return False
+    records = []
+    for r in base:
+        r2 = dict(r)
+        r2["source"] = "Industry (EURAXESS)"
+        r2["programme_type"] = "Industry"
+        records.append(r2)
+    if config.LIFE_SCIENCES_ONLY:
+        records = [r for r in records if euraxess.is_life_science(r["research_field"])]
+    allow = {c.lower() for c in config.INDUSTRY_COUNTRIES}
+    records = [r for r in records if (r["country"] or "").lower() in allow]
+    print(f"  Industry: {len(records)} life-science in {config.INDUSTRY_COUNTRIES}")
+    finalize_and_write(records, os.path.join(args.output_dir, config.TIER3_CSV_FILE),
+                       os.path.join(args.output_dir, config.TIER3_JSON_FILE), run_ts, "tab4-industry")
     return True
 
 
@@ -172,43 +209,40 @@ def build_radar(args, run_ts) -> bool:
     if not getattr(config, "RADAR_ENABLED", False):
         return True
     print("== Cancer-centres radar (doctorat.gouv.fr + EURAXESS Spain + VHIO) ==")
-    try:
-        records = cancer_radar.scrape()
-    except euraxess.ScrapeValidationError as exc:
-        print(f"  ABORTING radar: EURAXESS Spain degraded ({exc}); data untouched.", file=sys.stderr)
-        return False
-    except Exception as exc:
-        print(f"  Radar error (left untouched): {exc}", file=sys.stderr)
-        return False
-    csv_path = os.path.join(args.output_dir, config.RADAR_CSV_FILE)
-    json_path = os.path.join(args.output_dir, config.RADAR_JSON_FILE)
-    finalize_and_write(records, csv_path, json_path, run_ts, "cancer-radar")
+    sp = eur(_profile_country(config.SPAIN_COUNTRY_CODE))  # reuses Tab 3's scrape
+    records = cancer_radar.build(doctorat_items(), sp or [], vhio_records())
+    finalize_and_write(records, os.path.join(args.output_dir, config.RADAR_CSV_FILE),
+                       os.path.join(args.output_dir, config.RADAR_JSON_FILE), run_ts, "cancer-radar")
     return True
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="Build multi-source doctoral scholarship tables.")
+    ap = argparse.ArgumentParser(description="Build the geographic doctoral-scholarship tabs.")
     ap.add_argument("--no-details", action="store_true", help="skip EURAXESS detail enrichment")
-    ap.add_argument("--limit", type=int, default=0, help="cap EURAXESS listings (debug)")
-    ap.add_argument("--tier1-only", action="store_true")
-    ap.add_argument("--tier3-only", action="store_true")
+    ap.add_argument("--limit", type=int, default=0, help="cap MSCA listings (debug)")
+    ap.add_argument("--msca-only", action="store_true")
     ap.add_argument("--france-only", action="store_true")
+    ap.add_argument("--spain-only", action="store_true")
+    ap.add_argument("--industry-only", action="store_true")
     ap.add_argument("--radar-only", action="store_true")
     ap.add_argument("--output-dir", default=config.OUTPUT_DIR)
     args = ap.parse_args()
     os.makedirs(args.output_dir, exist_ok=True)
 
-    only = args.tier1_only or args.tier3_only or args.france_only or args.radar_only
+    only = (args.msca_only or args.france_only or args.spain_only
+            or args.industry_only or args.radar_only)
     run_ts = euraxess.now_iso()
-    print(f"[{run_ts}] multi-source scholarship build starting")
+    print(f"[{run_ts}] geographic scholarship build starting")
 
-    ok1 = ok3 = okfr = okr = True
-    if args.tier1_only or not only:
-        ok1 = build_tier1(args, run_ts)
-    if args.tier3_only or not only:
-        ok3 = build_tier3(args, run_ts)
+    ok1 = okfr = oksp = okind = okr = True
+    if args.msca_only or not only:
+        ok1 = build_msca(args, run_ts)
     if args.france_only or not only:
         okfr = build_france(args, run_ts)
+    if args.spain_only or not only:
+        oksp = build_spain(args, run_ts)
+    if args.industry_only or not only:
+        okind = build_industry(args, run_ts)
     if args.radar_only or not only:
         okr = build_radar(args, run_ts)
 
@@ -221,21 +255,16 @@ def main() -> None:
                   fh, indent=2, ensure_ascii=False)
 
     with open(os.path.join(args.output_dir, config.META_FILE), "w", encoding="utf-8") as fh:
-        json.dump({"generated_at": run_ts, "tier1_ok": ok1, "tier3_ok": ok3,
-                   "france_ok": okfr, "radar_ok": okr, "deadlines_open_now":
-                   sum(1 for r in dl if r["status"] == "open")}, fh, indent=2)
+        json.dump({"generated_at": run_ts, "msca_ok": ok1, "france_ok": okfr,
+                   "spain_ok": oksp, "industry_ok": okind, "radar_ok": okr,
+                   "deadlines_open_now": sum(1 for r in dl if r["status"] == "open")},
+                  fh, indent=2)
 
-    # Each tier only writes valid data (a degraded tier leaves its files
-    # untouched), so the runners can safely commit whatever changed. We exit
-    # non-zero only when the PRIMARY tier failed, purely as an alert signal.
-    if args.tier3_only:
-        primary_ok = ok3
-    elif args.france_only:
-        primary_ok = okfr
-    elif args.radar_only:
-        primary_ok = okr
-    else:
-        primary_ok = ok1
+    # Each tab only writes valid data (a degraded tab leaves its files
+    # untouched), so the runners can commit whatever changed. Exit non-zero
+    # only when the primary tab failed, as an alert signal.
+    primary_ok = (okfr if args.france_only else oksp if args.spain_only
+                  else okind if args.industry_only else okr if args.radar_only else ok1)
     if not primary_ok:
         sys.exit(1)
 

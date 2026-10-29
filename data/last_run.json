@@ -1,8 +1,9 @@
 {
-  "generated_at": "2026-10-28T12:42:39+00:00",
-  "tier1_ok": true,
-  "tier3_ok": true,
+  "generated_at": "2026-10-29T09:46:16+00:00",
+  "msca_ok": true,
   "france_ok": true,
+  "spain_ok": true,
+  "industry_ok": true,
   "radar_ok": true,
   "deadlines_open_now": 6
 }
