@@ -136,6 +136,16 @@
 - Removed Tier 2 (Netherlands / AcademicTransfer) entirely at user request.
   NOTE: Netherlands is still one of the 7 Tier-1 COUNTRIES_FILTER countries.
 
+### Thu, 29 Oct 2026 — Restructure tabs by geography
+- New tabs: MSCA (FR/ES/IT/UK) · France (all life-science) · Spain (all
+  life-science) · Industry (FR/ES) · Cancer radar · Deadlines.
+- sources/france.py -> all-France (no city filter); new sources/spain.py
+  (EURAXESS Spain + VHIO + la Caixa). la Caixa MOVED to Spain tab (not dropped).
+- run.py shares each EURAXESS facet scrape once across tabs (Spain feeds Spain
+  tab + radar). Removed unused industry.py (inlined). Netherlands removed from
+  MSCA_COUNTRIES / INDUSTRY_COUNTRIES.
+- Counts: MSCA 43, France 188, Spain 53, Industry 9, radar 7.
+
 ## Outstanding / Next
 - (Optional) GitHub Pages so the hosted reports auto-refresh weekly.
 - la Caixa deadlines are *expected* windows — verify against official pages yearly.
