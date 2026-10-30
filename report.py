@@ -185,7 +185,7 @@ const tb=document.getElementById('tb'),q=document.getElementById('q'),src=docume
 let sortK='deadline',dir=1;
 function esc(s){{const d=document.createElement('div');d.textContent=s==null?'':s;return d.innerHTML;}}
 function render(){{const t=q.value.toLowerCase(),sf=src.value;
-let rows=DATA.filter(r=>{{if(sf&&r.source!==sf)return false;if(!t)return true;
+let rows=DATA.filter(r=>{{if(r.days!=null&&r.days<1)return false;if(sf&&r.source!==sf)return false;if(!t)return true;
 return (r.title+' '+r.country+' '+r.org+' '+r.source+' '+r.field).toLowerCase().includes(t);}});
 rows.sort((a,b)=>{{let x=a[sortK],y=b[sortK];if(sortK==='days'){{x=x==null?1e9:x;y=y==null?1e9:y;return (x-y)*dir;}}
 x=(x||'').toString().toLowerCase();y=(y||'').toString().toLowerCase();return x<y?-dir:x>y?dir:0;}});
@@ -286,7 +286,7 @@ function renderPanel(pid){{const q=document.getElementById('q-'+pid),src=documen
 tb=document.getElementById('tb-'+pid),cnt=document.getElementById('cnt-'+pid);
 const st=state[pid]||(state[pid]={{sortK:'deadline',dir:1}});
 let rows=PANELS[pid].filter(r=>{{const t=(q.value||'').toLowerCase(),sf=src.value;
-if(sf&&r.source!==sf)return false;if(!t)return true;
+if(r.days!=null&&r.days<1)return false;if(sf&&r.source!==sf)return false;if(!t)return true;
 return (r.title+' '+r.country+' '+r.org+' '+r.source+' '+r.field).toLowerCase().includes(t);}});
 rows.sort((a,b)=>{{let x=a[st.sortK],y=b[st.sortK];if(st.sortK==='days'){{x=x==null?1e9:x;y=y==null?1e9:y;return (x-y)*st.dir;}}
 x=(x||'').toString().toLowerCase();y=(y||'').toString().toLowerCase();return x<y?-st.dir:x>y?st.dir:0;}});

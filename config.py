@@ -74,6 +74,14 @@ INDUSTRY_COUNTRIES = ["France", "Spain"]
 # Back-compat alias (unused by the per-tab builds).
 COUNTRIES_FILTER = MSCA_COUNTRIES
 
+# --- Hide closed positions ----------------------------------------------
+# Drop a position once its deadline is reached. MIN_DAYS_LEFT = 1 hides any
+# position whose deadline is today (0 days left) or already past; a position
+# with no deadline (e.g. "until filled", or a tracked call) is always kept.
+# Set HIDE_CLOSED = False to keep everything.
+HIDE_CLOSED = True
+MIN_DAYS_LEFT = 1
+
 # --- Detail-page enrichment ---------------------------------------------
 # Each listing links to /jobs/<id>, whose detail page carries contract type,
 # weekly hours, required education level, the Marie Curie grant number, and

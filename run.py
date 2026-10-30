@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import datetime
 import json
 import os
 import sys
@@ -55,9 +56,36 @@ def load_history(json_path: str) -> dict[str, dict]:
         return {}
 
 
+def _deadline_days(deadline):
+    """Days until the deadline (negative if past); None if no/invalid date."""
+    if not deadline:
+        return None
+    try:
+        d = datetime.date.fromisoformat(str(deadline)[:10])
+    except ValueError:
+        return None
+    return (d - datetime.date.today()).days
+
+
+def drop_closed(records):
+    """Remove positions whose deadline is reached (0 days left or past)."""
+    if not getattr(config, "HIDE_CLOSED", False):
+        return records, 0
+    min_days = getattr(config, "MIN_DAYS_LEFT", 1)
+    kept = []
+    for r in records:
+        days = _deadline_days(r.get("deadline"))
+        if days is None or days >= min_days:   # no deadline, or still open
+            kept.append(r)
+    return kept, len(records) - len(kept)
+
+
 def finalize_and_write(records, csv_path, json_path, run_ts, label, meta_extra=None):
-    """Merge history (first_seen + carry-forward), sort, write CSV + JSON."""
+    """Drop closed positions, merge history, sort, write CSV + JSON."""
     today = run_ts[:10]
+    records, n_closed = drop_closed(records)
+    if n_closed:
+        print(f"  hid {n_closed} closed (deadline reached)")
     history = load_history(json_path)
     for r in records:
         prev = history.get(r["id"])
